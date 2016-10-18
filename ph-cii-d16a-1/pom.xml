@@ -86,9 +86,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Export-Package>com.helger.cii.d16a1.*,
-              oasis.names.specification.ubl.*,
-              un.unece.uncefact.*</Export-Package>
+            <Export-Package>com.helger.cii.d16a1.*</Export-Package>
             <Import-Package>!javax.annotation.*,*</Import-Package>
           </instructions>
         </configuration>
@@ -101,7 +99,6 @@
             <exclude>**/LICENSE</exclude>
             <exclude>**/NOTICE</exclude>
             <exclude>src/main/resources/schemas/**</exclude>
-            <exclude>src/test/resources/examples/**</exclude>
           </excludes>
         </configuration>
       </plugin>
