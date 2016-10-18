@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2014-2016 Philip Helger (www.helger.com)
+ * Copyright (C) 2016 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,34 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.ubl.testfiles;
-
-import static org.junit.Assert.assertTrue;
-
-import java.util.List;
-
-import javax.annotation.Nonnull;
+package com.helger.cii.testfiles;
 
 import org.junit.Test;
 
-import com.helger.commons.io.resource.ClassPathResource;
+import com.helger.commons.mock.SPITestHelper;
 
 /**
- * Test class for class {@link CIITestFiles}.
- *
+ * Test SPI definitions
+ * 
  * @author Philip Helger
  */
-public final class CIITestFilesTest
+public final class SPITest
 {
-  private static void _test (@Nonnull final List <String> aFiles)
-  {
-    for (final String sFile : aFiles)
-      assertTrue (sFile + " does not exist", new ClassPathResource (sFile).exists ());
-  }
-
   @Test
-  public void testExistence ()
+  public void testBasic () throws Exception
   {
-    _test (CIITestFiles.D16A1_FILES);
+    SPITestHelper.testIfAllSPIImplementationsAreValid ();
   }
 }

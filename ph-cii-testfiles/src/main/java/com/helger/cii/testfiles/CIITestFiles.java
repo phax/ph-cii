@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2014-2016 Philip Helger (www.helger.com)
+ * Copyright (C) 2016 Philip Helger (www.helger.com)
  * philip[at]helger[dot]com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.ubl.testfiles;
+package com.helger.cii.testfiles;
 
 import java.util.List;
 
