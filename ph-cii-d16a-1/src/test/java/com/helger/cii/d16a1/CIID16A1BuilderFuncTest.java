@@ -20,6 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.helger.commons.error.list.IErrorList;
 import com.helger.commons.io.resource.ClassPathResource;
@@ -29,13 +31,15 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Test class for classes {@link CIID16A1Reader},
- * {@link CIID16A1Validator} and {@link CIID16A1Writer}.
+ * Test class for classes {@link CIID16A1Reader}, {@link CIID16A1Validator} and
+ * {@link CIID16A1Writer}.
  *
  * @author Philip Helger
  */
 public final class CIID16A1BuilderFuncTest
 {
+  private static final Logger s_aLogger = LoggerFactory.getLogger (CIID16A1BuilderFuncTest.class);
+
   @Test
   public void testReadAndWriteInvoice ()
   {
@@ -64,6 +68,7 @@ public final class CIID16A1BuilderFuncTest
 
     // Write
     final String s = aWriter.getAsString (aRead1);
-    System.out.println (s);
+    if (true)
+      s_aLogger.info (s);
   }
 }

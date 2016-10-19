@@ -37,7 +37,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  */
 public enum ECIID16A1DocumentType implements IJAXBDocumentType
 {
-  CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_100p0.xsd"),;
+  CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_100p0.xsd");
 
   private final JAXBDocumentType m_aDocType;
 
