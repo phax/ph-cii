@@ -59,10 +59,6 @@
       <artifactId>ph-jaxb</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.helger</groupId>
-      <artifactId>ph-xsds-ccts-cct-schemamodule</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <scope>test</scope>
@@ -86,7 +82,10 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Export-Package>com.helger.cii.d16a1.*</Export-Package>
+            <Export-Package>com.helger.cii.d16a1.*,
+            un.unece.uncefact.codelist.*,
+            un.unece.uncefact.data.*,
+            un.unece.uncefact.identifierlist.*</Export-Package>
             <Import-Package>!javax.annotation.*,*</Import-Package>
           </instructions>
         </configuration>
