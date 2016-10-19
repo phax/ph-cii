@@ -41,7 +41,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 public final class CIID16A1FuncTest
 {
   @Test
-  public void testReadAndWriteCatalogue () throws SAXException
+  public void testReadAndWriteInvoice () throws SAXException
   {
     for (final String sFilename : MockCIID16A1TestDocuments.getTestDocuments (ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE))
     {
