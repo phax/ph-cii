@@ -78,11 +78,6 @@
       </dependency>
       <dependency>
         <groupId>com.helger</groupId>
-        <artifactId>ph-cii-api</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.helger</groupId>
         <artifactId>ph-cii-d16a-1</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -99,7 +94,6 @@
   
   <modules>
     <module>ph-cii-testfiles</module>
-    <module>ph-cii-api</module>
     <module>ph-cii-d16a-1</module>
   </modules>
 </project>
