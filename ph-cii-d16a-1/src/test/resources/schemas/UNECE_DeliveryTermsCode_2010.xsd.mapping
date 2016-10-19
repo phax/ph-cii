@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+  <map key="1" value="_1" />
+  <map key="2" value="_2" />
+  <map key="CFR" value="CFR" />
+  <map key="CIF" value="CIF" />
+  <map key="CIP" value="CIP" />
+  <map key="CPT" value="CPT" />
+  <map key="DAP" value="DAP" />
+  <map key="DAT" value="DAT" />
+  <map key="DDP" value="DDP" />
+  <map key="EXW" value="EXW" />
+  <map key="FAS" value="FAS" />
+  <map key="FCA" value="FCA" />
+  <map key="FOB" value="FOB" />
+</mapping>

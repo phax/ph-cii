@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+  <map key="A" value="A" />
+  <map key="AA" value="AA" />
+  <map key="AB" value="AB" />
+  <map key="AC" value="AC" />
+  <map key="AD" value="AD" />
+  <map key="AE" value="AE" />
+  <map key="B" value="B" />
+  <map key="C" value="C" />
+  <map key="D" value="D" />
+  <map key="E" value="E" />
+  <map key="F" value="F" />
+  <map key="G" value="G" />
+  <map key="H" value="H" />
+  <map key="I" value="I" />
+  <map key="J" value="J" />
+  <map key="O" value="O" />
+  <map key="S" value="S" />
+  <map key="Z" value="Z" />
+</mapping>

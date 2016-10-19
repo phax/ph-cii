@@ -71,7 +71,9 @@ public final class MainCreateJAXBBinding
   {
     final IMicroDocument eDoc = new MicroDocument ();
     final IMicroElement eRoot = eDoc.appendElement (JAXB_NS_URI, "bindings");
-    eRoot.setAttribute ("xsi:schemaLocation", JAXB_NS_URI + " http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd");
+    eRoot.setAttribute (CXML.XML_NS_XSI,
+                        "schemaLocation",
+                        JAXB_NS_URI + " http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd");
     eRoot.setAttribute ("version", "2.1");
 
     final IMicroElement eGlobal = eRoot.appendElement (JAXB_NS_URI, "globalBindings");
@@ -151,7 +153,7 @@ public final class MainCreateJAXBBinding
       System.out.println ("D16A.1");
       final IMicroDocument eDoc = _createBaseDoc ();
       final ICommonsSet <String> aNamespaces = new CommonsHashSet<> ();
-      for (final String sPart : new String [] { "data/standard" })
+      for (final String sPart : new String [] { "codelist/standard", "data/standard", "identifierlist/standard" })
       {
         final String sBasePath = "/resources/schemas/d16a1/" + sPart;
         for (final File aFile : _getFileList ("src/main" + sBasePath))
@@ -176,10 +178,7 @@ public final class MainCreateJAXBBinding
                    .appendElement (JAXB_NS_URI, "package")
                    .setAttribute ("name", sPackageName);
 
-          if (aFile.getName ().equals ("QualifiedDataType_19.xsd"))
-          {
-            _generateExplicitEnumMapping (aDoc, aFile.getName (), eBindings);
-          }
+          _generateExplicitEnumMapping (aDoc, aFile.getName (), eBindings);
         }
       }
       MicroWriter.writeToStream (eDoc,
@@ -201,59 +200,61 @@ public final class MainCreateJAXBBinding
                                                     @Nonnull @Nonempty final String sFilename,
                                                     @Nonnull final IMicroElement eBindings)
   {
-    final ICommonsSet <String> aUsedNames = new CommonsHashSet<> ();
+    System.out.println ("Create enum mapping for " + sFilename);
     final ICommonsNavigableMap <String, String> aValueToConstants = new CommonsTreeMap<> ();
-    final IMicroElement eSimpleType = aDoc.getDocumentElement ().getFirstChildElement ();
 
-    final IMicroElement eInnerBindings = eBindings.appendElement (JAXB_NS_URI, "bindings").setAttribute ("node",
-                                                                                                         "xsd:simpleType[@name='" +
-                                                                                                                 eSimpleType.getAttributeValue ("name") +
-                                                                                                                 "']");
-    final IMicroElement eTypesafeEnumClass = eInnerBindings.appendElement (JAXB_NS_URI, "typesafeEnumClass");
-
-    final IMicroElement eRestriction = eSimpleType.getFirstChildElement ();
-    for (final IMicroElement eEnumeration : eRestriction.getAllChildElements (CXML.XML_NS_XSD, "enumeration"))
+    for (final IMicroElement eSimpleType : aDoc.getDocumentElement ().getAllChildElements (CXML.XML_NS_XSD,
+                                                                                           "simpleType"))
     {
-      final IMicroElement eAnnotation = eEnumeration.getFirstChildElement (CXML.XML_NS_XSD, "annotation");
-      if (eAnnotation == null)
-        throw new IllegalStateException ("annotation is missing");
-      final IMicroElement eDocumentation = eAnnotation.getFirstChildElement (CXML.XML_NS_XSD, "documentation");
-      if (eDocumentation == null)
-        throw new IllegalStateException ("documentation is missing");
-      final IMicroElement eCodeName = eDocumentation.getFirstChildElement ("urn:un:unece:uncefact:documentation:2",
-                                                                           "CodeName");
-      if (eCodeName == null)
-        throw new IllegalStateException ("CodeName is missing");
+      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (CXML.XML_NS_XSD, "restriction");
+      if (eRestriction == null)
+        continue;
 
-      final String sValue = eEnumeration.getAttributeValue ("value");
-      // Create an upper case Java identifier, without duplicate "_"
-      String sCodeName = RegExHelper.getAsIdentifier (eCodeName.getTextContent ().trim ().toUpperCase (Locale.US))
-                                    .replaceAll ("_+", "_");
+      final ICommonsList <IMicroElement> aEnumerations = eRestriction.getAllChildElements (CXML.XML_NS_XSD,
+                                                                                           "enumeration");
+      if (aEnumerations.isEmpty ())
+        continue;
 
-      if (!aUsedNames.add (sCodeName))
+      final ICommonsSet <String> aUsedNames = new CommonsHashSet<> ();
+      final IMicroElement eInnerBindings = eBindings.appendElement (JAXB_NS_URI, "bindings")
+                                                    .setAttribute ("node",
+                                                                   "xsd:simpleType[@name='" +
+                                                                           eSimpleType.getAttributeValue ("name") +
+                                                                           "']");
+      final IMicroElement eTypesafeEnumClass = eInnerBindings.appendElement (JAXB_NS_URI, "typesafeEnumClass");
+
+      for (final IMicroElement eEnumeration : aEnumerations)
       {
-        // Ensure uniqueness of the enum member name
-        int nSuffix = 1;
-        while (true)
-        {
-          final String sSuffixedCodeName = sCodeName + "_" + nSuffix;
-          if (aUsedNames.add (sSuffixedCodeName))
-          {
-            sCodeName = sSuffixedCodeName;
-            break;
-          }
-          ++nSuffix;
-        }
-      }
+        final String sValue = eEnumeration.getAttributeValue ("value");
+        // Create an upper case Java identifier, without duplicate "_"
+        String sCodeName = RegExHelper.getAsIdentifier (sValue.trim ().toUpperCase (Locale.US)).replaceAll ("_+", "_");
 
-      eTypesafeEnumClass.appendElement (JAXB_NS_URI, "typesafeEnumMember")
-                        .setAttribute ("value", sValue)
-                        .setAttribute ("name", sCodeName);
-      aValueToConstants.put (sValue, sCodeName);
+        if (!aUsedNames.add (sCodeName))
+        {
+          // Ensure uniqueness of the enum member name
+          int nSuffix = 1;
+          while (true)
+          {
+            final String sSuffixedCodeName = sCodeName + "_" + nSuffix;
+            if (aUsedNames.add (sSuffixedCodeName))
+            {
+              sCodeName = sSuffixedCodeName;
+              break;
+            }
+            ++nSuffix;
+          }
+        }
+
+        eTypesafeEnumClass.appendElement (JAXB_NS_URI, "typesafeEnumMember")
+                          .setAttribute ("value", sValue)
+                          .setAttribute ("name", sCodeName);
+        aValueToConstants.put (sValue, sCodeName);
+      }
     }
 
     // Write out the mapping file for easy later-on resolving
-    XMLMapHandler.writeMap (aValueToConstants,
-                            new FileSystemResource ("src/main/resources/schemas/" + sFilename + ".mapping"));
+    if (aValueToConstants.isNotEmpty ())
+      XMLMapHandler.writeMap (aValueToConstants,
+                              new FileSystemResource ("src/test/resources/schemas/" + sFilename + ".mapping"));
   }
 }

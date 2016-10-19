@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+  <map key="AB" value="AB" />
+  <map key="AE" value="AE" />
+  <map key="AF" value="AF" />
+  <map key="AH" value="AH" />
+  <map key="AQ" value="AQ" />
+  <map key="AR" value="AR" />
+  <map key="AT" value="AT" />
+  <map key="AU" value="AU" />
+  <map key="CA" value="CA" />
+  <map key="CG" value="CG" />
+  <map key="CN" value="CN" />
+  <map key="CPD" value="CPD" />
+  <map key="CX" value="CX" />
+  <map key="CZ" value="CZ" />
+  <map key="EX" value="EX" />
+  <map key="FW" value="FW" />
+  <map key="GS" value="GS" />
+  <map key="IM" value="IM" />
+  <map key="IV" value="IV" />
+  <map key="PE" value="PE" />
+</mapping>
