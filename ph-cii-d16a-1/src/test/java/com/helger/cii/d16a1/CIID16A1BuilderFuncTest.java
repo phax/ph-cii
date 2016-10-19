@@ -29,8 +29,8 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Test class for classes {@link CIID16A1ReaderBuilder},
- * {@link CIID16A1ValidatorBuilder} and {@link CIID16A1WriterBuilder}.
+ * Test class for classes {@link CIID16A1Reader},
+ * {@link CIID16A1Validator} and {@link CIID16A1Writer}.
  *
  * @author Philip Helger
  */
@@ -39,9 +39,9 @@ public final class CIID16A1BuilderFuncTest
   @Test
   public void testReadAndWriteInvoice ()
   {
-    final CIID16A1ReaderBuilder <CrossIndustryInvoiceType> aReader = new CIID16A1ReaderBuilder<> (CrossIndustryInvoiceType.class);
-    final CIID16A1ValidatorBuilder <CrossIndustryInvoiceType> aValidator = new CIID16A1ValidatorBuilder<> (CrossIndustryInvoiceType.class);
-    final CIID16A1WriterBuilder <CrossIndustryInvoiceType> aWriter = new CIID16A1WriterBuilder<> (CrossIndustryInvoiceType.class).setFormattedOutput (true);
+    final CIID16A1Reader <CrossIndustryInvoiceType> aReader = new CIID16A1Reader<> (CrossIndustryInvoiceType.class);
+    final CIID16A1Validator <CrossIndustryInvoiceType> aValidator = new CIID16A1Validator<> (CrossIndustryInvoiceType.class);
+    final CIID16A1Writer <CrossIndustryInvoiceType> aWriter = new CIID16A1Writer<> (CrossIndustryInvoiceType.class).setFormattedOutput (true);
     aWriter.setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("bla",
                                                                              ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE.getNamespaceURI ()));
 

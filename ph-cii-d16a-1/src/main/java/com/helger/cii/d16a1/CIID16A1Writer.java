@@ -19,23 +19,51 @@ package com.helger.cii.d16a1;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.PresentForCodeCoverage;
+import com.helger.jaxb.builder.JAXBWriterBuilder;
+import com.helger.xml.namespace.MapBasedNamespaceContext;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Write all CII D16A1 document types.
+ * A writer builder for CII D16A1 documents.
  *
  * @author Philip Helger
+ * @param <JAXBTYPE>
+ *        The CII D16A1 implementation class to be read
  */
 @NotThreadSafe
-public final class CIID16A1Writer
+public class CIID16A1Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID16A1Writer <JAXBTYPE>>
 {
-  @PresentForCodeCoverage
-  private static final CIID16A1Writer s_aInstance = new CIID16A1Writer ();
+  public CIID16A1Writer (@Nonnull final ECIID16A1DocumentType eDocType)
+  {
+    super (eDocType);
 
-  private CIID16A1Writer ()
-  {}
+    // Create a special namespace context for the passed document type
+    final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
+    aNSContext.addMappings (CIID16A1NamespaceContext.getInstance ());
+    aNSContext.setDefaultNamespaceURI (m_aDocType.getNamespaceURI ());
+    setNamespaceContext (aNSContext);
+  }
+
+  public CIID16A1Writer (@Nonnull final Class <JAXBTYPE> aClass)
+  {
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+  }
+
+  /**
+   * Create a new writer builder.
+   *
+   * @param aClass
+   *        The UBL class to be written. May not be <code>null</code>.
+   * @return The new writer builder. Never <code>null</code>.
+   * @param <T>
+   *        The CII D16A1 document implementation type
+   */
+  @Nonnull
+  public static <T> CIID16A1Writer <T> create (@Nonnull final Class <T> aClass)
+  {
+    return new CIID16A1Writer<> (aClass);
+  }
 
   /**
    * Create a writer builder for CrossIndustryInvoiceType.
@@ -43,8 +71,8 @@ public final class CIID16A1Writer
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static CIID16A1WriterBuilder <CrossIndustryInvoiceType> crossIndustryInvoice ()
+  public static CIID16A1Writer <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return CIID16A1WriterBuilder.create (CrossIndustryInvoiceType.class);
+    return create (CrossIndustryInvoiceType.class);
   }
 }

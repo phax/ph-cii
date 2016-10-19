@@ -19,23 +19,45 @@ package com.helger.cii.d16a1;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
-import com.helger.commons.annotation.PresentForCodeCoverage;
+import com.helger.jaxb.builder.JAXBValidationBuilder;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Validate all CII D16A1 document types.
+ * A writer builder for CII D16A1 documents.
  *
  * @author Philip Helger
+ * @param <JAXBTYPE>
+ *        The CII D16A1 implementation class to be read
  */
 @NotThreadSafe
-public final class CIID16A1Validator
+public class CIID16A1Validator <JAXBTYPE>
+                                      extends JAXBValidationBuilder <JAXBTYPE, CIID16A1Validator <JAXBTYPE>>
 {
-  @PresentForCodeCoverage
-  private static final CIID16A1Validator s_aInstance = new CIID16A1Validator ();
+  public CIID16A1Validator (@Nonnull final ECIID16A1DocumentType eDocType)
+  {
+    super (eDocType);
+  }
 
-  private CIID16A1Validator ()
-  {}
+  public CIID16A1Validator (@Nonnull final Class <JAXBTYPE> aClass)
+  {
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+  }
+
+  /**
+   * Create a new validation builder.
+   *
+   * @param aClass
+   *        The UBL class to be validated. May not be <code>null</code>.
+   * @return The new validation builder. Never <code>null</code>.
+   * @param <T>
+   *        The CII D16A1 document implementation type
+   */
+  @Nonnull
+  public static <T> CIID16A1Validator <T> create (@Nonnull final Class <T> aClass)
+  {
+    return new CIID16A1Validator<> (aClass);
+  }
 
   /**
    * Create a validation builder for CrossIndustryInvoiceType.
@@ -43,8 +65,8 @@ public final class CIID16A1Validator
    * @return The builder and never <code>null</code>
    */
   @Nonnull
-  public static CIID16A1ValidatorBuilder <CrossIndustryInvoiceType> crossIndustryInvoice ()
+  public static CIID16A1Validator <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return CIID16A1ValidatorBuilder.create (CrossIndustryInvoiceType.class);
+    return create (CrossIndustryInvoiceType.class);
   }
 }
