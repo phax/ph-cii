@@ -21,7 +21,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import com.helger.cii.d16a1.EUBL20DocumentType;
+import com.helger.cii.d16a1.ECIID16A1DocumentType;
 import com.helger.cii.d16a1.UBL20ReaderBuilder;
 import com.helger.cii.d16a1.UBL20ValidatorBuilder;
 import com.helger.cii.d16a1.UBL20WriterBuilder;
@@ -47,9 +47,9 @@ public final class UBL20BuilderFuncTest
     final UBL20ValidatorBuilder <InvoiceType> aValidator = new UBL20ValidatorBuilder<> (InvoiceType.class);
     final UBL20WriterBuilder <InvoiceType> aWriter = new UBL20WriterBuilder<> (InvoiceType.class).setFormattedOutput (true);
     aWriter.setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("bla",
-                                                                             EUBL20DocumentType.INVOICE.getNamespaceURI ()));
+                                                                             ECIID16A1DocumentType.INVOICE.getNamespaceURI ()));
 
-    final String sFilename = MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.INVOICE).get (0);
+    final String sFilename = MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.INVOICE).get (0);
 
     // Read from resource
     final InvoiceType aRead1 = aReader.read (new ClassPathResource (sFilename));

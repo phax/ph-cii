@@ -23,7 +23,7 @@ import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
-import com.helger.cii.d16a1.EUBL20DocumentType;
+import com.helger.cii.d16a1.ECIID16A1DocumentType;
 import com.helger.cii.d16a1.UBL20DocumentTypes;
 
 /**
@@ -73,7 +73,7 @@ public final class UBL20DocumentTypesTest
     assertNull (UBL20DocumentTypes.getDocumentTypeOfImplementationClass (null));
     assertNull (UBL20DocumentTypes.getSchemaOfImplementationClass (null));
     assertNull (UBL20DocumentTypes.getSchemaOfImplementationClass (String.class));
-    for (final EUBL20DocumentType eDocType : EUBL20DocumentType.values ())
+    for (final ECIID16A1DocumentType eDocType : ECIID16A1DocumentType.values ())
     {
       assertSame (eDocType,
                   UBL20DocumentTypes.getDocumentTypeOfImplementationClass (eDocType.getImplementationClass ()));

@@ -31,7 +31,7 @@ import com.helger.jaxb.builder.JAXBReaderBuilder;
 @NotThreadSafe
 public class UBL20ReaderBuilder <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, UBL20ReaderBuilder <JAXBTYPE>>
 {
-  public UBL20ReaderBuilder (@Nonnull final EUBL20DocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
+  public UBL20ReaderBuilder (@Nonnull final ECIID16A1DocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
   {
     super (eDocType, aImplClass);
   }
@@ -65,7 +65,7 @@ public class UBL20ReaderBuilder <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, 
    * @return The new reader builder. Never <code>null</code>.
    */
   @Nonnull
-  public static UBL20ReaderBuilder <?> createGeneric (@Nonnull final EUBL20DocumentType eDocType)
+  public static UBL20ReaderBuilder <?> createGeneric (@Nonnull final ECIID16A1DocumentType eDocType)
   {
     return new UBL20ReaderBuilder <> (eDocType, Object.class);
   }

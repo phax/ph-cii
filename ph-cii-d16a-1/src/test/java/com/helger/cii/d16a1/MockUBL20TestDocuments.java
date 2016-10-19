@@ -21,7 +21,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import com.helger.cii.d16a1.EUBL20DocumentType;
+import com.helger.cii.d16a1.ECIID16A1DocumentType;
 import com.helger.cii.testfiles.CIITestFiles;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.CollectionHelper;
@@ -34,7 +34,7 @@ public final class MockUBL20TestDocuments
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <String> getUBL20TestDocuments (@Nonnull final EUBL20DocumentType eType)
+  public static List <String> getUBL20TestDocuments (@Nonnull final ECIID16A1DocumentType eType)
   {
     List <String> aFiles = null;
     switch (eType)

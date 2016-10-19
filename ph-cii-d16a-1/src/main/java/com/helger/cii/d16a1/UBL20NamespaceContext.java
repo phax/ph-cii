@@ -39,9 +39,9 @@ public class UBL20NamespaceContext extends MapBasedNamespaceContext
   {
     addMapping ("xsi", CXML.XML_NS_XSI);
     addMapping ("xs", CXML.XML_NS_XSD);
-    addMapping ("cac", CUBL20.XML_SCHEMA_CAC_NAMESPACE_URL);
-    addMapping ("cbc", CUBL20.XML_SCHEMA_CBC_NAMESPACE_URL);
-    addMapping ("cec", CUBL20.XML_SCHEMA_CEC_NAMESPACE_URL);
+    addMapping ("cac", CCIID16A1.XML_SCHEMA_CAC_NAMESPACE_URL);
+    addMapping ("cbc", CCIID16A1.XML_SCHEMA_CBC_NAMESPACE_URL);
+    addMapping ("cec", CCIID16A1.XML_SCHEMA_CEC_NAMESPACE_URL);
   }
 
   @Nonnull

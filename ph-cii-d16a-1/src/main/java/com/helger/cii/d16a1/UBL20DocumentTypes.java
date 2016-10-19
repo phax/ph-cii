@@ -38,15 +38,15 @@ import com.helger.commons.collection.ext.ICommonsSet;
 public final class UBL20DocumentTypes
 {
   /** Maps namespaces to document types */
-  private static final ICommonsMap <String, EUBL20DocumentType> s_aNamespace2DocType = new CommonsHashMap <> ();
+  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aNamespace2DocType = new CommonsHashMap <> ();
 
   /** Maps local names to document types */
-  private static final ICommonsMap <String, EUBL20DocumentType> s_aLocalName2DocType = new CommonsHashMap <> ();
+  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aLocalName2DocType = new CommonsHashMap <> ();
 
   static
   {
     // Register all UBL 2.0 document types
-    for (final EUBL20DocumentType eDocType : EUBL20DocumentType.values ())
+    for (final ECIID16A1DocumentType eDocType : ECIID16A1DocumentType.values ())
     {
       // add to namespace map
       final String sNamespace = eDocType.getNamespaceURI ();
@@ -88,7 +88,7 @@ public final class UBL20DocumentTypes
    *         specified namespace URI exists.
    */
   @Nullable
-  public static EUBL20DocumentType getDocumentTypeOfNamespace (@Nullable final String sNamespace)
+  public static ECIID16A1DocumentType getDocumentTypeOfNamespace (@Nullable final String sNamespace)
   {
     return s_aNamespace2DocType.get (sNamespace);
   }
@@ -104,7 +104,7 @@ public final class UBL20DocumentTypes
   @Nullable
   public static Class <?> getImplementationClassOfNamespace (@Nullable final String sNamespace)
   {
-    final EUBL20DocumentType eDocType = getDocumentTypeOfNamespace (sNamespace);
+    final ECIID16A1DocumentType eDocType = getDocumentTypeOfNamespace (sNamespace);
     return eDocType == null ? null : eDocType.getImplementationClass ();
   }
 
@@ -139,7 +139,7 @@ public final class UBL20DocumentTypes
   public static Schema getSchemaOfNamespace (@Nullable final String sNamespace,
                                              @Nullable final ClassLoader aClassLoader)
   {
-    final EUBL20DocumentType eDocType = getDocumentTypeOfNamespace (sNamespace);
+    final ECIID16A1DocumentType eDocType = getDocumentTypeOfNamespace (sNamespace);
     return eDocType == null ? null : eDocType.getSchema (aClassLoader);
   }
 
@@ -164,7 +164,7 @@ public final class UBL20DocumentTypes
    *         specified local name exists.
    */
   @Nullable
-  public static EUBL20DocumentType getDocumentTypeOfLocalName (@Nullable final String sLocalName)
+  public static ECIID16A1DocumentType getDocumentTypeOfLocalName (@Nullable final String sLocalName)
   {
     return s_aLocalName2DocType.get (sLocalName);
   }
@@ -180,7 +180,7 @@ public final class UBL20DocumentTypes
   @Nullable
   public static Class <?> getImplementationClassOfLocalName (@Nullable final String sLocalName)
   {
-    final EUBL20DocumentType eDocType = getDocumentTypeOfLocalName (sLocalName);
+    final ECIID16A1DocumentType eDocType = getDocumentTypeOfLocalName (sLocalName);
     return eDocType == null ? null : eDocType.getImplementationClass ();
   }
 
@@ -194,11 +194,11 @@ public final class UBL20DocumentTypes
    *         class.
    */
   @Nullable
-  public static EUBL20DocumentType getDocumentTypeOfImplementationClass (@Nullable final Class <?> aImplClass)
+  public static ECIID16A1DocumentType getDocumentTypeOfImplementationClass (@Nullable final Class <?> aImplClass)
   {
     if (aImplClass == null)
       return null;
-    return ArrayHelper.findFirst (EUBL20DocumentType.values (),
+    return ArrayHelper.findFirst (ECIID16A1DocumentType.values (),
                                   eDocType -> eDocType.getImplementationClass ().equals (aImplClass));
   }
 
@@ -233,7 +233,7 @@ public final class UBL20DocumentTypes
   public static Schema getSchemaOfLocalName (@Nullable final String sLocalName,
                                              @Nullable final ClassLoader aClassLoader)
   {
-    final EUBL20DocumentType eDocType = getDocumentTypeOfLocalName (sLocalName);
+    final ECIID16A1DocumentType eDocType = getDocumentTypeOfLocalName (sLocalName);
     return eDocType == null ? null : eDocType.getSchema (aClassLoader);
   }
 
@@ -268,7 +268,7 @@ public final class UBL20DocumentTypes
   public static Schema getSchemaOfImplementationClass (@Nullable final Class <?> aImplClass,
                                                        @Nullable final ClassLoader aClassLoader)
   {
-    final EUBL20DocumentType eDocType = getDocumentTypeOfImplementationClass (aImplClass);
+    final ECIID16A1DocumentType eDocType = getDocumentTypeOfImplementationClass (aImplClass);
     return eDocType == null ? null : eDocType.getSchema (aClassLoader);
   }
 }

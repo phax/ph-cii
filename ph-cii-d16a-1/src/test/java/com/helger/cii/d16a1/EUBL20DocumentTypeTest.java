@@ -22,12 +22,12 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.helger.cii.d16a1.EUBL20DocumentType;
+import com.helger.cii.d16a1.ECIID16A1DocumentType;
 import com.helger.commons.io.resource.IReadableResource;
 import com.helger.commons.string.StringHelper;
 
 /**
- * Test class for class {@link EUBL20DocumentType}.
+ * Test class for class {@link ECIID16A1DocumentType}.
  *
  * @author Philip Helger
  */
@@ -36,7 +36,7 @@ public final class EUBL20DocumentTypeTest
   @Test
   public void testAll ()
   {
-    for (final EUBL20DocumentType e : EUBL20DocumentType.values ())
+    for (final ECIID16A1DocumentType e : ECIID16A1DocumentType.values ())
     {
       assertNotNull (e.getImplementationClass ());
       assertTrue (StringHelper.hasText (e.getLocalName ()));
@@ -46,7 +46,7 @@ public final class EUBL20DocumentTypeTest
         assertTrue (e.name (), aRes.exists ());
       assertNotNull (e.getSchema ());
       assertSame (e.getSchema (), e.getSchema ());
-      assertSame (e, EUBL20DocumentType.valueOf (e.name ()));
+      assertSame (e, ECIID16A1DocumentType.valueOf (e.name ()));
     }
   }
 }

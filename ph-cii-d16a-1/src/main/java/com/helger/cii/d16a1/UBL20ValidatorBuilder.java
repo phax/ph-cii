@@ -31,7 +31,7 @@ import com.helger.jaxb.builder.JAXBValidationBuilder;
 @NotThreadSafe
 public class UBL20ValidatorBuilder <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, UBL20ValidatorBuilder <JAXBTYPE>>
 {
-  public UBL20ValidatorBuilder (@Nonnull final EUBL20DocumentType eDocType)
+  public UBL20ValidatorBuilder (@Nonnull final ECIID16A1DocumentType eDocType)
   {
     super (eDocType);
   }

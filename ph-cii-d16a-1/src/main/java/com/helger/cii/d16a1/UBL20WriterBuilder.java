@@ -32,7 +32,7 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
 @NotThreadSafe
 public class UBL20WriterBuilder <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, UBL20WriterBuilder <JAXBTYPE>>
 {
-  public UBL20WriterBuilder (@Nonnull final EUBL20DocumentType eDocType)
+  public UBL20WriterBuilder (@Nonnull final ECIID16A1DocumentType eDocType)
   {
     super (eDocType);
 

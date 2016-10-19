@@ -26,7 +26,7 @@ import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.helger.cii.d16a1.EUBL20DocumentType;
+import com.helger.cii.d16a1.ECIID16A1DocumentType;
 import com.helger.cii.d16a1.UBL20Reader;
 import com.helger.cii.d16a1.UBL20Validator;
 import com.helger.cii.d16a1.UBL20Writer;
@@ -60,11 +60,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteCatalogue () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.CATALOGUE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.CATALOGUE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.CATALOGUE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.CATALOGUE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final CatalogueType aUBLObject = UBL20Reader.catalogue ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -101,11 +101,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteCreditNote () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.CREDIT_NOTE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.CREDIT_NOTE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.CREDIT_NOTE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.CREDIT_NOTE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final CreditNoteType aUBLObject = UBL20Reader.creditNote ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -142,11 +142,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteDespatchAdvice () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.DESPATCH_ADVICE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.DESPATCH_ADVICE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.DESPATCH_ADVICE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.DESPATCH_ADVICE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final DespatchAdviceType aUBLObject = UBL20Reader.despatchAdvice ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -183,11 +183,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteForwardingInstructions () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.FORWARDING_INSTRUCTIONS))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.FORWARDING_INSTRUCTIONS))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.FORWARDING_INSTRUCTIONS.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.FORWARDING_INSTRUCTIONS.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final ForwardingInstructionsType aUBLObject = UBL20Reader.forwardingInstructions ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -224,11 +224,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteInvoice () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.INVOICE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.INVOICE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.INVOICE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.INVOICE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final InvoiceType aUBLObject = UBL20Reader.invoice ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -265,11 +265,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteOrder () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.ORDER))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.ORDER))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.ORDER.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.ORDER.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final OrderType aUBLObject = UBL20Reader.order ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -307,11 +307,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteOrderResponseSimple () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.ORDER_RESPONSE_SIMPLE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.ORDER_RESPONSE_SIMPLE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.ORDER_RESPONSE_SIMPLE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.ORDER_RESPONSE_SIMPLE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final OrderResponseSimpleType aUBLObject = UBL20Reader.orderResponseSimple ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -348,11 +348,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteQuotation () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.QUOTATION))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.QUOTATION))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.QUOTATION.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.QUOTATION.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final QuotationType aUBLObject = UBL20Reader.quotation ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -389,11 +389,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteReceiptAdvice () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.RECEIPT_ADVICE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.RECEIPT_ADVICE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.RECEIPT_ADVICE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.RECEIPT_ADVICE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final ReceiptAdviceType aUBLObject = UBL20Reader.receiptAdvice ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -430,11 +430,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteRemittanceAdvice () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.REMITTANCE_ADVICE))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.REMITTANCE_ADVICE))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.REMITTANCE_ADVICE.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.REMITTANCE_ADVICE.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final RemittanceAdviceType aUBLObject = UBL20Reader.remittanceAdvice ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -471,11 +471,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteRequestForQuotation () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.REQUEST_FOR_QUOTATION))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.REQUEST_FOR_QUOTATION))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.REQUEST_FOR_QUOTATION.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.REQUEST_FOR_QUOTATION.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final RequestForQuotationType aUBLObject = UBL20Reader.requestForQuotation ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -512,11 +512,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteStatement () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.STATEMENT))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.STATEMENT))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.STATEMENT.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.STATEMENT.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final StatementType aUBLObject = UBL20Reader.statement ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
@@ -553,11 +553,11 @@ public final class UBL20FuncTest
   @Test
   public void testReadAndWriteWaybill () throws SAXException
   {
-    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (EUBL20DocumentType.WAYBILL))
+    for (final String sFilename : MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.WAYBILL))
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (EUBL20DocumentType.WAYBILL.getSchema ()));
+                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.WAYBILL.getSchema ()));
       assertNotNull (sFilename, aDoc);
       final WaybillType aUBLObject = UBL20Reader.waybill ().read (aDoc);
       assertNotNull (sFilename, aUBLObject);
