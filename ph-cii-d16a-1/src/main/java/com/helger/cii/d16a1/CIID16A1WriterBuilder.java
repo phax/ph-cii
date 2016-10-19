@@ -23,29 +23,29 @@ import com.helger.jaxb.builder.JAXBWriterBuilder;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
 /**
- * A writer builder for UBL 2.0 documents.
+ * A writer builder for CII D16A1 documents.
  *
  * @author Philip Helger
  * @param <JAXBTYPE>
- *        The UBL 2.0 implementation class to be read
+ *        The CII D16A1 implementation class to be read
  */
 @NotThreadSafe
-public class UBL20WriterBuilder <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, UBL20WriterBuilder <JAXBTYPE>>
+public class CIID16A1WriterBuilder <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID16A1WriterBuilder <JAXBTYPE>>
 {
-  public UBL20WriterBuilder (@Nonnull final ECIID16A1DocumentType eDocType)
+  public CIID16A1WriterBuilder (@Nonnull final ECIID16A1DocumentType eDocType)
   {
     super (eDocType);
 
     // Create a special namespace context for the passed document type
     final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
-    aNSContext.addMappings (UBL20NamespaceContext.getInstance ());
+    aNSContext.addMappings (CIID16A1NamespaceContext.getInstance ());
     aNSContext.setDefaultNamespaceURI (m_aDocType.getNamespaceURI ());
     setNamespaceContext (aNSContext);
   }
 
-  public UBL20WriterBuilder (@Nonnull final Class <JAXBTYPE> aClass)
+  public CIID16A1WriterBuilder (@Nonnull final Class <JAXBTYPE> aClass)
   {
-    this (UBL20DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
   }
 
   /**
@@ -55,11 +55,11 @@ public class UBL20WriterBuilder <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, 
    *        The UBL class to be written. May not be <code>null</code>.
    * @return The new writer builder. Never <code>null</code>.
    * @param <T>
-   *        The UBL 2.0 document implementation type
+   *        The CII D16A1 document implementation type
    */
   @Nonnull
-  public static <T> UBL20WriterBuilder <T> create (@Nonnull final Class <T> aClass)
+  public static <T> CIID16A1WriterBuilder <T> create (@Nonnull final Class <T> aClass)
   {
-    return new UBL20WriterBuilder <> (aClass);
+    return new CIID16A1WriterBuilder<> (aClass);
   }
 }

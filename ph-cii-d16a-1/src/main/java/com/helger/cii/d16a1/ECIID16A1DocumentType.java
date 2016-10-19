@@ -31,7 +31,7 @@ import com.helger.jaxb.builder.JAXBDocumentType;
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Enumeration with all available UBL 2.0 document types.
+ * Enumeration with all available CII D16A1 document types.
  *
  * @author Philip Helger
  */

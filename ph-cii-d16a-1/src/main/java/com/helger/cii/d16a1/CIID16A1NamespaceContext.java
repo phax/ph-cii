@@ -28,24 +28,26 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
  * @author Philip Helger
  */
 @Singleton
-public class UBL20NamespaceContext extends MapBasedNamespaceContext
+public class CIID16A1NamespaceContext extends MapBasedNamespaceContext
 {
   private static final class SingletonHolder
   {
-    static final UBL20NamespaceContext s_aInstance = new UBL20NamespaceContext ();
+    static final CIID16A1NamespaceContext s_aInstance = new CIID16A1NamespaceContext ();
   }
 
-  protected UBL20NamespaceContext ()
+  protected CIID16A1NamespaceContext ()
   {
     addMapping ("xsi", CXML.XML_NS_XSI);
     addMapping ("xs", CXML.XML_NS_XSD);
-    addMapping ("cac", CCIID16A1.XML_SCHEMA_CAC_NAMESPACE_URL);
-    addMapping ("cbc", CCIID16A1.XML_SCHEMA_CBC_NAMESPACE_URL);
-    addMapping ("cec", CCIID16A1.XML_SCHEMA_CEC_NAMESPACE_URL);
+    addMapping ("rsm", CCIID16A1.XML_SCHEMA_RSM_NAMESPACE_URL);
+    addMapping ("ccts", CCIID16A1.XML_SCHEMA_CCTS_NAMESPACE_URL);
+    addMapping ("udt", CCIID16A1.XML_SCHEMA_UDT_NAMESPACE_URL);
+    addMapping ("qdt", CCIID16A1.XML_SCHEMA_QDT_NAMESPACE_URL);
+    addMapping ("ram", CCIID16A1.XML_SCHEMA_RAM_NAMESPACE_URL);
   }
 
   @Nonnull
-  public static UBL20NamespaceContext getInstance ()
+  public static CIID16A1NamespaceContext getInstance ()
   {
     return SingletonHolder.s_aInstance;
   }

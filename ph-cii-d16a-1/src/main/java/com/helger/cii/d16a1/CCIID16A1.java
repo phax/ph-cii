@@ -21,7 +21,7 @@ import javax.annotation.concurrent.Immutable;
 import com.helger.commons.annotation.PresentForCodeCoverage;
 
 /**
- * Constants for UBL 2.0 handling.
+ * Constants for CII D16A1 handling.
  *
  * @author Philip Helger
  */

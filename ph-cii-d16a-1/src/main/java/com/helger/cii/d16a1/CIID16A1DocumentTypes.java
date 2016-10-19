@@ -29,23 +29,23 @@ import com.helger.commons.collection.ext.ICommonsMap;
 import com.helger.commons.collection.ext.ICommonsSet;
 
 /**
- * UBL document type map. Provides sanity methods for accessing UBL 2.0 document
- * types based on different information items.
+ * UBL document type map. Provides sanity methods for accessing CII D16A1
+ * document types based on different information items.
  *
  * @author Philip Helger
  */
 @Immutable
-public final class UBL20DocumentTypes
+public final class CIID16A1DocumentTypes
 {
   /** Maps namespaces to document types */
-  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aNamespace2DocType = new CommonsHashMap <> ();
+  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aNamespace2DocType = new CommonsHashMap<> ();
 
   /** Maps local names to document types */
-  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aLocalName2DocType = new CommonsHashMap <> ();
+  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aLocalName2DocType = new CommonsHashMap<> ();
 
   static
   {
-    // Register all UBL 2.0 document types
+    // Register all CII D16A1 document types
     for (final ECIID16A1DocumentType eDocType : ECIID16A1DocumentType.values ())
     {
       // add to namespace map
@@ -63,13 +63,13 @@ public final class UBL20DocumentTypes
   }
 
   @PresentForCodeCoverage
-  private static final UBL20DocumentTypes s_aInstance = new UBL20DocumentTypes ();
+  private static final CIID16A1DocumentTypes s_aInstance = new CIID16A1DocumentTypes ();
 
-  private UBL20DocumentTypes ()
+  private CIID16A1DocumentTypes ()
   {}
 
   /**
-   * @return A non-<code>null</code> set of all supported UBL 2.0 namespaces.
+   * @return A non-<code>null</code> set of all supported CII D16A1 namespaces.
    */
   @Nonnull
   @ReturnsMutableCopy
@@ -82,9 +82,9 @@ public final class UBL20DocumentTypes
    * Get the document type matching the passed namespace.
    *
    * @param sNamespace
-   *        The namespace URI of any UBL 2.0 document type. May be
+   *        The namespace URI of any CII D16A1 document type. May be
    *        <code>null</code>.
-   * @return <code>null</code> if no UBL 2.0 document type matching the
+   * @return <code>null</code> if no CII D16A1 document type matching the
    *         specified namespace URI exists.
    */
   @Nullable
@@ -97,9 +97,9 @@ public final class UBL20DocumentTypes
    * Get the domain object class of the passed namespace.
    *
    * @param sNamespace
-   *        The namespace URI of any UBL 2.0 document type. May be
+   *        The namespace URI of any CII D16A1 document type. May be
    *        <code>null</code>.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Class <?> getImplementationClassOfNamespace (@Nullable final String sNamespace)
@@ -109,13 +109,13 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the XSD Schema object for the UBL 2.0 document type of the passed
+   * Get the XSD Schema object for the CII D16A1 document type of the passed
    * namespace.
    *
    * @param sNamespace
-   *        The namespace URI of any UBL 2.0 document type. May be
+   *        The namespace URI of any CII D16A1 document type. May be
    *        <code>null</code>.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Schema getSchemaOfNamespace (@Nullable final String sNamespace)
@@ -124,16 +124,16 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the XSD Schema object for the UBL 2.0 document type of the passed
+   * Get the XSD Schema object for the CII D16A1 document type of the passed
    * namespace.
    *
    * @param sNamespace
-   *        The namespace URI of any UBL 2.0 document type. May be
+   *        The namespace URI of any CII D16A1 document type. May be
    *        <code>null</code>.
    * @param aClassLoader
    *        The class loader to be used. May be <code>null</code> indicating
    *        that the default class loader should be used.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Schema getSchemaOfNamespace (@Nullable final String sNamespace,
@@ -144,7 +144,7 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * @return A non-<code>null</code> set of all supported UBL 2.0 document
+   * @return A non-<code>null</code> set of all supported CII D16A1 document
    *         element local names.
    */
   @Nonnull
@@ -158,9 +158,9 @@ public final class UBL20DocumentTypes
    * Get the document type matching the passed document element local name.
    *
    * @param sLocalName
-   *        The document element local name of any UBL 2.0 document type. May be
-   *        <code>null</code>.
-   * @return <code>null</code> if no UBL 2.0 document type matching the
+   *        The document element local name of any CII D16A1 document type. May
+   *        be <code>null</code>.
+   * @return <code>null</code> if no CII D16A1 document type matching the
    *         specified local name exists.
    */
   @Nullable
@@ -173,8 +173,8 @@ public final class UBL20DocumentTypes
    * Get the domain object class of the passed document element local name.
    *
    * @param sLocalName
-   *        The document element local name of any UBL 2.0 document type. May be
-   *        <code>null</code>.
+   *        The document element local name of any CII D16A1 document type. May
+   *        be <code>null</code>.
    * @return <code>null</code> if no such implementation class exists.
    */
   @Nullable
@@ -185,12 +185,12 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the UBL 2.0 document type matching the passed implementation class.
+   * Get the CII D16A1 document type matching the passed implementation class.
    *
    * @param aImplClass
    *        The implementation class to use. May be <code>null</code>.
    * @return <code>null</code> if the implementation class is <code>null</code>
-   *         or if no UBL 2.0 document type has the specified implementation
+   *         or if no CII D16A1 document type has the specified implementation
    *         class.
    */
   @Nullable
@@ -203,13 +203,13 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the XSD Schema object for the UBL 2.0 document type of the passed
+   * Get the XSD Schema object for the CII D16A1 document type of the passed
    * document element local name.
    *
    * @param sLocalName
-   *        The document element local name of any UBL 2.0 document type. May be
-   *        <code>null</code>.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   *        The document element local name of any CII D16A1 document type. May
+   *        be <code>null</code>.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Schema getSchemaOfLocalName (@Nullable final String sLocalName)
@@ -218,16 +218,16 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the XSD Schema object for the UBL 2.0 document type of the passed
+   * Get the XSD Schema object for the CII D16A1 document type of the passed
    * document element local name.
    *
    * @param sLocalName
-   *        The document element local name of any UBL 2.0 document type. May be
-   *        <code>null</code>.
+   *        The document element local name of any CII D16A1 document type. May
+   *        be <code>null</code>.
    * @param aClassLoader
    *        The class loader to be used. May be <code>null</code> indicating
    *        that the default class loader should be used.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Schema getSchemaOfLocalName (@Nullable final String sLocalName,
@@ -238,13 +238,13 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the XSD Schema object for the UBL 2.0 document type of the passed
+   * Get the XSD Schema object for the CII D16A1 document type of the passed
    * implementation class.
    *
    * @param aImplClass
-   *        The implementation class of any UBL 2.0 document type. May be
+   *        The implementation class of any CII D16A1 document type. May be
    *        <code>null</code>.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Schema getSchemaOfImplementationClass (@Nullable final Class <?> aImplClass)
@@ -253,16 +253,16 @@ public final class UBL20DocumentTypes
   }
 
   /**
-   * Get the XSD Schema object for the UBL 2.0 document type of the passed
+   * Get the XSD Schema object for the CII D16A1 document type of the passed
    * implementation class.
    *
    * @param aImplClass
-   *        The implementation class of any UBL 2.0 document type. May be
+   *        The implementation class of any CII D16A1 document type. May be
    *        <code>null</code>.
    * @param aClassLoader
    *        The class loader to be used. May be <code>null</code> indicating
    *        that the default class loader should be used.
-   * @return <code>null</code> if no such UBL 2.0 document type exists.
+   * @return <code>null</code> if no such CII D16A1 document type exists.
    */
   @Nullable
   public static Schema getSchemaOfImplementationClass (@Nullable final Class <?> aImplClass,

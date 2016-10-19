@@ -21,42 +21,39 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import com.helger.cii.d16a1.ECIID16A1DocumentType;
-import com.helger.cii.d16a1.UBL20ReaderBuilder;
-import com.helger.cii.d16a1.UBL20ValidatorBuilder;
-import com.helger.cii.d16a1.UBL20WriterBuilder;
 import com.helger.commons.error.list.IErrorList;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.stream.StreamHelper;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
-import oasis.names.specification.ubl.schema.xsd.invoice_2.InvoiceType;
+import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Test class for classes {@link UBL20ReaderBuilder},
- * {@link UBL20ValidatorBuilder} and {@link UBL20WriterBuilder}.
+ * Test class for classes {@link CIID16A1ReaderBuilder},
+ * {@link CIID16A1ValidatorBuilder} and {@link CIID16A1WriterBuilder}.
  *
  * @author Philip Helger
  */
-public final class UBL20BuilderFuncTest
+public final class CIID16A1BuilderFuncTest
 {
   @Test
   public void testReadAndWriteInvoice ()
   {
-    final UBL20ReaderBuilder <InvoiceType> aReader = new UBL20ReaderBuilder<> (InvoiceType.class);
-    final UBL20ValidatorBuilder <InvoiceType> aValidator = new UBL20ValidatorBuilder<> (InvoiceType.class);
-    final UBL20WriterBuilder <InvoiceType> aWriter = new UBL20WriterBuilder<> (InvoiceType.class).setFormattedOutput (true);
+    final CIID16A1ReaderBuilder <CrossIndustryInvoiceType> aReader = new CIID16A1ReaderBuilder<> (CrossIndustryInvoiceType.class);
+    final CIID16A1ValidatorBuilder <CrossIndustryInvoiceType> aValidator = new CIID16A1ValidatorBuilder<> (CrossIndustryInvoiceType.class);
+    final CIID16A1WriterBuilder <CrossIndustryInvoiceType> aWriter = new CIID16A1WriterBuilder<> (CrossIndustryInvoiceType.class).setFormattedOutput (true);
     aWriter.setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("bla",
-                                                                             ECIID16A1DocumentType.INVOICE.getNamespaceURI ()));
+                                                                             ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE.getNamespaceURI ()));
 
-    final String sFilename = MockUBL20TestDocuments.getUBL20TestDocuments (ECIID16A1DocumentType.INVOICE).get (0);
+    final String sFilename = MockCIID16A1TestDocuments.getTestDocuments (ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE)
+                                                      .get (0);
 
     // Read from resource
-    final InvoiceType aRead1 = aReader.read (new ClassPathResource (sFilename));
+    final CrossIndustryInvoiceType aRead1 = aReader.read (new ClassPathResource (sFilename));
     assertNotNull (aRead1);
 
     // Read from byte[]
-    final InvoiceType aRead2 = aReader.read (StreamHelper.getAllBytes (new ClassPathResource (sFilename)));
+    final CrossIndustryInvoiceType aRead2 = aReader.read (StreamHelper.getAllBytes (new ClassPathResource (sFilename)));
     assertNotNull (aRead2);
     assertEquals (aRead1, aRead2);
 

@@ -31,7 +31,7 @@ import com.helger.commons.string.StringHelper;
  *
  * @author Philip Helger
  */
-public final class EUBL20DocumentTypeTest
+public final class ECIID16A1DocumentTypeTest
 {
   @Test
   public void testAll ()

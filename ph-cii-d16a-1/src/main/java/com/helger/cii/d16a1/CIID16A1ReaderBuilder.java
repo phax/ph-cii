@@ -22,23 +22,23 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.jaxb.builder.JAXBReaderBuilder;
 
 /**
- * A reader builder for UBL 2.0 documents.
+ * A reader builder for CII D16A1 documents.
  *
  * @author Philip Helger
  * @param <JAXBTYPE>
- *        The UBL 2.0 implementation class to be read
+ *        The CII D16A1 implementation class to be read
  */
 @NotThreadSafe
-public class UBL20ReaderBuilder <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, UBL20ReaderBuilder <JAXBTYPE>>
+public class CIID16A1ReaderBuilder <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID16A1ReaderBuilder <JAXBTYPE>>
 {
-  public UBL20ReaderBuilder (@Nonnull final ECIID16A1DocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
+  public CIID16A1ReaderBuilder (@Nonnull final ECIID16A1DocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
   {
     super (eDocType, aImplClass);
   }
 
-  public UBL20ReaderBuilder (@Nonnull final Class <JAXBTYPE> aClass)
+  public CIID16A1ReaderBuilder (@Nonnull final Class <JAXBTYPE> aClass)
   {
-    this (UBL20DocumentTypes.getDocumentTypeOfImplementationClass (aClass), aClass);
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass), aClass);
   }
 
   /**
@@ -48,12 +48,12 @@ public class UBL20ReaderBuilder <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, 
    *        The UBL class to be read. May not be <code>null</code>.
    * @return The new reader builder. Never <code>null</code>.
    * @param <T>
-   *        The UBL 2.0 document implementation type
+   *        The CII D16A1 document implementation type
    */
   @Nonnull
-  public static <T> UBL20ReaderBuilder <T> create (@Nonnull final Class <T> aClass)
+  public static <T> CIID16A1ReaderBuilder <T> create (@Nonnull final Class <T> aClass)
   {
-    return new UBL20ReaderBuilder <> (aClass);
+    return new CIID16A1ReaderBuilder<> (aClass);
   }
 
   /**
@@ -61,12 +61,13 @@ public class UBL20ReaderBuilder <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, 
    * type enumeration value is available.
    *
    * @param eDocType
-   *        The UBL 2.0 document type to be read. May not be <code>null</code> .
+   *        The CII D16A1 document type to be read. May not be <code>null</code>
+   *        .
    * @return The new reader builder. Never <code>null</code>.
    */
   @Nonnull
-  public static UBL20ReaderBuilder <?> createGeneric (@Nonnull final ECIID16A1DocumentType eDocType)
+  public static CIID16A1ReaderBuilder <?> createGeneric (@Nonnull final ECIID16A1DocumentType eDocType)
   {
-    return new UBL20ReaderBuilder <> (eDocType, Object.class);
+    return new CIID16A1ReaderBuilder<> (eDocType, Object.class);
   }
 }

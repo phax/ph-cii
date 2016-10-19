@@ -22,23 +22,23 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.jaxb.builder.JAXBValidationBuilder;
 
 /**
- * A writer builder for UBL 2.0 documents.
+ * A writer builder for CII D16A1 documents.
  *
  * @author Philip Helger
  * @param <JAXBTYPE>
- *        The UBL 2.0 implementation class to be read
+ *        The CII D16A1 implementation class to be read
  */
 @NotThreadSafe
-public class UBL20ValidatorBuilder <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, UBL20ValidatorBuilder <JAXBTYPE>>
+public class CIID16A1ValidatorBuilder <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, CIID16A1ValidatorBuilder <JAXBTYPE>>
 {
-  public UBL20ValidatorBuilder (@Nonnull final ECIID16A1DocumentType eDocType)
+  public CIID16A1ValidatorBuilder (@Nonnull final ECIID16A1DocumentType eDocType)
   {
     super (eDocType);
   }
 
-  public UBL20ValidatorBuilder (@Nonnull final Class <JAXBTYPE> aClass)
+  public CIID16A1ValidatorBuilder (@Nonnull final Class <JAXBTYPE> aClass)
   {
-    this (UBL20DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
   }
 
   /**
@@ -48,11 +48,11 @@ public class UBL20ValidatorBuilder <JAXBTYPE> extends JAXBValidationBuilder <JAX
    *        The UBL class to be validated. May not be <code>null</code>.
    * @return The new validation builder. Never <code>null</code>.
    * @param <T>
-   *        The UBL 2.0 document implementation type
+   *        The CII D16A1 document implementation type
    */
   @Nonnull
-  public static <T> UBL20ValidatorBuilder <T> create (@Nonnull final Class <T> aClass)
+  public static <T> CIID16A1ValidatorBuilder <T> create (@Nonnull final Class <T> aClass)
   {
-    return new UBL20ValidatorBuilder <> (aClass);
+    return new CIID16A1ValidatorBuilder<> (aClass);
   }
 }
