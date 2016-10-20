@@ -45,15 +45,15 @@ public final class CIITestFiles
    * "test-cii/d16a1/CII_example8.xml", "test-cii/d16a1/CII_example9.xml"
    */);
   public static final List <String> D16B_FILES = CollectionHelper.makeUnmodifiable (/*
-                                                                                     * "test-cii/d16a1/CII_example1.xml",
-                                                                                     * "test-cii/d16a1/CII_example2.xml",
-                                                                                     * "test-cii/d16a1/CII_example3.xml",
-                                                                                     * "test-cii/d16a1/CII_example4.xml",
-                                                                                     * "test-cii/d16a1/CII_example5.xml",
-                                                                                     * "test-cii/d16a1/CII_example6.xml",
-                                                                                     * "test-cii/d16a1/CII_example7.xml",
-                                                                                     * "test-cii/d16a1/CII_example8.xml",
-                                                                                     * "test-cii/d16a1/CII_example9.xml"
+                                                                                     * "test-cii/d16b/CII_example1.xml",
+                                                                                     * "test-cii/d16b/CII_example2.xml",
+                                                                                     * "test-cii/d16b/CII_example3.xml",
+                                                                                     * "test-cii/d16b/CII_example4.xml",
+                                                                                     * "test-cii/d16b/CII_example5.xml",
+                                                                                     * "test-cii/d16b/CII_example6.xml",
+                                                                                     * "test-cii/d16b/CII_example7.xml",
+                                                                                     * "test-cii/d16b/CII_example8.xml",
+                                                                                     * "test-cii/d16b/CII_example9.xml"
                                                                                      */);
 
   public CIITestFiles ()
