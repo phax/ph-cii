@@ -81,6 +81,11 @@
         <artifactId>ph-cii-d16a-1</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.helger</groupId>
+        <artifactId>ph-cii-d16b</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   
@@ -95,5 +100,6 @@
   <modules>
     <module>ph-cii-testfiles</module>
     <module>ph-cii-d16a-1</module>
+    <module>ph-cii-d16b</module>
   </modules>
 </project>
