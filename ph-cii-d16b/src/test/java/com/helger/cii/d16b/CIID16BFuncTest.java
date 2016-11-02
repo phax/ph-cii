@@ -75,7 +75,7 @@ public final class CIID16BFuncTest
       assertFalse (sFilename, aErrors.containsAtLeastOneError ());
     }
 
-    // Validate
+    // Validate empty instance
     final IErrorList aErrors = CIID16BValidator.crossIndustryInvoice ().validate (new CrossIndustryInvoiceType ());
     assertNotNull (aErrors);
     assertTrue (aErrors.containsAtLeastOneError ());

@@ -19,7 +19,6 @@ package com.helger.cii.d16b;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +41,6 @@ public final class CIID16BBuilderFuncTest
   private static final Logger s_aLogger = LoggerFactory.getLogger (CIID16BBuilderFuncTest.class);
 
   @Test
-  @Ignore ("No test files")
   public void testReadAndWriteInvoice ()
   {
     final CIID16BReader <CrossIndustryInvoiceType> aReader = new CIID16BReader<> (CrossIndustryInvoiceType.class);
