@@ -22,7 +22,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 import com.helger.jaxb.builder.JAXBWriterBuilder;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
-import un.unece.uncefact.data.standard.crossindustryinvoice._13.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
  * A writer builder for CII D16B documents.

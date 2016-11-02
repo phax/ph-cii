@@ -34,7 +34,7 @@ public final class MainCreateJAXBBindingD16B
   public static void main (final String [] args)
   {
     s_aLogger.info ("D16B");
-    JAXBBindingCreator.runCIIBindingCreation ("d16b");
+    JAXBBindingCreator.runCIIBindingCreation ("d16b", false);
     s_aLogger.info ("Done");
   }
 }

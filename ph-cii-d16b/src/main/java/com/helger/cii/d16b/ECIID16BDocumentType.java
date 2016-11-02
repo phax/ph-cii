@@ -28,7 +28,7 @@ import com.helger.commons.string.StringHelper;
 import com.helger.jaxb.builder.IJAXBDocumentType;
 import com.helger.jaxb.builder.JAXBDocumentType;
 
-import un.unece.uncefact.data.standard.crossindustryinvoice._13.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
  * Enumeration with all available CII D16B document types.
@@ -37,7 +37,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._13.CrossIndustryInv
  */
 public enum ECIID16BDocumentType implements IJAXBDocumentType
 {
-  CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_13p1.xsd");
+  CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_100pD16B.xsd");
 
   private final JAXBDocumentType m_aDocType;
 

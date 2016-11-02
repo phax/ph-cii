@@ -31,7 +31,7 @@ import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 import com.helger.xml.serialize.read.DOMReaderSettings;
 
-import un.unece.uncefact.data.standard.crossindustryinvoice._13.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
  * Some cross functionality testing

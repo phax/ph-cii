@@ -21,7 +21,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.jaxb.builder.JAXBReaderBuilder;
 
-import un.unece.uncefact.data.standard.crossindustryinvoice._13.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
  * A reader builder for CII D16B documents.

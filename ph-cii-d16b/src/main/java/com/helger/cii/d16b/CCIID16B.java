@@ -32,7 +32,7 @@ public final class CCIID16B
   public static final String SCHEMA_DIRECTORY = "schemas/d16b/data/standard/";
 
   /** The CII rsm namespace URL */
-  public static final String XML_SCHEMA_RSM_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:13";
+  public static final String XML_SCHEMA_RSM_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100";
 
   /** The ccts namespace URL */
   public static final String XML_SCHEMA_CCTS_NAMESPACE_URL = "urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2";

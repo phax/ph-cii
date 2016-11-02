@@ -28,6 +28,7 @@ import javax.xml.XMLConstants;
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.collection.ArrayHelper;
 import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.ext.CommonsArrayList;
 import com.helger.commons.collection.ext.CommonsHashSet;
 import com.helger.commons.collection.ext.CommonsTreeMap;
 import com.helger.commons.collection.ext.ICommonsList;
@@ -146,35 +147,42 @@ public final class JAXBBindingCreator
     return StringHelper.getImploded (".", aParts);
   }
 
-  public static void runCIIBindingCreation (@Nonnull @Nonempty final String sDName)
+  public static void runCIIBindingCreation (@Nonnull @Nonempty final String sDName, final boolean bWithCodelists)
   {
     final IMicroDocument eDoc = _createBaseDoc ();
     final ICommonsSet <String> aNamespaces = new CommonsHashSet<> ();
-    for (final String sPart : new String [] { "codelist/standard", "data/standard", "identifierlist/standard" })
+    final ICommonsList <String> aParts = new CommonsArrayList<> ("data/standard");
+    if (bWithCodelists)
+    {
+      aParts.add ("identifierlist/standard");
+      aParts.add ("codelist/standard");
+    }
+    for (final String sPart : aParts)
     {
       final String sBasePath = "/resources/schemas/" + sDName + "/" + sPart;
       for (final File aFile : _getFileList ("src/main" + sBasePath))
       {
-        // Each namespace should handled only once
+        final String sFilename = aFile.getName ();
         final IMicroDocument aDoc = MicroReader.readMicroXML (new FileSystemResource (aFile));
         final String sTargetNamespace = _getTargetNamespace (aDoc);
         if (!aNamespaces.add (sTargetNamespace))
         {
-          System.out.println ("Ignored " + sTargetNamespace + " in " + aFile.getName ());
+          System.out.println ("Ignored " + sTargetNamespace + " in " + sFilename);
           continue;
         }
         final String sPackageName = _convertToPackage (sTargetNamespace);
         // schemaLocation must be relative to bindings file!
         final IMicroElement eBindings = eDoc.getDocumentElement ()
                                             .appendElement (JAXB_NS_URI, "bindings")
-                                            .setAttribute ("schemaLocation", ".." + sBasePath + "/" + aFile.getName ())
+                                            .setAttribute ("schemaLocation", ".." + sBasePath + "/" + sFilename)
                                             .setAttribute ("node", "/xsd:schema");
 
         eBindings.appendElement (JAXB_NS_URI, "schemaBindings")
                  .appendElement (JAXB_NS_URI, "package")
                  .setAttribute ("name", sPackageName);
 
-        _generateExplicitEnumMapping (aDoc, aFile.getName (), eBindings);
+        if (sFilename.equals (""))
+          _generateExplicitEnumMapping (aDoc, sFilename, eBindings);
       }
     }
     MicroWriter.writeToStream (eDoc,

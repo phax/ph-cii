@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+  <map key="AA" value="AA" />
+  <map key="AB" value="AB" />
+  <map key="AC" value="AC" />
+  <map key="AD" value="AD" />
+  <map key="AE" value="AE" />
+  <map key="AF" value="AF" />
+  <map key="AI" value="AI" />
+  <map key="AQ" value="AQ" />
+  <map key="CA" value="CA" />
+  <map key="CT" value="CT" />
+  <map key="CU" value="CU" />
+  <map key="DI" value="DI" />
+  <map key="EC" value="EC" />
+  <map key="NW" value="NW" />
+  <map key="PC" value="PC" />
+  <map key="PE" value="PE" />
+  <map key="PK" value="PK" />
+  <map key="PL" value="PL" />
+  <map key="PT" value="PT" />
+  <map key="PU" value="PU" />
+  <map key="PV" value="PV" />
+  <map key="PW" value="PW" />
+  <map key="QT" value="QT" />
+  <map key="SR" value="SR" />
+  <map key="TB" value="TB" />
+  <map key="TU" value="TU" />
+  <map key="TW" value="TW" />
+  <map key="WH" value="WH" />
+  <map key="WI" value="WI" />
+</mapping>

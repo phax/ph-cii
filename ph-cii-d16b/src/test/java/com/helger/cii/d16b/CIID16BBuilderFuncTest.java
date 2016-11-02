@@ -29,7 +29,7 @@ import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.io.stream.StreamHelper;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
-import un.unece.uncefact.data.standard.crossindustryinvoice._13.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
  * Test class for classes {@link CIID16BReader}, {@link CIID16BValidator} and
