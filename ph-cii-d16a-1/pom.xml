@@ -106,7 +106,7 @@
             <goals>
               <goal>generate</goal>
             </goals>
-            <id>ubl20</id>
+            <id>ciid16a1</id>
             <configuration>
               <generateDirectory>${project.build.directory}/generated-sources/d16a1</generateDirectory>
               <schemaDirectory>${basedir}/src/main/resources/schemas/d16a1</schemaDirectory>
