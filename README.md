@@ -1,4 +1,7 @@
 # ph-cii
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5a5b1e7c59124d0a8922ceb5838a1ea3)](https://www.codacy.com/app/philip/ph-cii?utm_source=github.com&utm_medium=referral&utm_content=phax/ph-cii&utm_campaign=badger)
+
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
 Latest version is **1.0.0**
