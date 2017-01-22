@@ -23,9 +23,6 @@ import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
-import com.helger.cii.d16a1.ECIID16A1DocumentType;
-import com.helger.cii.d16a1.CIID16A1DocumentTypes;
-
 /**
  * Test class for class {@link CIID16A1DocumentTypes}.
  *
