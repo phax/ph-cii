@@ -25,6 +25,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.xml.XMLConstants;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.collection.ArrayHelper;
 import com.helger.commons.collection.CollectionHelper;
@@ -66,6 +69,7 @@ public final class JAXBBindingCreator
 {
   public static final String JAXB_NS_URI = "http://java.sun.com/xml/ns/jaxb";
   public static final String XJC_NS_URI = "http://java.sun.com/xml/ns/jaxb/xjc";
+  private static final Logger s_aLogger = LoggerFactory.getLogger (JAXBBindingCreator.class);
 
   @Nonnull
   private static IMicroDocument _createBaseDoc ()
@@ -150,8 +154,8 @@ public final class JAXBBindingCreator
   public static void runCIIBindingCreation (@Nonnull @Nonempty final String sDName, final boolean bWithCodelists)
   {
     final IMicroDocument eDoc = _createBaseDoc ();
-    final ICommonsSet <String> aNamespaces = new CommonsHashSet<> ();
-    final ICommonsList <String> aParts = new CommonsArrayList<> ("data/standard");
+    final ICommonsSet <String> aNamespaces = new CommonsHashSet <> ();
+    final ICommonsList <String> aParts = new CommonsArrayList <> ("data/standard");
     if (bWithCodelists)
     {
       aParts.add ("identifierlist/standard");
@@ -167,7 +171,7 @@ public final class JAXBBindingCreator
         final String sTargetNamespace = _getTargetNamespace (aDoc);
         if (!aNamespaces.add (sTargetNamespace))
         {
-          System.out.println ("Ignored " + sTargetNamespace + " in " + sFilename);
+          s_aLogger.info ("Ignored " + sTargetNamespace + " in " + sFilename);
           continue;
         }
         final String sPackageName = _convertToPackage (sTargetNamespace);
@@ -201,7 +205,7 @@ public final class JAXBBindingCreator
                                                     @Nonnull @Nonempty final String sFilename,
                                                     @Nonnull final IMicroElement eBindings)
   {
-    final ICommonsNavigableMap <String, String> aValueToConstants = new CommonsTreeMap<> ();
+    final ICommonsNavigableMap <String, String> aValueToConstants = new CommonsTreeMap <> ();
 
     for (final IMicroElement eSimpleType : aDoc.getDocumentElement ().getAllChildElements (CXML.XML_NS_XSD,
                                                                                            "simpleType"))
@@ -215,7 +219,7 @@ public final class JAXBBindingCreator
       if (aEnumerations.isEmpty ())
         continue;
 
-      final ICommonsSet <String> aUsedNames = new CommonsHashSet<> ();
+      final ICommonsSet <String> aUsedNames = new CommonsHashSet <> ();
       final IMicroElement eInnerBindings = eBindings.appendElement (JAXB_NS_URI, "bindings")
                                                     .setAttribute ("node",
                                                                    "xsd:simpleType[@name='" +
