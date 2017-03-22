@@ -12,12 +12,12 @@ It is licensed under Apache 2.0 license.
 
 It requires at least Java 8 to be used.
 
-#News and noteworthy
+# News and noteworthy
 
   * Version 1.0.0 - 2016-11-04
     * Initial version with D16A.1 and D16B (SCRDM)
 
-#Maven usage
+# Maven usage
 Add the following to your pom.xml to use this artifact:
 
 For CII D16A.1:
