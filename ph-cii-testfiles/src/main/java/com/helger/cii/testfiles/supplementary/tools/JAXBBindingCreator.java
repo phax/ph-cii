@@ -37,7 +37,6 @@ import com.helger.commons.collection.ext.CommonsTreeMap;
 import com.helger.commons.collection.ext.ICommonsList;
 import com.helger.commons.collection.ext.ICommonsNavigableMap;
 import com.helger.commons.collection.ext.ICommonsSet;
-import com.helger.commons.io.file.FileHelper;
 import com.helger.commons.io.file.filter.IFileFilter;
 import com.helger.commons.io.file.iterate.FileSystemIterator;
 import com.helger.commons.io.resource.FileSystemResource;
@@ -189,16 +188,16 @@ public final class JAXBBindingCreator
           _generateExplicitEnumMapping (aDoc, sFilename, eBindings);
       }
     }
-    MicroWriter.writeToStream (eDoc,
-                               FileHelper.getOutputStream ("src/main/jaxb/bindings.xjb"),
-                               new XMLWriterSettings ().setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
-                                                       .setNamespaceContext (new MapBasedNamespaceContext ().addMapping (XMLConstants.DEFAULT_NS_PREFIX,
-                                                                                                                         JAXB_NS_URI)
-                                                                                                            .addMapping ("xsd",
-                                                                                                                         CXML.XML_NS_XSD)
-                                                                                                            .addMapping ("xsi",
-                                                                                                                         CXML.XML_NS_XSI))
-                                                       .setPutNamespaceContextPrefixesInRoot (true));
+    MicroWriter.writeToFile (eDoc,
+                             new File ("src/main/jaxb/bindings.xjb"),
+                             new XMLWriterSettings ().setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
+                                                     .setNamespaceContext (new MapBasedNamespaceContext ().addMapping (XMLConstants.DEFAULT_NS_PREFIX,
+                                                                                                                       JAXB_NS_URI)
+                                                                                                          .addMapping ("xsd",
+                                                                                                                       CXML.XML_NS_XSD)
+                                                                                                          .addMapping ("xsi",
+                                                                                                                       CXML.XML_NS_XSI))
+                                                     .setPutNamespaceContextPrefixesInRoot (true));
   }
 
   private static void _generateExplicitEnumMapping (@Nonnull final IMicroDocument aDoc,
