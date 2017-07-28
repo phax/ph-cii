@@ -13,8 +13,9 @@ It is licensed under Apache 2.0 license.
 It requires at least Java 8 to be used.
 
 # News and noteworthy
-
-  * Version 1.0.0 - 2016-11-04
+  * v2.0.0 - work in progress
+    * Updated to ph-commons 9.0.0
+  * v1.0.0 - 2016-11-04
     * Initial version with D16A.1 and D16B (SCRDM)
 
 # Maven usage
