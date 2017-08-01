@@ -41,7 +41,7 @@ public class CIID16BWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID1
     // Create a special namespace context for the passed document type
     final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext ();
     aNSContext.addMappings (CIID16BNamespaceContext.getInstance ());
-    aNSContext.setDefaultNamespaceURI (m_aDocType.getNamespaceURI ());
+    aNSContext.addDefaultNamespaceURI (m_aDocType.getNamespaceURI ());
     setNamespaceContext (aNSContext);
   }
 
