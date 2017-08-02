@@ -75,7 +75,7 @@ public final class JAXBBindingCreator
   {
     final IMicroDocument eDoc = new MicroDocument ();
     final IMicroElement eRoot = eDoc.appendElement (JAXB_NS_URI, "bindings");
-    eRoot.setAttribute (CXML.XML_NS_XSI,
+    eRoot.setAttribute (XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI,
                         "schemaLocation",
                         JAXB_NS_URI + " http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd");
     eRoot.setAttribute ("version", "2.1");
@@ -194,9 +194,9 @@ public final class JAXBBindingCreator
                                                      .setNamespaceContext (new MapBasedNamespaceContext ().addMapping (XMLConstants.DEFAULT_NS_PREFIX,
                                                                                                                        JAXB_NS_URI)
                                                                                                           .addMapping ("xsd",
-                                                                                                                       CXML.XML_NS_XSD)
+                                                                                                                       XMLConstants.W3C_XML_SCHEMA_NS_URI)
                                                                                                           .addMapping ("xsi",
-                                                                                                                       CXML.XML_NS_XSI))
+                                                                                                                       XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI))
                                                      .setPutNamespaceContextPrefixesInRoot (true));
   }
 
@@ -206,14 +206,14 @@ public final class JAXBBindingCreator
   {
     final ICommonsNavigableMap <String, String> aValueToConstants = new CommonsTreeMap <> ();
 
-    for (final IMicroElement eSimpleType : aDoc.getDocumentElement ().getAllChildElements (CXML.XML_NS_XSD,
+    for (final IMicroElement eSimpleType : aDoc.getDocumentElement ().getAllChildElements (XMLConstants.W3C_XML_SCHEMA_NS_URI,
                                                                                            "simpleType"))
     {
-      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (CXML.XML_NS_XSD, "restriction");
+      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (XMLConstants.W3C_XML_SCHEMA_NS_URI, "restriction");
       if (eRestriction == null)
         continue;
 
-      final ICommonsList <IMicroElement> aEnumerations = eRestriction.getAllChildElements (CXML.XML_NS_XSD,
+      final ICommonsList <IMicroElement> aEnumerations = eRestriction.getAllChildElements (XMLConstants.W3C_XML_SCHEMA_NS_URI,
                                                                                            "enumeration");
       if (aEnumerations.isEmpty ())
         continue;

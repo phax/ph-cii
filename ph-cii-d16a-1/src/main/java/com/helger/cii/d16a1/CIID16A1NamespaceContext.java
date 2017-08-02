@@ -17,9 +17,9 @@
 package com.helger.cii.d16a1;
 
 import javax.annotation.Nonnull;
+import javax.xml.XMLConstants;
 
 import com.helger.commons.annotation.Singleton;
-import com.helger.xml.CXML;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
 
 /**
@@ -37,8 +37,8 @@ public class CIID16A1NamespaceContext extends MapBasedNamespaceContext
 
   protected CIID16A1NamespaceContext ()
   {
-    addMapping ("xsi", CXML.XML_NS_XSI);
-    addMapping ("xs", CXML.XML_NS_XSD);
+    addMapping ("xsi", XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
+    addMapping ("xs", XMLConstants.W3C_XML_SCHEMA_NS_URI);
     addMapping ("rsm", CCIID16A1.XML_SCHEMA_RSM_NAMESPACE_URL);
     addMapping ("ccts", CCIID16A1.XML_SCHEMA_CCTS_NAMESPACE_URL);
     addMapping ("udt", CCIID16A1.XML_SCHEMA_UDT_NAMESPACE_URL);
