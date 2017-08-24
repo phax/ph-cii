@@ -38,10 +38,10 @@ import com.helger.commons.collection.impl.ICommonsSet;
 public final class CIID16A1DocumentTypes
 {
   /** Maps namespaces to document types */
-  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aNamespace2DocType = new CommonsHashMap<> ();
+  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aNamespace2DocType = new CommonsHashMap <> ();
 
   /** Maps local names to document types */
-  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aLocalName2DocType = new CommonsHashMap<> ();
+  private static final ICommonsMap <String, ECIID16A1DocumentType> s_aLocalName2DocType = new CommonsHashMap <> ();
 
   static
   {

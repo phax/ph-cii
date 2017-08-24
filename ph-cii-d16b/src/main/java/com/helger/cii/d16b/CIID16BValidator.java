@@ -55,7 +55,7 @@ public class CIID16BValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE
   @Nonnull
   public static <T> CIID16BValidator <T> create (@Nonnull final Class <T> aClass)
   {
-    return new CIID16BValidator<> (aClass);
+    return new CIID16BValidator <> (aClass);
   }
 
   /**

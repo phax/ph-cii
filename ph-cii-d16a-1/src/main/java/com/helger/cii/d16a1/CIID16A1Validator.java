@@ -31,8 +31,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  *        The CII D16A1 implementation class to be read
  */
 @NotThreadSafe
-public class CIID16A1Validator <JAXBTYPE>
-                                      extends JAXBValidationBuilder <JAXBTYPE, CIID16A1Validator <JAXBTYPE>>
+public class CIID16A1Validator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, CIID16A1Validator <JAXBTYPE>>
 {
   public CIID16A1Validator (@Nonnull final ECIID16A1DocumentType eDocType)
   {
@@ -56,7 +55,7 @@ public class CIID16A1Validator <JAXBTYPE>
   @Nonnull
   public static <T> CIID16A1Validator <T> create (@Nonnull final Class <T> aClass)
   {
-    return new CIID16A1Validator<> (aClass);
+    return new CIID16A1Validator <> (aClass);
   }
 
   /**

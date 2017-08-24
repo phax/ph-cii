@@ -62,7 +62,7 @@ public class CIID16A1Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID
   @Nonnull
   public static <T> CIID16A1Writer <T> create (@Nonnull final Class <T> aClass)
   {
-    return new CIID16A1Writer<> (aClass);
+    return new CIID16A1Writer <> (aClass);
   }
 
   /**

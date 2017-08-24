@@ -55,7 +55,7 @@ public class CIID16BReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID1
   @Nonnull
   public static <T> CIID16BReader <T> create (@Nonnull final Class <T> aClass)
   {
-    return new CIID16BReader<> (aClass);
+    return new CIID16BReader <> (aClass);
   }
 
   /**
@@ -70,7 +70,7 @@ public class CIID16BReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID1
   @Nonnull
   public static CIID16BReader <?> createGeneric (@Nonnull final ECIID16BDocumentType eDocType)
   {
-    return new CIID16BReader<> (eDocType, Object.class);
+    return new CIID16BReader <> (eDocType, Object.class);
   }
 
   /**

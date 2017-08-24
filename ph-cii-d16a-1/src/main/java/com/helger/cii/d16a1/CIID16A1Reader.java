@@ -33,8 +33,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16A1Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID16A1Reader <JAXBTYPE>>
 {
-  public CIID16A1Reader (@Nonnull final ECIID16A1DocumentType eDocType,
-                                @Nonnull final Class <JAXBTYPE> aImplClass)
+  public CIID16A1Reader (@Nonnull final ECIID16A1DocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
   {
     super (eDocType, aImplClass);
   }
@@ -56,7 +55,7 @@ public class CIID16A1Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID
   @Nonnull
   public static <T> CIID16A1Reader <T> create (@Nonnull final Class <T> aClass)
   {
-    return new CIID16A1Reader<> (aClass);
+    return new CIID16A1Reader <> (aClass);
   }
 
   /**
@@ -71,7 +70,7 @@ public class CIID16A1Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID
   @Nonnull
   public static CIID16A1Reader <?> createGeneric (@Nonnull final ECIID16A1DocumentType eDocType)
   {
-    return new CIID16A1Reader<> (eDocType, Object.class);
+    return new CIID16A1Reader <> (eDocType, Object.class);
   }
 
   /**
