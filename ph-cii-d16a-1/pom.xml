@@ -77,6 +77,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Automatic-Module-Name>com.helger.cii.d16a1</Automatic-Module-Name>
             <Export-Package>com.helger.cii.d16a1.*,
             un.unece.uncefact.codelist.*,
             un.unece.uncefact.data.*,
