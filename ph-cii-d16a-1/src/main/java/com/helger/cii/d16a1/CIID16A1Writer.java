@@ -45,24 +45,15 @@ public class CIID16A1Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID
     setNamespaceContext (aNSContext);
   }
 
-  public CIID16A1Writer (@Nonnull final Class <JAXBTYPE> aClass)
-  {
-    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
-  }
-
   /**
    * Create a new writer builder.
    *
    * @param aClass
    *        The UBL class to be written. May not be <code>null</code>.
-   * @return The new writer builder. Never <code>null</code>.
-   * @param <T>
-   *        The CII D16A1 document implementation type
    */
-  @Nonnull
-  public static <T> CIID16A1Writer <T> create (@Nonnull final Class <T> aClass)
+  public CIID16A1Writer (@Nonnull final Class <JAXBTYPE> aClass)
   {
-    return new CIID16A1Writer <> (aClass);
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
   }
 
   /**
@@ -73,6 +64,6 @@ public class CIID16A1Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID
   @Nonnull
   public static CIID16A1Writer <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return create (CrossIndustryInvoiceType.class);
+    return new CIID16A1Writer <> (CrossIndustryInvoiceType.class);
   }
 }

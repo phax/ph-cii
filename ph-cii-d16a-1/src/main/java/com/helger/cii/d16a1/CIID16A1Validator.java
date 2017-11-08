@@ -38,24 +38,15 @@ public class CIID16A1Validator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYP
     super (eDocType);
   }
 
-  public CIID16A1Validator (@Nonnull final Class <JAXBTYPE> aClass)
-  {
-    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
-  }
-
   /**
    * Create a new validation builder.
    *
    * @param aClass
    *        The UBL class to be validated. May not be <code>null</code>.
-   * @return The new validation builder. Never <code>null</code>.
-   * @param <T>
-   *        The CII D16A1 document implementation type
    */
-  @Nonnull
-  public static <T> CIID16A1Validator <T> create (@Nonnull final Class <T> aClass)
+  public CIID16A1Validator (@Nonnull final Class <JAXBTYPE> aClass)
   {
-    return new CIID16A1Validator <> (aClass);
+    this (CIID16A1DocumentTypes.getDocumentTypeOfImplementationClass (aClass));
   }
 
   /**
@@ -66,6 +57,6 @@ public class CIID16A1Validator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYP
   @Nonnull
   public static CIID16A1Validator <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return create (CrossIndustryInvoiceType.class);
+    return new CIID16A1Validator <> (CrossIndustryInvoiceType.class);
   }
 }
