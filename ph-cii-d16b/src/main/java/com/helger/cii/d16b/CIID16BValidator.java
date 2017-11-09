@@ -33,29 +33,20 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16BValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE, CIID16BValidator <JAXBTYPE>>
 {
-  public CIID16BValidator (@Nonnull final ECIID16BDocumentType eDocType)
-  {
-    super (eDocType);
-  }
-
-  public CIID16BValidator (@Nonnull final Class <JAXBTYPE> aClass)
-  {
-    this (CIID16BDocumentTypes.getDocumentTypeOfImplementationClass (aClass));
-  }
-
   /**
    * Create a new validation builder.
    *
    * @param aClass
    *        The UBL class to be validated. May not be <code>null</code>.
-   * @return The new validation builder. Never <code>null</code>.
-   * @param <T>
-   *        The CII D16B document implementation type
    */
-  @Nonnull
-  public static <T> CIID16BValidator <T> create (@Nonnull final Class <T> aClass)
+  public CIID16BValidator (@Nonnull final Class <JAXBTYPE> aClass)
   {
-    return new CIID16BValidator <> (aClass);
+    this (CIID16BDocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+  }
+
+  public CIID16BValidator (@Nonnull final ECIID16BDocumentType eDocType)
+  {
+    super (eDocType);
   }
 
   /**
@@ -66,6 +57,6 @@ public class CIID16BValidator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYPE
   @Nonnull
   public static CIID16BValidator <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return create (CrossIndustryInvoiceType.class);
+    return new CIID16BValidator <> (CrossIndustryInvoiceType.class);
   }
 }

@@ -34,6 +34,17 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16BWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID16BWriter <JAXBTYPE>>
 {
+  /**
+   * Create a new writer builder.
+   *
+   * @param aClass
+   *        The UBL class to be written. May not be <code>null</code>.
+   */
+  public CIID16BWriter (@Nonnull final Class <JAXBTYPE> aClass)
+  {
+    this (CIID16BDocumentTypes.getDocumentTypeOfImplementationClass (aClass));
+  }
+
   public CIID16BWriter (@Nonnull final ECIID16BDocumentType eDocType)
   {
     super (eDocType);
@@ -45,26 +56,6 @@ public class CIID16BWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID1
     setNamespaceContext (aNSContext);
   }
 
-  public CIID16BWriter (@Nonnull final Class <JAXBTYPE> aClass)
-  {
-    this (CIID16BDocumentTypes.getDocumentTypeOfImplementationClass (aClass));
-  }
-
-  /**
-   * Create a new writer builder.
-   *
-   * @param aClass
-   *        The UBL class to be written. May not be <code>null</code>.
-   * @return The new writer builder. Never <code>null</code>.
-   * @param <T>
-   *        The CII D16B document implementation type
-   */
-  @Nonnull
-  public static <T> CIID16BWriter <T> create (@Nonnull final Class <T> aClass)
-  {
-    return new CIID16BWriter <> (aClass);
-  }
-
   /**
    * Create a writer builder for CrossIndustryInvoiceType.
    *
@@ -73,6 +64,6 @@ public class CIID16BWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID1
   @Nonnull
   public static CIID16BWriter <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return create (CrossIndustryInvoiceType.class);
+    return new CIID16BWriter <> (CrossIndustryInvoiceType.class);
   }
 }

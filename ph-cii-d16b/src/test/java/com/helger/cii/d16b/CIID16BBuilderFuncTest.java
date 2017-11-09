@@ -43,11 +43,12 @@ public final class CIID16BBuilderFuncTest
   @Test
   public void testReadAndWriteInvoice ()
   {
-    final CIID16BReader <CrossIndustryInvoiceType> aReader = new CIID16BReader<> (CrossIndustryInvoiceType.class);
-    final CIID16BValidator <CrossIndustryInvoiceType> aValidator = new CIID16BValidator<> (CrossIndustryInvoiceType.class);
-    final CIID16BWriter <CrossIndustryInvoiceType> aWriter = new CIID16BWriter<> (CrossIndustryInvoiceType.class).setFormattedOutput (true);
-    aWriter.setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("bla",
-                                                                             ECIID16BDocumentType.CROSS_INDUSTRY_INVOICE.getNamespaceURI ()));
+    final CIID16BReader <CrossIndustryInvoiceType> aReader = CIID16BReader.crossIndustryInvoice ();
+    final CIID16BValidator <CrossIndustryInvoiceType> aValidator = CIID16BValidator.crossIndustryInvoice ();
+    final CIID16BWriter <CrossIndustryInvoiceType> aWriter = CIID16BWriter.crossIndustryInvoice ()
+                                                                          .setFormattedOutput (true);
+    aWriter.setNamespaceContext (new MapBasedNamespaceContext (CIID16BNamespaceContext.getInstance ()).addMapping ("bla",
+                                                                                                                   ECIID16BDocumentType.CROSS_INDUSTRY_INVOICE.getNamespaceURI ()));
 
     final String sFilename = MockCIID16BTestDocuments.getTestDocuments (ECIID16BDocumentType.CROSS_INDUSTRY_INVOICE)
                                                      .get (0);

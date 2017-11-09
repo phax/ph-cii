@@ -33,29 +33,15 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16BReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID16BReader <JAXBTYPE>>
 {
-  public CIID16BReader (@Nonnull final ECIID16BDocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
-  {
-    super (eDocType, aImplClass);
-  }
-
-  public CIID16BReader (@Nonnull final Class <JAXBTYPE> aClass)
-  {
-    this (CIID16BDocumentTypes.getDocumentTypeOfImplementationClass (aClass), aClass);
-  }
-
   /**
    * Create a new reader builder.
    *
-   * @param aClass
+   * @param aImplClass
    *        The UBL class to be read. May not be <code>null</code>.
-   * @return The new reader builder. Never <code>null</code>.
-   * @param <T>
-   *        The CII D16B document implementation type
    */
-  @Nonnull
-  public static <T> CIID16BReader <T> create (@Nonnull final Class <T> aClass)
+  public CIID16BReader (@Nonnull final Class <JAXBTYPE> aImplClass)
   {
-    return new CIID16BReader <> (aClass);
+    this (CIID16BDocumentTypes.getDocumentTypeOfImplementationClass (aImplClass), aImplClass);
   }
 
   /**
@@ -65,12 +51,12 @@ public class CIID16BReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID1
    * @param eDocType
    *        The CII D16B document type to be read. May not be <code>null</code>
    *        .
-   * @return The new reader builder. Never <code>null</code>.
+   * @param aImplClass
+   *        The UBL class to be read. May not be <code>null</code>.
    */
-  @Nonnull
-  public static CIID16BReader <?> createGeneric (@Nonnull final ECIID16BDocumentType eDocType)
+  public CIID16BReader (@Nonnull final ECIID16BDocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
   {
-    return new CIID16BReader <> (eDocType, Object.class);
+    super (eDocType, aImplClass);
   }
 
   /**
@@ -81,6 +67,6 @@ public class CIID16BReader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID1
   @Nonnull
   public static CIID16BReader <CrossIndustryInvoiceType> crossIndustryInvoice ()
   {
-    return create (CrossIndustryInvoiceType.class);
+    return new CIID16BReader <> (CrossIndustryInvoiceType.class);
   }
 }

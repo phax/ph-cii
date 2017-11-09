@@ -87,7 +87,7 @@ public final class JAXBBindingCreator
   }
 
   @Nonnull
-  private static Iterable <File> _getFileList (final String sPath)
+  private static ICommonsList <File> _getFileList (final String sPath)
   {
     return CollectionHelper.getSorted (new FileSystemIterator (sPath).withFilter (IFileFilter.filenameEndsWith (".xsd")),
                                        Comparator.comparing (File::getName));
@@ -206,10 +206,11 @@ public final class JAXBBindingCreator
   {
     final ICommonsNavigableMap <String, String> aValueToConstants = new CommonsTreeMap <> ();
 
-    for (final IMicroElement eSimpleType : aDoc.getDocumentElement ().getAllChildElements (XMLConstants.W3C_XML_SCHEMA_NS_URI,
-                                                                                           "simpleType"))
+    for (final IMicroElement eSimpleType : aDoc.getDocumentElement ()
+                                               .getAllChildElements (XMLConstants.W3C_XML_SCHEMA_NS_URI, "simpleType"))
     {
-      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (XMLConstants.W3C_XML_SCHEMA_NS_URI, "restriction");
+      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (XMLConstants.W3C_XML_SCHEMA_NS_URI,
+                                                                           "restriction");
       if (eRestriction == null)
         continue;
 

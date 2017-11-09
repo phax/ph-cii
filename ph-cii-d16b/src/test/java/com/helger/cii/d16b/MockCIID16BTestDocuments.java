@@ -23,7 +23,8 @@ import javax.annotation.concurrent.Immutable;
 
 import com.helger.cii.testfiles.CIITestFiles;
 import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.CollectionHelper;
+import com.helger.commons.collection.impl.CommonsArrayList;
+import com.helger.commons.collection.impl.ICommonsList;
 
 @Immutable
 public final class MockCIID16BTestDocuments
@@ -33,7 +34,7 @@ public final class MockCIID16BTestDocuments
 
   @Nonnull
   @ReturnsMutableCopy
-  public static List <String> getTestDocuments (@Nonnull final ECIID16BDocumentType eType)
+  public static ICommonsList <String> getTestDocuments (@Nonnull final ECIID16BDocumentType eType)
   {
     List <String> aFiles = null;
     switch (eType)
@@ -45,6 +46,6 @@ public final class MockCIID16BTestDocuments
         throw new IllegalArgumentException ("No test files available for type " + eType);
     }
 
-    return CollectionHelper.newList (aFiles);
+    return new CommonsArrayList <> (aFiles);
   }
 }
