@@ -40,7 +40,6 @@ public class CIID16BNamespaceContext extends MapBasedNamespaceContext
     addMapping ("xsi", XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
     addMapping ("xs", XMLConstants.W3C_XML_SCHEMA_NS_URI);
     addMapping ("rsm", CCIID16B.XML_SCHEMA_RSM_NAMESPACE_URL);
-    addMapping ("ccts", CCIID16B.XML_SCHEMA_CCTS_NAMESPACE_URL);
     addMapping ("udt", CCIID16B.XML_SCHEMA_UDT_NAMESPACE_URL);
     addMapping ("qdt", CCIID16B.XML_SCHEMA_QDT_NAMESPACE_URL);
     addMapping ("ram", CCIID16B.XML_SCHEMA_RAM_NAMESPACE_URL);

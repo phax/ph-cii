@@ -13,12 +13,16 @@ It is licensed under Apache 2.0 license.
 It requires at least Java 8 to be used.
 
 # News and noteworthy
+
+* v2.0.1 - work in progress
+  * Fixed D16B namespace URL versions (use `100` instead of `20`)
 * v2.0.0 - 2017-11-09
   * Updated to ph-commons 9.0.0
 * v1.0.0 - 2016-11-04
   * Initial version with D16A.1 and D16B (SCRDM)
 
 # Maven usage
+
 Add the following to your pom.xml to use this artifact:
 
 For CII D16A.1:
@@ -41,7 +45,7 @@ For CII D16B:
 
 # References
 
-  * Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
+* Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
 
 ---
 
