@@ -4,7 +4,7 @@
 
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
-Latest version is **2.0.0**
+Latest version is **2.0.1**
 
 This library focuses currently on D16A.1 and D16B for use with the EN resulting from directive 2014/55/EU.
 
@@ -14,7 +14,7 @@ It requires at least Java 8 to be used.
 
 # News and noteworthy
 
-* v2.0.1 - work in progress
+* v2.0.1 - 2018-02-01
   * Fixed D16B namespace URL versions (use `100` instead of `20`)
 * v2.0.0 - 2017-11-09
   * Updated to ph-commons 9.0.0
@@ -30,7 +30,7 @@ For CII D16A.1:
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-cii-d16a-1</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
 </dependency>
 ```
 
@@ -39,7 +39,7 @@ For CII D16B:
 <dependency>
   <groupId>com.helger</groupId>
   <artifactId>ph-cii-d16b</artifactId>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
 </dependency>
 ```
 
