@@ -68,7 +68,7 @@ public final class JAXBBindingCreator
 {
   public static final String JAXB_NS_URI = "http://java.sun.com/xml/ns/jaxb";
   public static final String XJC_NS_URI = "http://java.sun.com/xml/ns/jaxb/xjc";
-  private static final Logger s_aLogger = LoggerFactory.getLogger (JAXBBindingCreator.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (JAXBBindingCreator.class);
 
   @Nonnull
   private static IMicroDocument _createBaseDoc ()
@@ -170,7 +170,7 @@ public final class JAXBBindingCreator
         final String sTargetNamespace = _getTargetNamespace (aDoc);
         if (!aNamespaces.add (sTargetNamespace))
         {
-          s_aLogger.info ("Ignored " + sTargetNamespace + " in " + sFilename);
+          LOGGER.info ("Ignored " + sTargetNamespace + " in " + sFilename);
           continue;
         }
         final String sPackageName = _convertToPackage (sTargetNamespace);

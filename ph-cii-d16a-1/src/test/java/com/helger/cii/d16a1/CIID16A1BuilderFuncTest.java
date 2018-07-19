@@ -38,7 +38,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  */
 public final class CIID16A1BuilderFuncTest
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (CIID16A1BuilderFuncTest.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (CIID16A1BuilderFuncTest.class);
 
   @Test
   public void testReadAndWriteInvoice ()
@@ -69,6 +69,6 @@ public final class CIID16A1BuilderFuncTest
     // Write
     final String s = aWriter.getAsString (aRead1);
     if (true)
-      s_aLogger.info (s);
+      LOGGER.info (s);
   }
 }

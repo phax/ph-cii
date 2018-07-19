@@ -29,12 +29,12 @@ import com.helger.cii.testfiles.supplementary.tools.JAXBBindingCreator;
  */
 public final class MainCreateJAXBBindingD16B
 {
-  private static final Logger s_aLogger = LoggerFactory.getLogger (MainCreateJAXBBindingD16B.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (MainCreateJAXBBindingD16B.class);
 
   public static void main (final String [] args)
   {
-    s_aLogger.info ("D16B");
+    LOGGER.info ("D16B");
     JAXBBindingCreator.runCIIBindingCreation ("d16b", false);
-    s_aLogger.info ("Done");
+    LOGGER.info ("Done");
   }
 }
