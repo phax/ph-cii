@@ -14,12 +14,14 @@ It requires at least Java 8 to be used.
 
 # News and noteworthy
 
+* v2.0.2 - work in progess
+    * Requires at least ph-commons 9.1.8
 * v2.0.1 - 2018-02-01
-  * Fixed D16B namespace URL versions (use `100` instead of `20`)
+    * Fixed D16B namespace URL versions (use `100` instead of `20`)
 * v2.0.0 - 2017-11-09
-  * Updated to ph-commons 9.0.0
+    * Updated to ph-commons 9.0.0
 * v1.0.0 - 2016-11-04
-  * Initial version with D16A.1 and D16B (SCRDM)
+    * Initial version with D16A.1 and D16B (SCRDM)
 
 # Maven usage
 
