@@ -14,8 +14,8 @@ It requires at least Java 8 to be used.
 
 # News and noteworthy
 
-* v2.0.2 - work in progess
-    * Requires at least ph-commons 9.1.8
+* v2.1.0 - work in progess
+    * Requires at least ph-commons 9.2.0
 * v2.0.1 - 2018-02-01
     * Fixed D16B namespace URL versions (use `100` instead of `20`)
 * v2.0.0 - 2017-11-09

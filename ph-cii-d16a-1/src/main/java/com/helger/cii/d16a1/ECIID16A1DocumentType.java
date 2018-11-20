@@ -17,13 +17,13 @@
 package com.helger.cii.d16a1;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.xml.validation.Schema;
 
 import com.helger.commons.annotation.Nonempty;
 import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.collection.impl.ICommonsList;
+import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.string.StringHelper;
 import com.helger.jaxb.builder.IJAXBDocumentType;
 import com.helger.jaxb.builder.JAXBDocumentType;
@@ -39,12 +39,20 @@ public enum ECIID16A1DocumentType implements IJAXBDocumentType
 {
   CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_100p0.xsd");
 
+  @Nonnull
+  private static ClassLoader _getCL ()
+  {
+    return ECIID16A1DocumentType.class.getClassLoader ();
+  }
+
   private final JAXBDocumentType m_aDocType;
 
   private ECIID16A1DocumentType (@Nonnull final Class <?> aClass, @Nonnull final String sXSDPath)
   {
     m_aDocType = new JAXBDocumentType (aClass,
-                                       new CommonsArrayList <> (CCIID16A1.SCHEMA_DIRECTORY + sXSDPath),
+                                       new CommonsArrayList <> (new ClassPathResource (CCIID16A1.SCHEMA_DIRECTORY +
+                                                                                       sXSDPath,
+                                                                                       _getCL ())),
                                        s -> StringHelper.trimEnd (s, "Type"));
   }
 
@@ -57,9 +65,9 @@ public enum ECIID16A1DocumentType implements IJAXBDocumentType
   @Nonnull
   @Nonempty
   @ReturnsMutableCopy
-  public ICommonsList <String> getAllXSDPaths ()
+  public ICommonsList <ClassPathResource> getAllXSDResources ()
   {
-    return m_aDocType.getAllXSDPaths ();
+    return m_aDocType.getAllXSDResources ();
   }
 
   @Nonnull
@@ -76,8 +84,8 @@ public enum ECIID16A1DocumentType implements IJAXBDocumentType
   }
 
   @Nonnull
-  public Schema getSchema (@Nullable final ClassLoader aClassLoader)
+  public Schema getSchema ()
   {
-    return m_aDocType.getSchema (aClassLoader);
+    return m_aDocType.getSchema ();
   }
 }
