@@ -30,6 +30,7 @@
   <description>Library for reading and writing CII D16B documents</description>
   <url>https://github.com/phax/ph-cii/ph-cii-d16b</url>
   <inceptionYear>2016</inceptionYear>
+
   <licenses>
     <license>
       <name>Apache 2</name>
@@ -37,10 +38,12 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+
   <organization>
     <name>Philip Helger</name>
     <url>http://www.helger.com</url>
   </organization>
+
   <developers>
     <developer>
       <id>philip</id>
@@ -49,6 +52,7 @@
       <url>http://www.helger.com</url>
     </developer>
   </developers>
+
   <dependencies>
     <dependency>
       <groupId>com.helger</groupId>
@@ -69,6 +73,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -139,6 +144,7 @@
             <arg>-Xph-list-extension</arg>
             <arg>-Xph-csu</arg>
             <arg>-Xph-cloneable2</arg>
+            <arg>-Xph-ubl-value</arg>
           </args>
         </configuration>
         <dependencies>
@@ -146,6 +152,11 @@
             <groupId>com.helger</groupId>
             <artifactId>ph-jaxb22-plugin</artifactId>
             <version>2.3.1.2</version>
+          </dependency>
+          <dependency>
+            <groupId>com.helger</groupId>
+            <artifactId>ph-ubl-jaxb-plugin</artifactId>
+            <version>6.1.1-SNAPSHOT</version>
           </dependency>
         </dependencies>
       </plugin>
