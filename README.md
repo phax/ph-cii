@@ -49,6 +49,12 @@ For CII D16B:
 </dependency>
 ```
 
+
+# Gradle considerations
+
+This project relies on JDK version based Maven profile activation.
+See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
+
 # References
 
 * Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
