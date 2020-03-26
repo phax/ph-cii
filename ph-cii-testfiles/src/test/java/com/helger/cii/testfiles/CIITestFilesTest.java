@@ -24,7 +24,6 @@ import javax.annotation.Nonnull;
 
 import org.junit.Test;
 
-import com.helger.cii.testfiles.CIITestFiles;
 import com.helger.commons.io.resource.ClassPathResource;
 
 /**
