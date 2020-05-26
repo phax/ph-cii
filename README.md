@@ -4,7 +4,7 @@
 
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
-Latest version is **2.1.1**
+Latest version is **2.2.0**
 
 This library focuses currently on D16A.1 and D16B for use with the EN resulting from directive 2014/55/EU.
 
@@ -12,8 +12,47 @@ It is licensed under Apache 2.0 license.
 
 It requires at least Java 8 to be used.
 
+
+# Maven usage
+
+Add the following to your pom.xml to use this artifact:, replacing `x.y.z` with the real version number.
+
+For CII D16A.1:
+
+```xml
+<dependency>
+  <groupId>com.helger.cii</groupId>
+  <artifactId>ph-cii-d16a-1</artifactId>
+  <version>x.y.z</version>
+</dependency>
+```
+
+For CII D16B:
+
+```xml
+<dependency>
+  <groupId>com.helger.cii</groupId>
+  <artifactId>ph-cii-d16b</artifactId>
+  <version>x.y.z</version>
+</dependency>
+```
+
+Note: prior to v2.2.0 the Maven groupId was `com.helger`.
+
+#
+# Gradle considerations
+
+This project relies on JDK version based Maven profile activation.
+See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
+
+# References
+
+* Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
+
 # News and noteworthy
 
+* v2.2.0 - 2020-05-26
+    * Changed Maven groupId to `com.helger.cii`
 * v2.1.1 - 2019-01-26
     * Extended the API of the created classes with `ph-jaxb22-plugin:ph-value-extender`
 * v2.1.0 - 2018-11-12
@@ -24,40 +63,6 @@ It requires at least Java 8 to be used.
     * Updated to ph-commons 9.0.0
 * v1.0.0 - 2016-11-04
     * Initial version with D16A.1 and D16B (SCRDM)
-
-# Maven usage
-
-Add the following to your pom.xml to use this artifact:
-
-For CII D16A.1:
-
-```xml
-<dependency>
-  <groupId>com.helger</groupId>
-  <artifactId>ph-cii-d16a-1</artifactId>
-  <version>2.1.1</version>
-</dependency>
-```
-
-For CII D16B:
-
-```xml
-<dependency>
-  <groupId>com.helger</groupId>
-  <artifactId>ph-cii-d16b</artifactId>
-  <version>2.1.1</version>
-</dependency>
-```
-
-
-# Gradle considerations
-
-This project relies on JDK version based Maven profile activation.
-See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
-
-# References
-
-* Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
 
 ---
 
