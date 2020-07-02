@@ -42,7 +42,7 @@ public class CIID16A1Validator <JAXBTYPE> extends JAXBValidationBuilder <JAXBTYP
    * Create a new validation builder.
    *
    * @param aClass
-   *        The UBL class to be validated. May not be <code>null</code>.
+   *        The CII class to be validated. May not be <code>null</code>.
    */
   public CIID16A1Validator (@Nonnull final Class <JAXBTYPE> aClass)
   {

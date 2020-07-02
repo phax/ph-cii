@@ -29,7 +29,7 @@ import com.helger.commons.collection.impl.ICommonsMap;
 import com.helger.commons.collection.impl.ICommonsSet;
 
 /**
- * UBL document type map. Provides sanity methods for accessing CII D16B
+ * CII document type map. Provides sanity methods for accessing CII D16B
  * document types based on different information items.
  *
  * @author Philip Helger

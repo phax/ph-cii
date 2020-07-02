@@ -37,7 +37,7 @@ public class CIID16A1Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID
    * Create a new reader builder.
    *
    * @param aImplClass
-   *        The UBL class to be read. May not be <code>null</code>.
+   *        The CII class to be read. May not be <code>null</code>.
    */
   public CIID16A1Reader (@Nonnull final Class <JAXBTYPE> aImplClass)
   {
@@ -52,7 +52,7 @@ public class CIID16A1Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID
    *        The CII D16A1 document type to be read. May not be <code>null</code>
    *        .
    * @param aImplClass
-   *        The UBL class to be read. May not be <code>null</code>.
+   *        The CII class to be read. May not be <code>null</code>.
    */
   public CIID16A1Reader (@Nonnull final ECIID16A1DocumentType eDocType, @Nonnull final Class <JAXBTYPE> aImplClass)
   {

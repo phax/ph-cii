@@ -49,7 +49,7 @@ public class CIID16A1Writer <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID
    * Create a new writer builder.
    *
    * @param aClass
-   *        The UBL class to be written. May not be <code>null</code>.
+   *        The CII class to be written. May not be <code>null</code>.
    */
   public CIID16A1Writer (@Nonnull final Class <JAXBTYPE> aClass)
   {

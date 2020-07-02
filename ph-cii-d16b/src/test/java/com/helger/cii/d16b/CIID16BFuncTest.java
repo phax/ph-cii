@@ -48,28 +48,28 @@ public final class CIID16BFuncTest
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
                                                   new DOMReaderSettings ().setSchema (ECIID16BDocumentType.CROSS_INDUSTRY_INVOICE.getSchema ()));
       assertNotNull (sFilename, aDoc);
-      final CrossIndustryInvoiceType aUBLObject = CIID16BReader.crossIndustryInvoice ().read (aDoc);
-      assertNotNull (sFilename, aUBLObject);
+      final CrossIndustryInvoiceType aCIIObject = CIID16BReader.crossIndustryInvoice ().read (aDoc);
+      assertNotNull (sFilename, aCIIObject);
 
       // Validate
-      IErrorList aErrors = CIID16BValidator.crossIndustryInvoice ().validate (aUBLObject);
+      IErrorList aErrors = CIID16BValidator.crossIndustryInvoice ().validate (aCIIObject);
       assertNotNull (sFilename, aErrors);
       assertFalse (sFilename, aErrors.containsAtLeastOneError ());
 
       // write again
-      final Document aDoc2 = CIID16BWriter.crossIndustryInvoice ().getAsDocument (aUBLObject);
+      final Document aDoc2 = CIID16BWriter.crossIndustryInvoice ().getAsDocument (aCIIObject);
       assertNotNull (aDoc2);
       assertEquals (aDoc.getDocumentElement ().getNamespaceURI (), aDoc2.getDocumentElement ().getNamespaceURI ());
       assertEquals (aDoc.getDocumentElement ().getLocalName (), aDoc2.getDocumentElement ().getLocalName ());
 
       // read again
-      final CrossIndustryInvoiceType aUBLObject2 = CIID16BReader.crossIndustryInvoice ().read (aDoc2);
-      assertNotNull (sFilename, aUBLObject2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aUBLObject, aUBLObject2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aUBLObject, aUBLObject.clone ());
+      final CrossIndustryInvoiceType aCIIObject2 = CIID16BReader.crossIndustryInvoice ().read (aDoc2);
+      assertNotNull (sFilename, aCIIObject2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject2);
+      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject.clone ());
 
       // Validate
-      aErrors = CIID16BValidator.crossIndustryInvoice ().validate (aUBLObject2);
+      aErrors = CIID16BValidator.crossIndustryInvoice ().validate (aCIIObject2);
       assertNotNull (sFilename, aErrors);
       assertFalse (sFilename, aErrors.containsAtLeastOneError ());
     }
