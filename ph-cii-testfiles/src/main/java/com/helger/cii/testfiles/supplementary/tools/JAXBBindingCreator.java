@@ -66,8 +66,8 @@ import com.helger.xml.serialize.write.XMLWriterSettings;
  */
 public final class JAXBBindingCreator
 {
-  public static final String JAXB_NS_URI = "http://java.sun.com/xml/ns/jaxb";
-  public static final String XJC_NS_URI = "http://java.sun.com/xml/ns/jaxb/xjc";
+  private static final String JAXB_NS_URI = "http://java.sun.com/xml/ns/jaxb";
+  private static final String XJC_NS_URI = "http://java.sun.com/xml/ns/jaxb/xjc";
   private static final Logger LOGGER = LoggerFactory.getLogger (JAXBBindingCreator.class);
 
   @Nonnull
@@ -75,14 +75,35 @@ public final class JAXBBindingCreator
   {
     final IMicroDocument eDoc = new MicroDocument ();
     final IMicroElement eRoot = eDoc.appendElement (JAXB_NS_URI, "bindings");
-    eRoot.setAttribute (XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI,
-                        "schemaLocation",
-                        JAXB_NS_URI + " http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd");
+    if (false)
+      eRoot.setAttribute (XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI,
+                          "schemaLocation",
+                          JAXB_NS_URI + " http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd");
     eRoot.setAttribute ("version", "2.1");
 
     final IMicroElement eGlobal = eRoot.appendElement (JAXB_NS_URI, "globalBindings");
     eGlobal.setAttribute ("typesafeEnumMaxMembers", "2000");
     eGlobal.setAttribute ("typesafeEnumMemberName", "generateError");
+
+    // When in "xjc" namespace "adapter" can be used, when in "jaxb"
+    // namespace, parse and print must be used
+    eGlobal.appendElement (XJC_NS_URI, "javaType")
+           .setAttribute ("name", "java.time.LocalDateTime")
+           .setAttribute ("xmlType", "xsd:dateTime")
+           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterLocalDateTime");
+    eGlobal.appendElement (XJC_NS_URI, "javaType")
+           .setAttribute ("name", "java.time.LocalDate")
+           .setAttribute ("xmlType", "xsd:date")
+           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterLocalDate");
+    eGlobal.appendElement (XJC_NS_URI, "javaType")
+           .setAttribute ("name", "java.time.LocalTime")
+           .setAttribute ("xmlType", "xsd:time")
+           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterLocalTime");
+    eGlobal.appendElement (XJC_NS_URI, "javaType")
+           .setAttribute ("name", "java.time.Duration")
+           .setAttribute ("xmlType", "xsd:duration")
+           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterDuration");
+
     return eDoc;
   }
 
@@ -106,7 +127,7 @@ public final class JAXBBindingCreator
     String s = sNamespaceURI.toLowerCase (Locale.US);
 
     String [] aParts;
-    final URL aURL = URLHelper.getAsURL (sNamespaceURI);
+    final URL aURL = URLHelper.getAsURL (sNamespaceURI, false);
     if (aURL != null)
     {
       // Host
@@ -180,19 +201,17 @@ public final class JAXBBindingCreator
                                             .setAttribute ("schemaLocation", ".." + sBasePath + "/" + sFilename)
                                             .setAttribute ("node", "/xsd:schema");
 
-        eBindings.appendElement (JAXB_NS_URI, "schemaBindings")
-                 .appendElement (JAXB_NS_URI, "package")
-                 .setAttribute ("name", sPackageName);
+        eBindings.appendElement (JAXB_NS_URI, "schemaBindings").appendElement (JAXB_NS_URI, "package").setAttribute ("name", sPackageName);
 
-        if (sFilename.equals (""))
+        if (sDName.equalsIgnoreCase ("d16a1"))
           _generateExplicitEnumMapping (aDoc, sFilename, eBindings);
       }
     }
     MicroWriter.writeToFile (eDoc,
                              new File ("src/main/jaxb/bindings.xjb"),
                              new XMLWriterSettings ().setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
-                                                     .setNamespaceContext (new MapBasedNamespaceContext ().addMapping (XMLConstants.DEFAULT_NS_PREFIX,
-                                                                                                                       JAXB_NS_URI)
+                                                     .setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("", JAXB_NS_URI)
+                                                                                                          .addMapping ("xjc", XJC_NS_URI)
                                                                                                           .addMapping ("xsd",
                                                                                                                        XMLConstants.W3C_XML_SCHEMA_NS_URI)
                                                                                                           .addMapping ("xsi",
@@ -209,8 +228,7 @@ public final class JAXBBindingCreator
     for (final IMicroElement eSimpleType : aDoc.getDocumentElement ()
                                                .getAllChildElements (XMLConstants.W3C_XML_SCHEMA_NS_URI, "simpleType"))
     {
-      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (XMLConstants.W3C_XML_SCHEMA_NS_URI,
-                                                                           "restriction");
+      final IMicroElement eRestriction = eSimpleType.getFirstChildElement (XMLConstants.W3C_XML_SCHEMA_NS_URI, "restriction");
       if (eRestriction == null)
         continue;
 
@@ -258,7 +276,6 @@ public final class JAXBBindingCreator
 
     // Write out the mapping file for easy later-on resolving
     if (aValueToConstants.isNotEmpty ())
-      XMLMapHandler.writeMap (aValueToConstants,
-                              new FileSystemResource ("src/test/resources/schemas/" + sFilename + ".mapping"));
+      XMLMapHandler.writeMap (aValueToConstants, new FileSystemResource ("src/test/resources/schemas/" + sFilename + ".mapping"));
   }
 }
