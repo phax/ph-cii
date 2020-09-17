@@ -51,6 +51,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
+* v2.3.1 - 2020-09-17
+    * Updated to Jakarta JAXB 2.3.3
 * v2.3.0 - 2020-08-30
     * Updated to ph-commons 9.4.7
     * Using Java 8 date and time classes for JAXB created classes
