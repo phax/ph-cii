@@ -77,6 +77,11 @@
       <artifactId>ph-cii-testfiles</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -157,7 +162,7 @@
           <dependency>
             <groupId>com.helger</groupId>
             <artifactId>ph-jaxb22-plugin</artifactId>
-            <version>2.3.3.2</version>
+            <version>2.3.3.3</version>
           </dependency>
         </dependencies>
       </plugin>

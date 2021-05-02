@@ -51,6 +51,8 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
+* v2.5.0 - 2021-05-02
+    * Updated to ph-commons 10.1
 * v2.4.0 - 2021-03-21
     * Updated to ph-commons 10
 * v2.3.2 - 2021-03-18
