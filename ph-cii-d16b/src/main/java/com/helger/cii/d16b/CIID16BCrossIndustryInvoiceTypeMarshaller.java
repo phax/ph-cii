@@ -43,10 +43,7 @@ public class CIID16BCrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarsha
   }
 
   /**
-   * Create a new reader builder.
-   *
-   * @param aImplClass
-   *        The CII class to be read. May not be <code>null</code>.
+   * Create a new Marshaller
    */
   public CIID16BCrossIndustryInvoiceTypeMarshaller ()
   {
