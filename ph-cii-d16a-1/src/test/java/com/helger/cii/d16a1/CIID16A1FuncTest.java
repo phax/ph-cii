@@ -28,7 +28,6 @@ import com.helger.commons.error.list.IErrorList;
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.mock.CommonsTestHelper;
 import com.helger.xml.serialize.read.DOMReader;
-import com.helger.xml.serialize.read.DOMReaderSettings;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
@@ -37,46 +36,45 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  *
  * @author Philip Helger
  */
-@Deprecated
 public final class CIID16A1FuncTest
 {
   @Test
   public void testReadAndWriteInvoice ()
   {
-    for (final String sFilename : MockCIID16A1TestDocuments.getTestDocuments (ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE))
+    final CIID16A1CrossIndustryInvoiceTypeMarshaller m = new CIID16A1CrossIndustryInvoiceTypeMarshaller ();
+    for (final String sFilename : MockCIID16A1TestDocuments.getTestCrossIndustryInvoices ())
     {
       // Read
-      final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename),
-                                                  new DOMReaderSettings ().setSchema (ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE.getSchema ()));
+      final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename));
       assertNotNull (sFilename, aDoc);
-      final CrossIndustryInvoiceType aCIIObject = CIID16A1Reader.crossIndustryInvoice ().read (aDoc);
+      final CrossIndustryInvoiceType aCIIObject = m.read (aDoc);
       assertNotNull (sFilename, aCIIObject);
 
       // Validate
-      IErrorList aErrors = CIID16A1Validator.crossIndustryInvoice ().validate (aCIIObject);
+      IErrorList aErrors = m.validate (aCIIObject);
       assertNotNull (sFilename, aErrors);
       assertFalse (sFilename, aErrors.containsAtLeastOneError ());
 
       // write again
-      final Document aDoc2 = CIID16A1Writer.crossIndustryInvoice ().getAsDocument (aCIIObject);
+      final Document aDoc2 = m.getAsDocument (aCIIObject);
       assertNotNull (aDoc2);
       assertEquals (aDoc.getDocumentElement ().getNamespaceURI (), aDoc2.getDocumentElement ().getNamespaceURI ());
       assertEquals (aDoc.getDocumentElement ().getLocalName (), aDoc2.getDocumentElement ().getLocalName ());
 
       // read again
-      final CrossIndustryInvoiceType aCIIObject2 = CIID16A1Reader.crossIndustryInvoice ().read (aDoc2);
+      final CrossIndustryInvoiceType aCIIObject2 = m.read (aDoc2);
       assertNotNull (sFilename, aCIIObject2);
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject2);
       CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject.clone ());
 
       // Validate
-      aErrors = CIID16A1Validator.crossIndustryInvoice ().validate (aCIIObject2);
+      aErrors = m.validate (aCIIObject2);
       assertNotNull (sFilename, aErrors);
       assertFalse (sFilename, aErrors.containsAtLeastOneError ());
     }
 
     // Validate
-    final IErrorList aErrors = CIID16A1Validator.crossIndustryInvoice ().validate (new CrossIndustryInvoiceType ());
+    final IErrorList aErrors = m.validate (new CrossIndustryInvoiceType ());
     assertNotNull (aErrors);
     assertTrue (aErrors.containsAtLeastOneError ());
   }

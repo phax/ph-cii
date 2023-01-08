@@ -35,6 +35,7 @@ public final class MockCIID16BTestDocuments
   private MockCIID16BTestDocuments ()
   {}
 
+  @Deprecated
   @Nonnull
   @ReturnsMutableCopy
   public static ICommonsList <String> getTestDocuments (@Nonnull final ECIID16BDocumentType eType)
@@ -50,5 +51,12 @@ public final class MockCIID16BTestDocuments
     }
 
     return new CommonsArrayList <> (aFiles);
+  }
+
+  @Nonnull
+  @ReturnsMutableCopy
+  public static List <String> getTestCrossIndustryInvoices ()
+  {
+    return new CommonsArrayList <> (CIITestFiles.D16B_FILES);
   }
 }

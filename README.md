@@ -53,6 +53,7 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
     * Using Java 11 as the baseline
     * Updated to ph-commons 11
     * Using JAXB 4.0 as the baseline
+    * Deprecated classes `CIID16(A1|B)(Reader|Validator|Writer)` in favour of `CIID16(A1|B)CrossIndustryInvoiceTypeMarshaller`
 * v2.5.0 - 2021-05-02
     * Updated to ph-commons 10.1
 * v2.4.0 - 2021-03-21

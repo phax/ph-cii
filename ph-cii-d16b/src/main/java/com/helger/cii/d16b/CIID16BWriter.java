@@ -30,7 +30,10 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  * @author Philip Helger
  * @param <JAXBTYPE>
  *        The CII D16B implementation class to be read
+ * @deprecated Since 3.0.0. Use
+ *             {@link CIID16BCrossIndustryInvoiceTypeMarshaller} instead
  */
+@Deprecated (forRemoval = true)
 @NotThreadSafe
 public class CIID16BWriter <JAXBTYPE> extends JAXBWriterBuilder <JAXBTYPE, CIID16BWriter <JAXBTYPE>>
 {

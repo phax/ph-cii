@@ -36,6 +36,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  *
  * @author Philip Helger
  */
+@Deprecated
 public final class CIID16BBuilderFuncTest
 {
   private static final Logger LOGGER = LoggerFactory.getLogger (CIID16BBuilderFuncTest.class);

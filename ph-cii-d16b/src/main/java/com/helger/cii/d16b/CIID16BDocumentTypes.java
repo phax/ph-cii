@@ -33,7 +33,9 @@ import com.helger.commons.collection.impl.ICommonsSet;
  * document types based on different information items.
  *
  * @author Philip Helger
+ * @deprecated Since 3.0.0
  */
+@Deprecated (forRemoval = true)
 @Immutable
 public final class CIID16BDocumentTypes
 {

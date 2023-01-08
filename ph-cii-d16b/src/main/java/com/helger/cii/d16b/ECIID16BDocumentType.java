@@ -34,7 +34,9 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  * Enumeration with all available CII D16B document types.
  *
  * @author Philip Helger
+ * @deprecated Since 3.0.0
  */
+@Deprecated (forRemoval = true)
 public enum ECIID16BDocumentType implements IJAXBDocumentType
 {
   CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_100pD16B.xsd");
@@ -47,7 +49,7 @@ public enum ECIID16BDocumentType implements IJAXBDocumentType
 
   private final JAXBDocumentType m_aDocType;
 
-  private ECIID16BDocumentType (@Nonnull final Class <?> aClass, @Nonnull final String sXSDPath)
+  ECIID16BDocumentType (@Nonnull final Class <?> aClass, @Nonnull final String sXSDPath)
   {
     m_aDocType = new JAXBDocumentType (aClass,
                                        new CommonsArrayList <> (new ClassPathResource (CCIID16B.SCHEMA_DIRECTORY +
