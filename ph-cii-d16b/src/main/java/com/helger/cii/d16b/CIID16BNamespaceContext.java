@@ -32,7 +32,7 @@ public class CIID16BNamespaceContext extends MapBasedNamespaceContext
 {
   private static final class SingletonHolder
   {
-    static final CIID16BNamespaceContext s_aInstance = new CIID16BNamespaceContext ();
+    static final CIID16BNamespaceContext INSTANCE = new CIID16BNamespaceContext ();
   }
 
   protected CIID16BNamespaceContext ()
@@ -48,6 +48,6 @@ public class CIID16BNamespaceContext extends MapBasedNamespaceContext
   @Nonnull
   public static CIID16BNamespaceContext getInstance ()
   {
-    return SingletonHolder.s_aInstance;
+    return SingletonHolder.INSTANCE;
   }
 }
