@@ -31,44 +31,38 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
 
 /**
- * Test class for classes {@link CIID16A1Reader}, {@link CIID16A1Validator} and
- * {@link CIID16A1Writer}.
+ * Test class for class {@link CIID16A1CrossIndustryInvoiceTypeMarshaller}.
  *
  * @author Philip Helger
  */
-@Deprecated
-public final class CIID16A1BuilderFuncTest
+public final class CIID16A1CrossIndustryInvoiceTypeMarshallerTest
 {
-  private static final Logger LOGGER = LoggerFactory.getLogger (CIID16A1BuilderFuncTest.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (CIID16A1CrossIndustryInvoiceTypeMarshallerTest.class);
 
   @Test
   public void testReadAndWriteInvoice ()
   {
-    final CIID16A1Reader <CrossIndustryInvoiceType> aReader = new CIID16A1Reader <> (CrossIndustryInvoiceType.class);
-    final CIID16A1Validator <CrossIndustryInvoiceType> aValidator = new CIID16A1Validator <> (CrossIndustryInvoiceType.class);
-    final CIID16A1Writer <CrossIndustryInvoiceType> aWriter = new CIID16A1Writer <> (CrossIndustryInvoiceType.class).setFormattedOutput (true);
-    aWriter.setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("bla",
-                                                                             ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE.getNamespaceURI ()));
+    final CIID16A1CrossIndustryInvoiceTypeMarshaller m = new CIID16A1CrossIndustryInvoiceTypeMarshaller ();
+    m.setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("bla", CCIID16A1.XML_SCHEMA_RSM_NAMESPACE_URL));
 
-    final String sFilename = MockCIID16A1TestDocuments.getTestDocuments (ECIID16A1DocumentType.CROSS_INDUSTRY_INVOICE)
-                                                      .get (0);
+    final String sFilename = MockCIID16A1TestDocuments.getTestCrossIndustryInvoices ().get (0);
 
     // Read from resource
-    final CrossIndustryInvoiceType aRead1 = aReader.read (new ClassPathResource (sFilename));
+    final CrossIndustryInvoiceType aRead1 = m.read (new ClassPathResource (sFilename));
     assertNotNull (aRead1);
 
     // Read from byte[]
-    final CrossIndustryInvoiceType aRead2 = aReader.read (StreamHelper.getAllBytes (new ClassPathResource (sFilename)));
+    final CrossIndustryInvoiceType aRead2 = m.read (StreamHelper.getAllBytes (new ClassPathResource (sFilename)));
     assertNotNull (aRead2);
     assertEquals (aRead1, aRead2);
 
     // Validate
-    final IErrorList aREG1 = aValidator.validate (aRead1);
-    final IErrorList aREG2 = aValidator.validate (aRead2);
+    final IErrorList aREG1 = m.validate (aRead1);
+    final IErrorList aREG2 = m.validate (aRead2);
     assertEquals (aREG1, aREG2);
 
     // Write
-    final String s = aWriter.getAsString (aRead1);
+    final String s = m.getAsString (aRead1);
     if (true)
       LOGGER.info (s);
   }

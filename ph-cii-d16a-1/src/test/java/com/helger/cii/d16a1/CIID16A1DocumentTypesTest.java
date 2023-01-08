@@ -28,6 +28,7 @@ import org.junit.Test;
  *
  * @author Philip Helger
  */
+@Deprecated
 public final class CIID16A1DocumentTypesTest
 {
   @Test

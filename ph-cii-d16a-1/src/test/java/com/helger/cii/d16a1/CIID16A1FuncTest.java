@@ -37,6 +37,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  *
  * @author Philip Helger
  */
+@Deprecated
 public final class CIID16A1FuncTest
 {
   @Test

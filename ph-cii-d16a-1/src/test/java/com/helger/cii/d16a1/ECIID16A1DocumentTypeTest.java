@@ -30,6 +30,7 @@ import com.helger.commons.string.StringHelper;
  *
  * @author Philip Helger
  */
+@Deprecated
 public final class ECIID16A1DocumentTypeTest
 {
   @Test
