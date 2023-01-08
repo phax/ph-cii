@@ -4,13 +4,11 @@
 
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
-Latest version is **2.2.0**
-
 This library focuses currently on D16A.1 and D16B for use with the EN resulting from directive 2014/55/EU.
 
 It is licensed under Apache 2.0 license.
 
-It requires at least Java 8 to be used.
+It requires at least Java 11 to be used.
 
 
 # Maven usage
@@ -51,6 +49,10 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
+* v3.0.0 - 2023-01-08
+    * Using Java 11 as the baseline
+    * Updated to ph-commons 11
+    * Using JAXB 4.0 as the baseline
 * v2.5.0 - 2021-05-02
     * Updated to ph-commons 10.1
 * v2.4.0 - 2021-03-21
