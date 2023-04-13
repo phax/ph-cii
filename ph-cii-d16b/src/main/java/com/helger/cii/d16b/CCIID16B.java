@@ -29,7 +29,7 @@ import com.helger.commons.annotation.PresentForCodeCoverage;
 public final class CCIID16B
 {
   /** The classpath relative directory where the main XSDs reside */
-  public static final String SCHEMA_DIRECTORY = "schemas/d16b/data/standard/";
+  public static final String SCHEMA_DIRECTORY = "external/schemas/d16b/data/standard/";
 
   /** The CII rsm namespace URL */
   public static final String XML_SCHEMA_RSM_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100";

@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-
-    Copyright (C) 2016-2023 Philip Helger (www.helger.com)
-    philip[at]helger[dot]com
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-            http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
 <!--This file is generated. Do NOT edit manually.--><bindings xmlns="https://jakarta.ee/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jaxb https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd" version="3.0">
   <globalBindings typesafeEnumMaxMembers="2000" typesafeEnumMemberName="generateError">
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetDateTime" xmlType="xsd:dateTime" adapter="com.helger.jaxb.adapter.AdapterXMLOffsetDateTime" />
@@ -24,12 +6,12 @@
     <xjc:javaType name="com.helger.commons.datetime.XMLOffsetTime" xmlType="xsd:time" adapter="com.helger.jaxb.adapter.AdapterXMLOffsetTime" />
     <xjc:javaType name="java.time.Duration" xmlType="xsd:duration" adapter="com.helger.jaxb.adapter.AdapterDuration" />
   </globalBindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/data/standard/CrossIndustryInvoice_100p0.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/data/standard/CrossIndustryInvoice_100p0.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.data.standard.crossindustryinvoice._100" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/data/standard/QualifiedDataType_19.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/data/standard/QualifiedDataType_19.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.data.standard.qualifieddatatype._19" />
     </schemaBindings>
@@ -214,17 +196,17 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/data/standard/ReusableAggregateBusinessInformationEntity_19.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/data/standard/ReusableAggregateBusinessInformationEntity_19.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.data.standard.reusableaggregatebusinessinformationentity._19" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/data/standard/UnqualifiedDataType_19.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/data/standard/UnqualifiedDataType_19.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.data.standard.unqualifieddatatype._19" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/identifierlist/standard/ISO_ISOTwo-letterCountryCode_SecondEdition2006.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/identifierlist/standard/ISO_ISOTwo-letterCountryCode_SecondEdition2006.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.identifierlist.standard.iso.isotwo_lettercountrycode.secondedition2006" />
     </schemaBindings>
@@ -482,7 +464,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/identifierlist/standard/UNECE_FreightCostCode_4.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/identifierlist/standard/UNECE_FreightCostCode_4.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.identifierlist.standard.unece.freightcostcode._4" />
     </schemaBindings>
@@ -2132,7 +2114,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/identifierlist/standard/UNECE_PaymentTermsDescriptionIdentifier_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/identifierlist/standard/UNECE_PaymentTermsDescriptionIdentifier_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.identifierlist.standard.unece.paymenttermsdescriptionidentifier.d15b" />
     </schemaBindings>
@@ -2148,7 +2130,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/EDIFICAS-EU_AccountingAccountType_D11A.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/EDIFICAS-EU_AccountingAccountType_D11A.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.edificas_eu.accountingaccounttype.d11a" />
     </schemaBindings>
@@ -2164,7 +2146,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/EDIFICAS-EU_AccountingAmountType_D11A.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/EDIFICAS-EU_AccountingAmountType_D11A.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.edificas_eu.accountingamounttype.d11a" />
     </schemaBindings>
@@ -2179,7 +2161,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/ISO_ISO3AlphaCurrencyCode_2012-08-31.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/ISO_ISO3AlphaCurrencyCode_2012-08-31.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.iso.iso3alphacurrencycode._2012_08_31" />
     </schemaBindings>
@@ -2366,7 +2348,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_ActionCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_ActionCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.actioncode.d15b" />
     </schemaBindings>
@@ -2493,7 +2475,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_AllowanceChargeIdentificationCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_AllowanceChargeIdentificationCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.allowancechargeidentificationcode.d15b" />
     </schemaBindings>
@@ -2602,7 +2584,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_AllowanceChargeReasonCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_AllowanceChargeReasonCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.allowancechargereasoncode.d15b" />
     </schemaBindings>
@@ -2709,7 +2691,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_AutomaticDataCaptureMethodCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_AutomaticDataCaptureMethodCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.automaticdatacapturemethodcode.d15b" />
     </schemaBindings>
@@ -2728,7 +2710,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_CargoOperationalCategoryCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_CargoOperationalCategoryCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.cargooperationalcategorycode.d15b" />
     </schemaBindings>
@@ -2761,7 +2743,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_CargoTypeCode_1996Rev2Final.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_CargoTypeCode_1996Rev2Final.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.cargotypecode._1996rev2final" />
     </schemaBindings>
@@ -2779,7 +2761,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_CommodityIdentificationCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_CommodityIdentificationCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.commodityidentificationcode.d15b" />
     </schemaBindings>
@@ -2789,7 +2771,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_CommunicationMeansTypeCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_CommunicationMeansTypeCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.communicationmeanstypecode.d15b" />
     </schemaBindings>
@@ -2845,7 +2827,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_ContactFunctionCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_ContactFunctionCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.contactfunctioncode.d15b" />
     </schemaBindings>
@@ -2954,7 +2936,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DeliveryTermsCode_2010.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DeliveryTermsCode_2010.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.deliverytermscode._2010" />
     </schemaBindings>
@@ -2976,7 +2958,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DimensionTypeCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DimensionTypeCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.dimensiontypecode.d15b" />
     </schemaBindings>
@@ -3008,7 +2990,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DocumentNameCode_Accounting_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DocumentNameCode_Accounting_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.documentnamecode_accounting.d15b" />
     </schemaBindings>
@@ -3038,7 +3020,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DocumentNameCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DocumentNameCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.documentnamecode.d15b" />
     </schemaBindings>
@@ -3751,7 +3733,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DocumentStatusCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DocumentStatusCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.documentstatuscode.d15b" />
     </schemaBindings>
@@ -3798,7 +3780,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DutyTaxFeeTypeCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DutyTaxFeeTypeCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.dutytaxfeetypecode.d15b" />
     </schemaBindings>
@@ -3861,7 +3843,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.dutyortaxorfeecategorycode.d15b" />
     </schemaBindings>
@@ -3888,7 +3870,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_EquipmentSizeTypeDescriptionCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_EquipmentSizeTypeDescriptionCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.equipmentsizetypedescriptioncode.d15b" />
     </schemaBindings>
@@ -3937,7 +3919,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_EventTimeReferenceCodePaymentTermsEvent_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_EventTimeReferenceCodePaymentTermsEvent_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.eventtimereferencecodepaymenttermsevent.d15b" />
     </schemaBindings>
@@ -3951,7 +3933,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_EventTimeReferenceCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_EventTimeReferenceCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.eventtimereferencecode.d15b" />
     </schemaBindings>
@@ -4025,7 +4007,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_FreightChargeQuantityUnitBasisCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_FreightChargeQuantityUnitBasisCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.freightchargequantityunitbasiscode.d15b" />
     </schemaBindings>
@@ -4035,7 +4017,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_FreightChargeTariffCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_FreightChargeTariffCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.freightchargetariffcode.d15b" />
     </schemaBindings>
@@ -4056,7 +4038,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_MeasurementUnitCommonCodeLinear_4.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_MeasurementUnitCommonCodeLinear_4.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.measurementunitcommoncodelinear._4" />
     </schemaBindings>
@@ -4069,7 +4051,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_MessageFunctionCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_MessageFunctionCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.messagefunctioncode.d15b" />
     </schemaBindings>
@@ -4143,7 +4125,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PackagingMarkingCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PackagingMarkingCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.packagingmarkingcode.d15b" />
     </schemaBindings>
@@ -4204,7 +4186,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PartyRoleCode_ChargePaying_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PartyRoleCode_ChargePaying_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.partyrolecode_chargepaying.d15b" />
     </schemaBindings>
@@ -4233,7 +4215,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PartyRoleCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PartyRoleCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.partyrolecode.d15b" />
     </schemaBindings>
@@ -4840,7 +4822,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PaymentGuaranteeMeansCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PaymentGuaranteeMeansCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.paymentguaranteemeanscode.d15b" />
     </schemaBindings>
@@ -4861,7 +4843,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PaymentMeansChannelCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PaymentMeansChannelCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.paymentmeanschannelcode.d15b" />
     </schemaBindings>
@@ -4886,7 +4868,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PaymentMeansCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PaymentMeansCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.paymentmeanscode.d15b" />
     </schemaBindings>
@@ -4970,7 +4952,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PaymentTermsTypeCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PaymentTermsTypeCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.paymenttermstypecode.d15b" />
     </schemaBindings>
@@ -5058,7 +5040,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_PriceTypeCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_PriceTypeCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.pricetypecode.d15b" />
     </schemaBindings>
@@ -5096,7 +5078,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_ReferenceTypeCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_ReferenceTypeCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.referencetypecode.d15b" />
     </schemaBindings>
@@ -5894,7 +5876,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_TransportEquipmentCategoryCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_TransportEquipmentCategoryCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.transportequipmentcategorycode.d15b" />
     </schemaBindings>
@@ -5976,7 +5958,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_TransportEquipmentFullnessCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_TransportEquipmentFullnessCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.transportequipmentfullnesscode.d15b" />
     </schemaBindings>
@@ -5998,7 +5980,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_TransportMeansTypeCode_2007.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_TransportMeansTypeCode_2007.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.transportmeanstypecode._2007" />
     </schemaBindings>
@@ -6284,7 +6266,7 @@
       </typesafeEnumClass>
     </bindings>
   </bindings>
-  <bindings schemaLocation="../resources/schemas/d16a1/codelist/standard/UNECE_TransportMovementStageCode_D15B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d16a1/codelist/standard/UNECE_TransportMovementStageCode_D15B.xsd" node="/xsd:schema">
     <schemaBindings>
       <package name="un.unece.uncefact.codelist.standard.unece.transportmovementstagecode.d15b" />
     </schemaBindings>

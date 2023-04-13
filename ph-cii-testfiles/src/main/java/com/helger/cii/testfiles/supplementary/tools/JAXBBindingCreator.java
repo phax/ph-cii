@@ -58,8 +58,8 @@ import com.helger.xml.serialize.write.XMLWriterSettings;
  * Utility class that creates:
  * <ul>
  * <li>src/main/jaxb/bindings.xjb - the JAXB binding file</li>
- * <li>src/test/resources/schemas/*.xsd.mapping - mapping files that contain the
- * generated explicit enum mappings</li>
+ * <li>src/test/resources/external/schemas/*.xsd.mapping - mapping files that
+ * contain the generated explicit enum mappings</li>
  * </ul>
  *
  * @author Philip Helger
@@ -171,58 +171,6 @@ public final class JAXBBindingCreator
     return StringHelper.getImploded (".", aParts);
   }
 
-  public static void runCIIBindingCreation (@Nonnull @Nonempty final String sDName, final boolean bWithCodelists)
-  {
-    final IMicroDocument eDoc = _createBaseDoc ();
-    final ICommonsSet <String> aNamespaces = new CommonsHashSet <> ();
-    final ICommonsList <String> aParts = new CommonsArrayList <> ("data/standard");
-    if (bWithCodelists)
-    {
-      aParts.add ("identifierlist/standard");
-      aParts.add ("codelist/standard");
-    }
-    for (final String sPart : aParts)
-    {
-      final String sBasePath = "/resources/schemas/" + sDName + "/" + sPart;
-      for (final File aFile : _getFileList ("src/main" + sBasePath))
-      {
-        final String sFilename = aFile.getName ();
-        final IMicroDocument aDoc = MicroReader.readMicroXML (new FileSystemResource (aFile));
-        final String sTargetNamespace = _getTargetNamespace (aDoc);
-        if (!aNamespaces.add (sTargetNamespace))
-        {
-          LOGGER.info ("Ignored " + sTargetNamespace + " in " + sFilename);
-          continue;
-        }
-        final String sPackageName = _convertToPackage (sTargetNamespace);
-        // schemaLocation must be relative to bindings file!
-        final IMicroElement eBindings = eDoc.getDocumentElement ()
-                                            .appendElement (JAXB_NS_URI, "bindings")
-                                            .setAttribute ("schemaLocation", ".." + sBasePath + "/" + sFilename)
-                                            .setAttribute ("node", "/xsd:schema");
-
-        eBindings.appendElement (JAXB_NS_URI, "schemaBindings")
-                 .appendElement (JAXB_NS_URI, "package")
-                 .setAttribute ("name", sPackageName);
-
-        if (sDName.equalsIgnoreCase ("d16a1"))
-          _generateExplicitEnumMapping (aDoc, sFilename, eBindings);
-      }
-    }
-    MicroWriter.writeToFile (eDoc,
-                             new File ("src/main/jaxb/bindings.xjb"),
-                             new XMLWriterSettings ().setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
-                                                     .setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("",
-                                                                                                                       JAXB_NS_URI)
-                                                                                                          .addMapping ("xjc",
-                                                                                                                       XJC_NS_URI)
-                                                                                                          .addMapping ("xsd",
-                                                                                                                       XMLConstants.W3C_XML_SCHEMA_NS_URI)
-                                                                                                          .addMapping ("xsi",
-                                                                                                                       XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI))
-                                                     .setPutNamespaceContextPrefixesInRoot (true));
-  }
-
   private static void _generateExplicitEnumMapping (@Nonnull final IMicroDocument aDoc,
                                                     @Nonnull @Nonempty final String sFilename,
                                                     @Nonnull final IMicroElement eBindings)
@@ -282,6 +230,58 @@ public final class JAXBBindingCreator
     // Write out the mapping file for easy later-on resolving
     if (aValueToConstants.isNotEmpty ())
       XMLMapHandler.writeMap (aValueToConstants,
-                              new FileSystemResource ("src/test/resources/schemas/" + sFilename + ".mapping"));
+                              new FileSystemResource ("src/test/resources/external/schemas/" + sFilename + ".mapping"));
+  }
+
+  public static void runCIIBindingCreation (@Nonnull @Nonempty final String sDName, final boolean bWithCodelists)
+  {
+    final IMicroDocument eDoc = _createBaseDoc ();
+    final ICommonsSet <String> aNamespaces = new CommonsHashSet <> ();
+    final ICommonsList <String> aParts = new CommonsArrayList <> ("data/standard");
+    if (bWithCodelists)
+    {
+      aParts.add ("identifierlist/standard");
+      aParts.add ("codelist/standard");
+    }
+    for (final String sPart : aParts)
+    {
+      final String sBasePath = "/resources/external/schemas/" + sDName + "/" + sPart;
+      for (final File aFile : _getFileList ("src/main" + sBasePath))
+      {
+        final String sFilename = aFile.getName ();
+        final IMicroDocument aDoc = MicroReader.readMicroXML (new FileSystemResource (aFile));
+        final String sTargetNamespace = _getTargetNamespace (aDoc);
+        if (!aNamespaces.add (sTargetNamespace))
+        {
+          LOGGER.info ("Ignored " + sTargetNamespace + " in " + sFilename);
+          continue;
+        }
+        final String sPackageName = _convertToPackage (sTargetNamespace);
+        // schemaLocation must be relative to bindings file!
+        final IMicroElement eBindings = eDoc.getDocumentElement ()
+                                            .appendElement (JAXB_NS_URI, "bindings")
+                                            .setAttribute ("schemaLocation", ".." + sBasePath + "/" + sFilename)
+                                            .setAttribute ("node", "/xsd:schema");
+
+        eBindings.appendElement (JAXB_NS_URI, "schemaBindings")
+                 .appendElement (JAXB_NS_URI, "package")
+                 .setAttribute ("name", sPackageName);
+
+        if (sDName.equalsIgnoreCase ("d16a1"))
+          _generateExplicitEnumMapping (aDoc, sFilename, eBindings);
+      }
+    }
+    MicroWriter.writeToFile (eDoc,
+                             new File ("src/main/jaxb/bindings.xjb"),
+                             new XMLWriterSettings ().setIncorrectCharacterHandling (EXMLIncorrectCharacterHandling.DO_NOT_WRITE_LOG_WARNING)
+                                                     .setNamespaceContext (new MapBasedNamespaceContext ().addMapping ("",
+                                                                                                                       JAXB_NS_URI)
+                                                                                                          .addMapping ("xjc",
+                                                                                                                       XJC_NS_URI)
+                                                                                                          .addMapping ("xsd",
+                                                                                                                       XMLConstants.W3C_XML_SCHEMA_NS_URI)
+                                                                                                          .addMapping ("xsi",
+                                                                                                                       XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI))
+                                                     .setPutNamespaceContextPrefixesInRoot (true));
   }
 }
