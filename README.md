@@ -49,6 +49,9 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
+* v3.0.1 - 2023-04-14
+    * Extended API to replace deprecated API
+    * Moved XML schema files to new folder
 * v3.0.0 - 2023-01-08
     * Using Java 11 as the baseline
     * Updated to ph-commons 11
