@@ -32,7 +32,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  * @deprecated Since 3.0.0. Use
  *             {@link CIID16A1CrossIndustryInvoiceTypeMarshaller} instead
  */
-@Deprecated (forRemoval = true)
+@Deprecated (forRemoval = true, since = "3.0.0")
 @NotThreadSafe
 public class CIID16A1Reader <JAXBTYPE> extends JAXBReaderBuilder <JAXBTYPE, CIID16A1Reader <JAXBTYPE>>
 {

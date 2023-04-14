@@ -35,7 +35,7 @@ import com.helger.commons.collection.impl.ICommonsSet;
  * @author Philip Helger
  * @deprecated Since 3.0.0
  */
-@Deprecated (forRemoval = true)
+@Deprecated (forRemoval = true, since = "3.0.0")
 @Immutable
 public final class CIID16BDocumentTypes
 {

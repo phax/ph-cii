@@ -36,7 +36,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
  * @author Philip Helger
  * @deprecated Since 3.0.0
  */
-@Deprecated (forRemoval = true)
+@Deprecated (forRemoval = true, since = "3.0.0")
 public enum ECIID16A1DocumentType implements IJAXBDocumentType
 {
   CROSS_INDUSTRY_INVOICE (CrossIndustryInvoiceType.class, "CrossIndustryInvoice_100p0.xsd");

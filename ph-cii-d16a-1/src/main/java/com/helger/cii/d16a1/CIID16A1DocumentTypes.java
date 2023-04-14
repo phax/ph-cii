@@ -36,7 +36,7 @@ import com.helger.commons.collection.impl.ICommonsSet;
  * @deprecated Since 3.0.0
  */
 @Immutable
-@Deprecated (forRemoval = true)
+@Deprecated (forRemoval = true, since = "3.0.0")
 public final class CIID16A1DocumentTypes
 {
   /** Maps namespaces to document types */
