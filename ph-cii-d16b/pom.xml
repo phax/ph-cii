@@ -114,7 +114,7 @@
             <id>ciid16b</id>
             <configuration>
               <generateDirectory>${project.build.directory}/generated-sources/d16b</generateDirectory>
-              <schemaDirectory>${basedir}/src/main/resources/schemas/d16b</schemaDirectory>
+              <schemaDirectory>${basedir}/src/main/resources/external/schemas/d16b</schemaDirectory>
               <schemaIncludes>
                 <schemaInclude>data/standard/*.xsd</schemaInclude>
               </schemaIncludes>
