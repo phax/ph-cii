@@ -35,6 +35,7 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 public class CIID16BCrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarshaller <CrossIndustryInvoiceType>
 {
   public static final String XSD_PATH = CCIID16B.SCHEMA_DIRECTORY + "CrossIndustryInvoice_100pD16B.xsd";
+  public static final ClassPathResource XSD_RES = new ClassPathResource (XSD_PATH, _getCL ());
 
   @Nonnull
   private static ClassLoader _getCL ()
@@ -48,7 +49,7 @@ public class CIID16BCrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarsha
   public CIID16BCrossIndustryInvoiceTypeMarshaller ()
   {
     super (CrossIndustryInvoiceType.class,
-           new CommonsArrayList <> (new ClassPathResource (XSD_PATH, _getCL ())),
+           new CommonsArrayList <> (XSD_RES),
            new un.unece.uncefact.data.standard.crossindustryinvoice._100.ObjectFactory ()::createCrossIndustryInvoice);
     setNamespaceContext (CIID16BNamespaceContext.getInstance ());
   }
