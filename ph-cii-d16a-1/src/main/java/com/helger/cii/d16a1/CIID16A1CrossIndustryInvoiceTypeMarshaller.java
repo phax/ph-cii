@@ -16,11 +16,9 @@
  */
 package com.helger.cii.d16a1;
 
-import javax.annotation.Nonnull;
 import javax.annotation.concurrent.NotThreadSafe;
 
 import com.helger.commons.collection.impl.CommonsArrayList;
-import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
@@ -34,14 +32,8 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16A1CrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarshaller <CrossIndustryInvoiceType>
 {
-  public static final String XSD_PATH = CCIID16A1.SCHEMA_DIRECTORY + "CrossIndustryInvoice_100p0.xsd";
-  public static final ClassPathResource XSD_RES = new ClassPathResource (XSD_PATH, _getCL ());
-
-  @Nonnull
-  private static ClassLoader _getCL ()
-  {
-    return CIID16A1CrossIndustryInvoiceTypeMarshaller.class.getClassLoader ();
-  }
+  @Deprecated (forRemoval = true, since = "3.0.1")
+  public static final String XSD_PATH = CCIID16A1.XSD_PATH;
 
   /**
    * Create a new Marshaller
@@ -49,7 +41,7 @@ public class CIID16A1CrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarsh
   public CIID16A1CrossIndustryInvoiceTypeMarshaller ()
   {
     super (CrossIndustryInvoiceType.class,
-           new CommonsArrayList <> (XSD_RES),
+           new CommonsArrayList <> (CCIID16A1.getXSDResource ()),
            new un.unece.uncefact.data.standard.crossindustryinvoice._100.ObjectFactory ()::createCrossIndustryInvoice);
     setNamespaceContext (CIID16A1NamespaceContext.getInstance ());
   }

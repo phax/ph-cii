@@ -16,9 +16,11 @@
  */
 package com.helger.cii.d16a1;
 
+import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
 import com.helger.commons.annotation.PresentForCodeCoverage;
+import com.helger.commons.io.resource.ClassPathResource;
 
 /**
  * Constants for CII D16A1 handling.
@@ -30,6 +32,8 @@ public final class CCIID16A1
 {
   /** The classpath relative directory where the main XSDs reside */
   public static final String SCHEMA_DIRECTORY = "external/schemas/d16a1/data/standard/";
+
+  public static final String XSD_PATH = SCHEMA_DIRECTORY + "CrossIndustryInvoice_100p0.xsd";
 
   /** The CII rsm namespace URL */
   public static final String XML_SCHEMA_RSM_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100";
@@ -47,8 +51,20 @@ public final class CCIID16A1
   public static final String XML_SCHEMA_RAM_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:19";
 
   @PresentForCodeCoverage
-  private static final CCIID16A1 s_aInstance = new CCIID16A1 ();
+  private static final CCIID16A1 INSTANCE = new CCIID16A1 ();
 
   private CCIID16A1 ()
   {}
+
+  @Nonnull
+  private static ClassLoader _getCL ()
+  {
+    return CCIID16A1.class.getClassLoader ();
+  }
+
+  @Nonnull
+  public static ClassPathResource getXSDResource ()
+  {
+    return new ClassPathResource (XSD_PATH, _getCL ());
+  }
 }
