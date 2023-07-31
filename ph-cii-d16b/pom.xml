@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.helger.cii</groupId>
     <artifactId>ph-cii-parent-pom</artifactId>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.2</version>
   </parent>
   <artifactId>ph-cii-d16b</artifactId>
   <packaging>bundle</packaging>
