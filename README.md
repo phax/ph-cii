@@ -1,6 +1,8 @@
 # ph-cii
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5a5b1e7c59124d0a8922ceb5838a1ea3)](https://www.codacy.com/app/philip/ph-cii?utm_source=github.com&utm_medium=referral&utm_content=phax/ph-cii&utm_campaign=badger)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helger.cii/ph-cii-d16b/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.helger.cii/ph-cii-d16b) 
+[![javadoc](https://javadoc.io/badge2/com.helger.cii/ph-cii-d16b/javadoc.svg)](https://javadoc.io/doc/com.helger.cii/ph-cii-d16b)
+[![CodeCov](https://codecov.io/gh/phax/ph-cii/branch/master/graph/badge.svg)](https://codecov.io/gh/phax/ph-cii)
 
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
