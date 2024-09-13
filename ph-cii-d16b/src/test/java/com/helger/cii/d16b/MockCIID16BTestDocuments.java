@@ -26,10 +26,7 @@ import com.helger.commons.annotation.ReturnsMutableCopy;
 import com.helger.commons.collection.impl.CommonsArrayList;
 import com.helger.commons.collection.impl.ICommonsList;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
 @Immutable
-@SuppressFBWarnings ("JCIP_FIELD_ISNT_FINAL_IN_IMMUTABLE_CLASS")
 public final class MockCIID16BTestDocuments
 {
   private MockCIID16BTestDocuments ()
