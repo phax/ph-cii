@@ -27,9 +27,9 @@
   <artifactId>ph-cii-d22b</artifactId>
   <packaging>bundle</packaging>
   <name>ph-cii-d22b</name>
-  <description>Library for reading and writing CII D16B documents</description>
+  <description>Library for reading and writing CII D22B documents</description>
   <url>https://github.com/phax/ph-cii/ph-cii-d22b</url>
-  <inceptionYear>2016</inceptionYear>
+  <inceptionYear>2024</inceptionYear>
 
   <licenses>
     <license>
@@ -95,9 +95,8 @@
             <Automatic-Module-Name>com.helger.cii.d22b</Automatic-Module-Name>
             <Export-Package>com.helger.cii.d22b.*,
             un.unece.uncefact.codelist.*,
-            un.unece.uncefact.data.*,
-            un.unece.uncefact.documentation.*,
-            un.unece.uncefact.identifierlist.*</Export-Package>
+            un.unece.uncefact.data.standard.cii.*,
+            un.unece.uncefact.identifierlist.standard.*</Export-Package>
             <Import-Package>!javax.annotation.*,*</Import-Package>
           </instructions>
         </configuration>
