@@ -58,6 +58,7 @@ public final class CIITestFiles
   /*
    * PREFIX+"d16a1/CII_example8.xml", PREFIX+"d16a1/CII_example9.xml"
    */).getAsUnmodifiable ();
+
   public static final List <String> D16B_FILES = new CommonsArrayList <> (PREFIX + "d16b/CII_example1.xml",
                                                                           PREFIX + "d16b/CII_example2.xml",
                                                                           PREFIX + "d16b/CII_example3.xml",
@@ -67,6 +68,17 @@ public final class CIITestFiles
                                                                           PREFIX + "d16b/CII_example7.xml",
                                                                           PREFIX + "d16b/CII_example8.xml",
                                                                           PREFIX + "d16b/CII_example9.xml")
+                                                                                                           .getAsUnmodifiable ();
+
+  public static final List <String> D22B_FILES = new CommonsArrayList <> (PREFIX + "d22b/CII_example1.xml",
+                                                                          PREFIX + "d22b/CII_example2.xml",
+                                                                          PREFIX + "d22b/CII_example3.xml",
+                                                                          PREFIX + "d22b/CII_example4.xml",
+                                                                          PREFIX + "d22b/CII_example5.xml",
+                                                                          PREFIX + "d22b/CII_example6.xml",
+                                                                          PREFIX + "d22b/CII_example7.xml",
+                                                                          PREFIX + "d22b/CII_example8.xml",
+                                                                          PREFIX + "d22b/CII_example9.xml")
                                                                                                            .getAsUnmodifiable ();
 
   public CIITestFiles ()

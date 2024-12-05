@@ -74,7 +74,7 @@
       <dependency>
         <groupId>com.helger.commons</groupId>
         <artifactId>ph-commons-parent-pom</artifactId>
-        <version>11.1.10</version>
+        <version>11.1.11</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -109,6 +109,7 @@
     <module>ph-cii-testfiles</module>
     <module>ph-cii-d16a-1</module>
     <module>ph-cii-d16b</module>
+    <module>ph-cii-d22b</module>
   </modules>
   
   <build>
