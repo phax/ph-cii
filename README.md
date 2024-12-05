@@ -7,11 +7,11 @@
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
 This library focuses currently on D16A.1 and D16B for use with the EN resulting from directive 2014/55/EU.
+Additionally it supports D22B for support for the Zugferd 2.3+ versions.
 
 It is licensed under Apache 2.0 license.
 
 It requires at least Java 11 to be used.
-
 
 # Maven usage
 
@@ -37,13 +37,17 @@ For CII D16B:
 </dependency>
 ```
 
+For CII D22B (since v3.1.0):
+
+```xml
+<dependency>
+  <groupId>com.helger.cii</groupId>
+  <artifactId>ph-cii-d22b</artifactId>
+  <version>x.y.z</version>
+</dependency>
+```
+
 Note: prior to v2.2.0 the Maven groupId was `com.helger`.
-
-#
-# Gradle considerations
-
-This project relies on JDK version based Maven profile activation.
-See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific issue. 
 
 # References
 
@@ -51,8 +55,9 @@ See https://github.com/phax/ph-jaxb-pom#gradle-usage for help on this specific i
 
 # News and noteworthy
 
-* v3.0.3 - work in progress
-    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin` 
+* v3.1.0 - 2024-12-05
+    * Switched JAXB Maven plugin to `org.jvnet.jaxb:jaxb-maven-plugin`
+    * Added support for D22B in new submodule `ph-cii-d22b`
 * v3.0.2 - 2023-07-31
     * Updated to ph-commons 11.1
 * v3.0.1 - 2023-04-14
