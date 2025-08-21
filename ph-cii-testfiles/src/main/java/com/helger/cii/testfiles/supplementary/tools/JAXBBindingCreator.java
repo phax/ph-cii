@@ -18,6 +18,7 @@ package com.helger.cii.testfiles.supplementary.tools;
 
 import java.io.File;
 import java.net.URL;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -41,10 +42,17 @@ import com.helger.collection.commons.ICommonsList;
 import com.helger.collection.commons.ICommonsNavigableMap;
 import com.helger.collection.commons.ICommonsSet;
 import com.helger.collection.helper.CollectionSort;
+import com.helger.datetime.xml.XMLOffsetDate;
+import com.helger.datetime.xml.XMLOffsetDateTime;
+import com.helger.datetime.xml.XMLOffsetTime;
 import com.helger.io.file.FileSystemIterator;
 import com.helger.io.file.IFileFilter;
 import com.helger.io.resource.FileSystemResource;
 import com.helger.io.url.URLHelper;
+import com.helger.jaxb.adapter.AdapterDuration;
+import com.helger.jaxb.adapter.AdapterXMLOffsetDate;
+import com.helger.jaxb.adapter.AdapterXMLOffsetDateTime;
+import com.helger.jaxb.adapter.AdapterXMLOffsetTime;
 import com.helger.xml.CXML;
 import com.helger.xml.microdom.IMicroDocument;
 import com.helger.xml.microdom.IMicroElement;
@@ -93,21 +101,21 @@ public final class JAXBBindingCreator
     // When in "xjc" namespace "adapter" can be used, when in "jaxb"
     // namespace, parse and print must be used
     eGlobal.addElementNS (XJC_NS_URI, "javaType")
-           .setAttribute ("name", "com.helger.commons.datetime.XMLOffsetDateTime")
+           .setAttribute ("name", XMLOffsetDateTime.class.getName ())
            .setAttribute ("xmlType", "xsd:dateTime")
-           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterXMLOffsetDateTime");
+           .setAttribute ("adapter", AdapterXMLOffsetDateTime.class.getName ());
     eGlobal.addElementNS (XJC_NS_URI, "javaType")
-           .setAttribute ("name", "com.helger.commons.datetime.XMLOffsetDate")
+           .setAttribute ("name", XMLOffsetDate.class.getName ())
            .setAttribute ("xmlType", "xsd:date")
-           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterXMLOffsetDate");
+           .setAttribute ("adapter", AdapterXMLOffsetDate.class.getName ());
     eGlobal.addElementNS (XJC_NS_URI, "javaType")
-           .setAttribute ("name", "com.helger.commons.datetime.XMLOffsetTime")
+           .setAttribute ("name", XMLOffsetTime.class.getName ())
            .setAttribute ("xmlType", "xsd:time")
-           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterXMLOffsetTime");
+           .setAttribute ("adapter", AdapterXMLOffsetTime.class.getName ());
     eGlobal.addElementNS (XJC_NS_URI, "javaType")
-           .setAttribute ("name", "java.time.Duration")
+           .setAttribute ("name", Duration.class.getName ())
            .setAttribute ("xmlType", "xsd:duration")
-           .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterDuration");
+           .setAttribute ("adapter", AdapterDuration.class.getName ());
 
     return eDoc;
   }
