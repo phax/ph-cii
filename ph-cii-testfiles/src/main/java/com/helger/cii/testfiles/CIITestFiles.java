@@ -18,10 +18,9 @@ package com.helger.cii.testfiles;
 
 import java.util.List;
 
-import javax.annotation.concurrent.Immutable;
-
-import com.helger.commons.annotation.CodingStyleguideUnaware;
-import com.helger.commons.collection.impl.CommonsArrayList;
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.annotation.style.CodingStyleguideUnaware;
+import com.helger.collection.commons.CommonsArrayList;
 
 /**
  * List of all CII test files categorized by version.

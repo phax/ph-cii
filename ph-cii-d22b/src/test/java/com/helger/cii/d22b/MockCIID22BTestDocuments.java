@@ -18,12 +18,12 @@ package com.helger.cii.d22b;
 
 import java.util.List;
 
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.annotation.style.ReturnsMutableCopy;
 import com.helger.cii.testfiles.CIITestFiles;
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.impl.CommonsArrayList;
+import com.helger.collection.commons.CommonsArrayList;
+
+import jakarta.annotation.Nonnull;
 
 @Immutable
 public final class MockCIID22BTestDocuments

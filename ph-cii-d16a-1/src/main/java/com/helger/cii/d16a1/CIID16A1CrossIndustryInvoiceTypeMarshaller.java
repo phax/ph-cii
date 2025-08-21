@@ -16,9 +16,8 @@
  */
 package com.helger.cii.d16a1;
 
-import javax.annotation.concurrent.NotThreadSafe;
-
-import com.helger.commons.collection.impl.CommonsArrayList;
+import com.helger.annotation.concurrent.NotThreadSafe;
+import com.helger.collection.commons.CommonsArrayList;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;

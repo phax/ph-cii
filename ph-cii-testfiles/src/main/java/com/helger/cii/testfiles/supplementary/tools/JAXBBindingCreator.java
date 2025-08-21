@@ -18,31 +18,33 @@ package com.helger.cii.testfiles.supplementary.tools;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Locale;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.xml.XMLConstants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.helger.commons.annotation.Nonempty;
-import com.helger.commons.collection.ArrayHelper;
-import com.helger.commons.collection.CollectionHelper;
-import com.helger.commons.collection.impl.CommonsArrayList;
-import com.helger.commons.collection.impl.CommonsHashSet;
-import com.helger.commons.collection.impl.CommonsTreeMap;
-import com.helger.commons.collection.impl.ICommonsList;
-import com.helger.commons.collection.impl.ICommonsNavigableMap;
-import com.helger.commons.collection.impl.ICommonsSet;
-import com.helger.commons.io.file.FileSystemIterator;
-import com.helger.commons.io.file.IFileFilter;
-import com.helger.commons.io.resource.FileSystemResource;
-import com.helger.commons.regex.RegExHelper;
-import com.helger.commons.string.StringHelper;
-import com.helger.commons.url.URLHelper;
+import com.helger.annotation.Nonempty;
+import com.helger.base.array.ArrayHelper;
+import com.helger.base.string.StringHelper;
+import com.helger.base.string.StringImplode;
+import com.helger.base.string.StringReplace;
+import com.helger.cache.regex.RegExHelper;
+import com.helger.collection.commons.CommonsArrayList;
+import com.helger.collection.commons.CommonsHashSet;
+import com.helger.collection.commons.CommonsTreeMap;
+import com.helger.collection.commons.ICommonsList;
+import com.helger.collection.commons.ICommonsNavigableMap;
+import com.helger.collection.commons.ICommonsSet;
+import com.helger.collection.helper.CollectionSort;
+import com.helger.io.file.FileSystemIterator;
+import com.helger.io.file.IFileFilter;
+import com.helger.io.resource.FileSystemResource;
+import com.helger.io.url.URLHelper;
 import com.helger.xml.CXML;
 import com.helger.xml.microdom.IMicroDocument;
 import com.helger.xml.microdom.IMicroElement;
@@ -54,12 +56,15 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
 import com.helger.xml.serialize.write.EXMLIncorrectCharacterHandling;
 import com.helger.xml.serialize.write.XMLWriterSettings;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+
 /**
  * Utility class that creates:
  * <ul>
  * <li>src/main/jaxb/bindings.xjb - the JAXB binding file</li>
- * <li>src/test/resources/external/schemas/*.xsd.mapping - mapping files that
- * contain the generated explicit enum mappings</li>
+ * <li>src/test/resources/external/schemas/*.xsd.mapping - mapping files that contain the generated
+ * explicit enum mappings</li>
  * </ul>
  *
  * @author Philip Helger
@@ -74,32 +79,32 @@ public final class JAXBBindingCreator
   private static IMicroDocument _createBaseDoc ()
   {
     final IMicroDocument eDoc = new MicroDocument ();
-    eDoc.appendComment ("This file is generated. Do NOT edit manually.");
-    final IMicroElement eRoot = eDoc.appendElement (JAXB_NS_URI, "bindings");
-    eRoot.setAttribute (XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI,
-                        "schemaLocation",
-                        JAXB_NS_URI + " https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd");
+    eDoc.addComment ("This file is generated. Do NOT edit manually.");
+    final IMicroElement eRoot = eDoc.addElementNS (JAXB_NS_URI, "bindings");
+    eRoot.setAttributeNS (XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI,
+                          "schemaLocation",
+                          JAXB_NS_URI + " https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd");
     eRoot.setAttribute ("version", "3.0");
 
-    final IMicroElement eGlobal = eRoot.appendElement (JAXB_NS_URI, "globalBindings");
+    final IMicroElement eGlobal = eRoot.addElementNS (JAXB_NS_URI, "globalBindings");
     eGlobal.setAttribute ("typesafeEnumMaxMembers", "2000");
     eGlobal.setAttribute ("typesafeEnumMemberName", "generateError");
 
     // When in "xjc" namespace "adapter" can be used, when in "jaxb"
     // namespace, parse and print must be used
-    eGlobal.appendElement (XJC_NS_URI, "javaType")
+    eGlobal.addElementNS (XJC_NS_URI, "javaType")
            .setAttribute ("name", "com.helger.commons.datetime.XMLOffsetDateTime")
            .setAttribute ("xmlType", "xsd:dateTime")
            .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterXMLOffsetDateTime");
-    eGlobal.appendElement (XJC_NS_URI, "javaType")
+    eGlobal.addElementNS (XJC_NS_URI, "javaType")
            .setAttribute ("name", "com.helger.commons.datetime.XMLOffsetDate")
            .setAttribute ("xmlType", "xsd:date")
            .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterXMLOffsetDate");
-    eGlobal.appendElement (XJC_NS_URI, "javaType")
+    eGlobal.addElementNS (XJC_NS_URI, "javaType")
            .setAttribute ("name", "com.helger.commons.datetime.XMLOffsetTime")
            .setAttribute ("xmlType", "xsd:time")
            .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterXMLOffsetTime");
-    eGlobal.appendElement (XJC_NS_URI, "javaType")
+    eGlobal.addElementNS (XJC_NS_URI, "javaType")
            .setAttribute ("name", "java.time.Duration")
            .setAttribute ("xmlType", "xsd:duration")
            .setAttribute ("adapter", "com.helger.jaxb.adapter.AdapterDuration");
@@ -110,8 +115,8 @@ public final class JAXBBindingCreator
   @Nonnull
   private static ICommonsList <File> _getFileList (final String sPath)
   {
-    return CollectionHelper.getSorted (new FileSystemIterator (sPath).withFilter (IFileFilter.filenameEndsWith (".xsd")),
-                                       Comparator.comparing (File::getName));
+    return CollectionSort.getSorted (new FileSystemIterator (sPath).withFilter (IFileFilter.filenameEndsWith (".xsd")),
+                                     Comparator.comparing (File::getName));
   }
 
   @Nullable
@@ -137,15 +142,15 @@ public final class JAXBBindingCreator
       sHost = StringHelper.trimStart (sHost, "www.");
 
       // Reverse domain: helger.com -> com.helger
-      final ICommonsList <String> x = StringHelper.getExploded ('.', sHost);
-      x.reverse ();
+      final List <String> x = StringHelper.getExploded ('.', sHost);
+      Collections.reverse (x);
 
       // Path in regular order:
       final String sPath = StringHelper.trimStart (aURL.getPath (), '/');
       x.addAll (StringHelper.getExploded ('/', sPath));
 
       // Convert to array
-      aParts = ArrayHelper.newArray (x, String.class);
+      aParts = ArrayHelper.createArray (x, String.class);
     }
     else
     {
@@ -158,8 +163,8 @@ public final class JAXBBindingCreator
         }
 
       // Replace all illegal characters
-      s = StringHelper.replaceAll (s, ':', '.');
-      s = StringHelper.replaceAll (s, '-', '_');
+      s = StringReplace.replaceAll (s, ':', '.');
+      s = StringReplace.replaceAll (s, '-', '_');
       aParts = StringHelper.getExplodedArray ('.', s);
     }
 
@@ -168,7 +173,7 @@ public final class JAXBBindingCreator
     for (int i = 0; i < aParts.length; ++i)
       aParts[i] = RegExHelper.getAsIdentifier (aParts[i]);
 
-    return StringHelper.getImploded (".", aParts);
+    return StringImplode.getImploded (".", aParts);
   }
 
   private static void _generateExplicitEnumMapping (@Nonnull final IMicroDocument aDoc,
@@ -191,12 +196,12 @@ public final class JAXBBindingCreator
         continue;
 
       final ICommonsSet <String> aUsedNames = new CommonsHashSet <> ();
-      final IMicroElement eInnerBindings = eBindings.appendElement (JAXB_NS_URI, "bindings")
+      final IMicroElement eInnerBindings = eBindings.addElementNS (JAXB_NS_URI, "bindings")
                                                     .setAttribute ("node",
                                                                    "xsd:simpleType[@name='" +
                                                                            eSimpleType.getAttributeValue ("name") +
                                                                            "']");
-      final IMicroElement eTypesafeEnumClass = eInnerBindings.appendElement (JAXB_NS_URI, "typesafeEnumClass");
+      final IMicroElement eTypesafeEnumClass = eInnerBindings.addElementNS (JAXB_NS_URI, "typesafeEnumClass");
 
       for (final IMicroElement eEnumeration : aEnumerations)
       {
@@ -220,7 +225,7 @@ public final class JAXBBindingCreator
           }
         }
 
-        eTypesafeEnumClass.appendElement (JAXB_NS_URI, "typesafeEnumMember")
+        eTypesafeEnumClass.addElementNS (JAXB_NS_URI, "typesafeEnumMember")
                           .setAttribute ("value", sValue)
                           .setAttribute ("name", sCodeName);
         aValueToConstants.put (sValue, sCodeName);
@@ -259,12 +264,12 @@ public final class JAXBBindingCreator
         final String sPackageName = _convertToPackage (sTargetNamespace);
         // schemaLocation must be relative to bindings file!
         final IMicroElement eBindings = eDoc.getDocumentElement ()
-                                            .appendElement (JAXB_NS_URI, "bindings")
+                                            .addElementNS (JAXB_NS_URI, "bindings")
                                             .setAttribute ("schemaLocation", ".." + sBasePath + "/" + sFilename)
                                             .setAttribute ("node", "/xsd:schema");
 
-        eBindings.appendElement (JAXB_NS_URI, "schemaBindings")
-                 .appendElement (JAXB_NS_URI, "package")
+        eBindings.addElementNS (JAXB_NS_URI, "schemaBindings")
+                 .addElementNS (JAXB_NS_URI, "package")
                  .setAttribute ("name", sPackageName);
 
         if (sDName.equalsIgnoreCase ("d16a1"))

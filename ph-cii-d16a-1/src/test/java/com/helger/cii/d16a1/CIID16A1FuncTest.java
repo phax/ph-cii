@@ -24,9 +24,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-import com.helger.commons.error.list.IErrorList;
-import com.helger.commons.io.resource.ClassPathResource;
-import com.helger.commons.mock.CommonsTestHelper;
+import com.helger.diagnostics.error.list.IErrorList;
+import com.helger.io.resource.ClassPathResource;
+import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
@@ -64,8 +64,8 @@ public final class CIID16A1FuncTest
       // read again
       final CrossIndustryInvoiceType aCIIObject2 = m.read (aDoc2);
       assertNotNull (sFilename, aCIIObject2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject2);
-      CommonsTestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject2);
+      TestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject.clone ());
 
       // Validate
       aErrors = m.validate (aCIIObject2);

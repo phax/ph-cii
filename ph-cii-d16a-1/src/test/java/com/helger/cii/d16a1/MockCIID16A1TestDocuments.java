@@ -18,36 +18,18 @@ package com.helger.cii.d16a1;
 
 import java.util.List;
 
-import javax.annotation.Nonnull;
-import javax.annotation.concurrent.Immutable;
-
+import com.helger.annotation.concurrent.Immutable;
+import com.helger.annotation.style.ReturnsMutableCopy;
 import com.helger.cii.testfiles.CIITestFiles;
-import com.helger.commons.annotation.ReturnsMutableCopy;
-import com.helger.commons.collection.impl.CommonsArrayList;
+import com.helger.collection.commons.CommonsArrayList;
+
+import jakarta.annotation.Nonnull;
 
 @Immutable
 public final class MockCIID16A1TestDocuments
 {
   private MockCIID16A1TestDocuments ()
   {}
-
-  @Nonnull
-  @Deprecated
-  @ReturnsMutableCopy
-  public static List <String> getTestDocuments (@Nonnull final ECIID16A1DocumentType eType)
-  {
-    List <String> aFiles = null;
-    switch (eType)
-    {
-      case CROSS_INDUSTRY_INVOICE:
-        aFiles = CIITestFiles.D16A1_FILES;
-        break;
-      default:
-        throw new IllegalArgumentException ("No test files available for type " + eType);
-    }
-
-    return new CommonsArrayList <> (aFiles);
-  }
 
   @Nonnull
   @ReturnsMutableCopy

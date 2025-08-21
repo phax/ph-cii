@@ -16,9 +16,8 @@
  */
 package com.helger.cii.d16b;
 
-import javax.annotation.concurrent.NotThreadSafe;
-
-import com.helger.commons.collection.impl.CommonsArrayList;
+import com.helger.annotation.concurrent.NotThreadSafe;
+import com.helger.collection.commons.CommonsArrayList;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
 import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryInvoiceType;
@@ -32,9 +31,6 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16BCrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarshaller <CrossIndustryInvoiceType>
 {
-  @Deprecated (forRemoval = true, since = "3.0.1")
-  public static final String XSD_PATH = CCIID16B.XSD_PATH;
-
   /**
    * Create a new Marshaller
    */
