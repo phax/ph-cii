@@ -31,9 +31,6 @@ import un.unece.uncefact.data.standard.crossindustryinvoice._100.CrossIndustryIn
 @NotThreadSafe
 public class CIID16A1CrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarshaller <CrossIndustryInvoiceType>
 {
-  @Deprecated (forRemoval = true, since = "3.0.1")
-  public static final String XSD_PATH = CCIID16A1.XSD_PATH;
-
   /**
    * Create a new Marshaller
    */
