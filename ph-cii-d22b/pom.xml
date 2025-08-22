@@ -93,7 +93,7 @@
             un.unece.uncefact.codelist.*,
             un.unece.uncefact.data.standard.cii.*,
             un.unece.uncefact.identifierlist.standard.*</Export-Package>
-            <Import-Package>!javax.annotation.*,*</Import-Package>
+            <Import-Package>!jakarta.annotation.*,*</Import-Package>
           </instructions>
         </configuration>
       </plugin>
