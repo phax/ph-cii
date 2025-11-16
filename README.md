@@ -49,6 +49,8 @@ For CII D22B (since v3.1.0):
 
 Note: prior to v2.2.0 the Maven groupId was `com.helger`.
 
+Note: v10.1.0 was accidentally published to Maven and should NOT be used
+
 # References
 
 * Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
