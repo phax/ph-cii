@@ -18,10 +18,10 @@ package com.helger.cii.d16a1;
 
 import javax.xml.XMLConstants;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.misc.Singleton;
 import com.helger.xml.namespace.MapBasedNamespaceContext;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * The namespace context to be used as the namespace prefix mapper.
@@ -47,7 +47,7 @@ public class CIID16A1NamespaceContext extends MapBasedNamespaceContext
     addMapping ("ram", CCIID16A1.XML_SCHEMA_RAM_NAMESPACE_URL);
   }
 
-  @Nonnull
+  @NonNull
   public static CIID16A1NamespaceContext getInstance ()
   {
     return SingletonHolder.INSTANCE;

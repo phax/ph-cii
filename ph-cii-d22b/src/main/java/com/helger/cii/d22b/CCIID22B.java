@@ -16,11 +16,11 @@
  */
 package com.helger.cii.d22b;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.PresentForCodeCoverage;
 import com.helger.io.resource.ClassPathResource;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Constants for CII D22B handling.
@@ -53,13 +53,13 @@ public final class CCIID22B
   private CCIID22B ()
   {}
 
-  @Nonnull
+  @NonNull
   private static ClassLoader _getCL ()
   {
     return CCIID22B.class.getClassLoader ();
   }
 
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResource ()
   {
     return new ClassPathResource (XSD_PATH, _getCL ());

@@ -26,6 +26,8 @@ import java.util.Locale;
 
 import javax.xml.XMLConstants;
 
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,9 +66,6 @@ import com.helger.xml.namespace.MapBasedNamespaceContext;
 import com.helger.xml.serialize.write.EXMLIncorrectCharacterHandling;
 import com.helger.xml.serialize.write.XMLWriterSettings;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
-
 /**
  * Utility class that creates:
  * <ul>
@@ -83,7 +82,7 @@ public final class JAXBBindingCreator
   private static final String XJC_NS_URI = "http://java.sun.com/xml/ns/jaxb/xjc";
   private static final Logger LOGGER = LoggerFactory.getLogger (JAXBBindingCreator.class);
 
-  @Nonnull
+  @NonNull
   private static IMicroDocument _createBaseDoc ()
   {
     final IMicroDocument eDoc = new MicroDocument ();
@@ -120,7 +119,7 @@ public final class JAXBBindingCreator
     return eDoc;
   }
 
-  @Nonnull
+  @NonNull
   private static ICommonsList <File> _getFileList (final String sPath)
   {
     return CollectionSort.getSorted (new FileSystemIterator (sPath).withFilter (IFileFilter.filenameEndsWith (".xsd")),
@@ -128,13 +127,13 @@ public final class JAXBBindingCreator
   }
 
   @Nullable
-  private static String _getTargetNamespace (@Nonnull final IMicroDocument aDoc)
+  private static String _getTargetNamespace (@NonNull final IMicroDocument aDoc)
   {
     return aDoc.getDocumentElement ().getAttributeValue (CXML.XML_ATTR_XSD_TARGETNAMESPACE);
   }
 
-  @Nonnull
-  private static String _convertToPackage (@Nonnull final String sNamespaceURI)
+  @NonNull
+  private static String _convertToPackage (@NonNull final String sNamespaceURI)
   {
     // Lowercase everything
     String s = sNamespaceURI.toLowerCase (Locale.US);
@@ -184,9 +183,9 @@ public final class JAXBBindingCreator
     return StringImplode.getImploded (".", aParts);
   }
 
-  private static void _generateExplicitEnumMapping (@Nonnull final IMicroDocument aDoc,
-                                                    @Nonnull @Nonempty final String sFilename,
-                                                    @Nonnull final IMicroElement eBindings)
+  private static void _generateExplicitEnumMapping (@NonNull final IMicroDocument aDoc,
+                                                    @NonNull @Nonempty final String sFilename,
+                                                    @NonNull final IMicroElement eBindings)
   {
     final ICommonsNavigableMap <String, String> aValueToConstants = new CommonsTreeMap <> ();
 
@@ -246,7 +245,7 @@ public final class JAXBBindingCreator
                               new FileSystemResource ("src/test/resources/external/schemas/" + sFilename + ".mapping"));
   }
 
-  public static void runCIIBindingCreation (@Nonnull @Nonempty final String sDName, final boolean bWithCodelists)
+  public static void runCIIBindingCreation (@NonNull @Nonempty final String sDName, final boolean bWithCodelists)
   {
     final IMicroDocument eDoc = _createBaseDoc ();
     final ICommonsSet <String> aNamespaces = new CommonsHashSet <> ();

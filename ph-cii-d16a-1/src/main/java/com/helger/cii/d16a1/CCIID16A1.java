@@ -16,11 +16,11 @@
  */
 package com.helger.cii.d16a1;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.PresentForCodeCoverage;
 import com.helger.io.resource.ClassPathResource;
-
-import jakarta.annotation.Nonnull;
 
 /**
  * Constants for CII D16A1 handling.
@@ -56,13 +56,13 @@ public final class CCIID16A1
   private CCIID16A1 ()
   {}
 
-  @Nonnull
+  @NonNull
   private static ClassLoader _getCL ()
   {
     return CCIID16A1.class.getClassLoader ();
   }
 
-  @Nonnull
+  @NonNull
   public static ClassPathResource getXSDResource ()
   {
     return new ClassPathResource (XSD_PATH, _getCL ());

@@ -18,12 +18,12 @@ package com.helger.cii.d16a1;
 
 import java.util.List;
 
+import org.jspecify.annotations.NonNull;
+
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.ReturnsMutableCopy;
 import com.helger.cii.testfiles.CIITestFiles;
 import com.helger.collection.commons.CommonsArrayList;
-
-import jakarta.annotation.Nonnull;
 
 @Immutable
 public final class MockCIID16A1TestDocuments
@@ -31,7 +31,7 @@ public final class MockCIID16A1TestDocuments
   private MockCIID16A1TestDocuments ()
   {}
 
-  @Nonnull
+  @NonNull
   @ReturnsMutableCopy
   public static List <String> getTestCrossIndustryInvoices ()
   {

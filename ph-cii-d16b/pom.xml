@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.helger.cii</groupId>
     <artifactId>ph-cii-parent-pom</artifactId>
-    <version>4.0.1-SNAPSHOT</version>
+    <version>4.1.0-SNAPSHOT</version>
   </parent>
   <artifactId>ph-cii-d16b</artifactId>
   <packaging>bundle</packaging>
@@ -94,7 +94,7 @@
             un.unece.uncefact.data.*,
             un.unece.uncefact.documentation.*,
             un.unece.uncefact.identifierlist.*</Export-Package>
-            <Import-Package>!jakarta.annotation.*,*</Import-Package>
+            <Import-Package>!org.jspecify.annotations.*,*</Import-Package>
           </instructions>
         </configuration>
       </plugin>
@@ -128,6 +128,7 @@
             <arg>-quiet</arg>
             <arg>-Xph-default-locale</arg>
             <arg>en_US</arg>
+            <arg>-Xph-package-null-marked</arg>
             <arg>-Xph-annotate</arg>
             <arg>-Xph-fields-private</arg>
             <arg>-Xph-code-quality</arg>

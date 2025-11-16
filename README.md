@@ -55,6 +55,10 @@ Note: prior to v2.2.0 the Maven groupId was `com.helger`.
 
 # News and noteworthy
 
+v4.1.0 - 2025-11-16
+* Updated to ph-commons 12.1.0
+* Using JSpecify annotations
+
 v4.0.0 - 2025-08-25
 * Requires Java 17 as the minimum version
 * Updated to ph-commons 12.0.0
