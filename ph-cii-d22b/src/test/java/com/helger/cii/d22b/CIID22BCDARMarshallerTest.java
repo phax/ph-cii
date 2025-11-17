@@ -19,7 +19,6 @@ package com.helger.cii.d22b;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,15 +39,14 @@ public final class CIID22BCDARMarshallerTest
   private static final Logger LOGGER = LoggerFactory.getLogger (CIID22BCDARMarshallerTest.class);
 
   @Test
-  @Ignore ("Enable when test files are present")
-  public void testReadAndWriteInvoice ()
+  public void testReadAndWriteCDAR ()
   {
     final CIID22BCDARMarshaller m = new CIID22BCDARMarshaller ();
     m.setNamespaceContext (CIID22BNamespaceContext.getInstance ()
                                                   .getClone ()
                                                   .addMapping ("bla", CCIID22B.XML_SCHEMA_CDAR_NAMESPACE_URL));
 
-    final String sFilename = MockCIID22BTestDocuments.getTestCrossIndustryInvoices ().get (0);
+    final String sFilename = MockCIID22BTestDocuments.getTestCDARs ().get (0);
 
     // Read from resource
     final CrossDomainAcknowledgementAndResponseType aRead1 = m.read (new ClassPathResource (sFilename));
@@ -65,8 +63,8 @@ public final class CIID22BCDARMarshallerTest
     assertEquals (aREG1, aREG2);
 
     // Write
-    final String s = m.getAsString (aRead1);
-    if (true)
+    final String s = m.setFormattedOutput (true).getAsString (aRead1);
+    if (false)
       LOGGER.info (s);
   }
 }

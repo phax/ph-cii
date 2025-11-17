@@ -32,24 +32,20 @@ import com.helger.collection.commons.CommonsArrayList;
 public final class CIITestFiles
 {
   private static final String PREFIX = "external/test-cii/";
+
+  @CodingStyleguideUnaware
   public static final List <String> D16A1_FILES = new CommonsArrayList <> (/*
-                                                                            * PREFIX
-                                                                            * +
+                                                                            * PREFIX +
                                                                             * "d16a1/CII_example1.xml",
-                                                                            * PREFIX
-                                                                            * +
+                                                                            * PREFIX +
                                                                             * "d16a1/CII_example2.xml",
-                                                                            * PREFIX
-                                                                            * +
+                                                                            * PREFIX +
                                                                             * "d16a1/CII_example3.xml",
-                                                                            * PREFIX
-                                                                            * +
+                                                                            * PREFIX +
                                                                             * "d16a1/CII_example4.xml",
-                                                                            * PREFIX
-                                                                            * +
+                                                                            * PREFIX +
                                                                             * "d16a1/CII_example5.xml",
-                                                                            * PREFIX
-                                                                            * +
+                                                                            * PREFIX +
                                                                             * "d16a1/CII_example6.xml",
                                                                             */
                                                                            PREFIX +
@@ -58,6 +54,7 @@ public final class CIITestFiles
    * PREFIX+"d16a1/CII_example8.xml", PREFIX+"d16a1/CII_example9.xml"
    */).getAsUnmodifiable ();
 
+  @CodingStyleguideUnaware
   public static final List <String> D16B_FILES = new CommonsArrayList <> (PREFIX + "d16b/CII_example1.xml",
                                                                           PREFIX + "d16b/CII_example2.xml",
                                                                           PREFIX + "d16b/CII_example3.xml",
@@ -69,6 +66,7 @@ public final class CIITestFiles
                                                                           PREFIX + "d16b/CII_example9.xml")
                                                                                                            .getAsUnmodifiable ();
 
+  @CodingStyleguideUnaware
   public static final List <String> D22B_FILES = new CommonsArrayList <> (PREFIX + "d22b/CII_example1.xml",
                                                                           PREFIX + "d22b/CII_example2.xml",
                                                                           PREFIX + "d22b/CII_example3.xml",

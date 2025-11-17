@@ -29,43 +29,43 @@ import com.helger.io.resource.ClassPathResource;
 import com.helger.unittest.support.TestHelper;
 import com.helger.xml.serialize.read.DOMReader;
 
-import un.unece.uncefact.data.standard.cii.d22b.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.cdar.d22b.CrossDomainAcknowledgementAndResponseType;
 
 /**
  * Some cross functionality testing
  *
  * @author Philip Helger
  */
-public final class CIID22BFuncTest
+public final class CDARD22BFuncTest
 {
   @Test
   public void testReadAndWriteCII ()
   {
-    final CIID22BCrossIndustryInvoiceTypeMarshaller m = new CIID22BCrossIndustryInvoiceTypeMarshaller ();
-    for (final String sFilename : MockCIID22BTestDocuments.getTestCrossIndustryInvoices ())
+    final CIID22BCDARMarshaller m = new CIID22BCDARMarshaller ();
+    for (final String sFilename : MockCIID22BTestDocuments.getTestCDARs ())
     {
       // Read
       final Document aDoc = DOMReader.readXMLDOM (new ClassPathResource (sFilename));
       assertNotNull (sFilename, aDoc);
-      final CrossIndustryInvoiceType aCIIObject = m.read (aDoc);
-      assertNotNull (sFilename, aCIIObject);
+      CrossDomainAcknowledgementAndResponseType aCDARObject = m.read (aDoc);
+      assertNotNull (sFilename, aCDARObject);
 
       // Validate
-      IErrorList aErrors = m.validate (aCIIObject);
+      IErrorList aErrors = m.validate (aCDARObject);
       assertNotNull (sFilename, aErrors);
       assertFalse (sFilename, aErrors.containsAtLeastOneError ());
 
       // write again
-      final Document aDoc2 = m.getAsDocument (aCIIObject);
+      final Document aDoc2 = m.getAsDocument (aCDARObject);
       assertNotNull (aDoc2);
       assertEquals (aDoc.getDocumentElement ().getNamespaceURI (), aDoc2.getDocumentElement ().getNamespaceURI ());
       assertEquals (aDoc.getDocumentElement ().getLocalName (), aDoc2.getDocumentElement ().getLocalName ());
 
       // read again
-      final CrossIndustryInvoiceType aCIIObject2 = m.read (aDoc2);
+      final CrossDomainAcknowledgementAndResponseType aCIIObject2 = m.read (aDoc2);
       assertNotNull (sFilename, aCIIObject2);
-      TestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject2);
-      TestHelper.testDefaultImplementationWithEqualContentObject (aCIIObject, aCIIObject.clone ());
+      TestHelper.testDefaultImplementationWithEqualContentObject (aCDARObject, aCIIObject2);
+      TestHelper.testDefaultImplementationWithEqualContentObject (aCDARObject, aCDARObject.clone ());
 
       // Validate
       aErrors = m.validate (aCIIObject2);
@@ -74,7 +74,7 @@ public final class CIID22BFuncTest
     }
 
     // Validate empty instance
-    final IErrorList aErrors = m.validate (new CrossIndustryInvoiceType ());
+    final IErrorList aErrors = m.validate (new CrossDomainAcknowledgementAndResponseType ());
     assertNotNull (aErrors);
     assertTrue (aErrors.containsAtLeastOneError ());
   }

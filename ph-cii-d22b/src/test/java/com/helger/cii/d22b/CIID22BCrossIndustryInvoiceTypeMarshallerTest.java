@@ -63,8 +63,8 @@ public final class CIID22BCrossIndustryInvoiceTypeMarshallerTest
     assertEquals (aREG1, aREG2);
 
     // Write
-    final String s = m.getAsString (aRead1);
-    if (true)
+    final String s = m.setFormattedOutput (true).getAsString (aRead1);
+    if (false)
       LOGGER.info (s);
   }
 }

@@ -22,6 +22,7 @@ import org.jspecify.annotations.NonNull;
 
 import com.helger.annotation.concurrent.Immutable;
 import com.helger.annotation.style.ReturnsMutableCopy;
+import com.helger.cii.testfiles.CDARTestFiles;
 import com.helger.cii.testfiles.CIITestFiles;
 import com.helger.collection.commons.CommonsArrayList;
 
@@ -36,5 +37,12 @@ public final class MockCIID22BTestDocuments
   public static List <String> getTestCrossIndustryInvoices ()
   {
     return new CommonsArrayList <> (CIITestFiles.D22B_FILES);
+  }
+
+  @NonNull
+  @ReturnsMutableCopy
+  public static List <String> getTestCDARs ()
+  {
+    return new CommonsArrayList <> (CDARTestFiles.D22B_FILES);
   }
 }
