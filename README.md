@@ -57,7 +57,7 @@ Note: v10.1.0 was accidentally published to Maven and should NOT be used
 
 # News and noteworthy
 
-v4.1.1 - work in progress
+v4.1.1 - 2025-11-17
 * Added support for the Cross Domain Acknowledgement and Response (CDAR) format in D22B
 
 v4.1.0 - 2025-11-16
