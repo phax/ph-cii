@@ -106,15 +106,31 @@
             <goals>
               <goal>generate</goal>
             </goals>
-            <id>ciid22b</id>
+            <id>d22b-cii</id>
             <configuration>
-              <generateDirectory>${project.build.directory}/generated-sources/d22b</generateDirectory>
-              <schemaDirectory>${basedir}/src/main/resources/external/schemas/d22b</schemaDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/d22b-cii</generateDirectory>
+              <schemaDirectory>${basedir}/src/main/resources/external/schemas/d22b/cii</schemaDirectory>
               <schemaIncludes>
                 <schemaInclude>CrossIndustryInvoice_100pD22B.xsd</schemaInclude>
               </schemaIncludes>
               <bindingIncludes>
-                <bindingInclude>bindings.xjb</bindingInclude>
+                <bindingInclude>bindings-cii.xjb</bindingInclude>
+              </bindingIncludes>
+            </configuration>
+          </execution>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <id>d22b-cdar</id>
+            <configuration>
+              <generateDirectory>${project.build.directory}/generated-sources/d22b-cdar</generateDirectory>
+              <schemaDirectory>${basedir}/src/main/resources/external/schemas/d22b/cdar</schemaDirectory>
+              <schemaIncludes>
+                <schemaInclude>CrossDomainAcknowledgementAndResponse_100pD22B.xsd</schemaInclude>
+              </schemaIncludes>
+              <bindingIncludes>
+                <bindingInclude>bindings-cdar.xjb</bindingInclude>
               </bindingIncludes>
             </configuration>
           </execution>

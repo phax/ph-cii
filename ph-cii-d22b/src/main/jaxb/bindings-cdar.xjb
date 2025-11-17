@@ -25,24 +25,24 @@
     <xjc:javaType name="com.helger.datetime.xml.XMLOffsetTime" xmlType="xsd:time" adapter="com.helger.jaxb.adapter.AdapterXMLOffsetTime" />
     <xjc:javaType name="java.time.Duration" xmlType="xsd:duration" adapter="com.helger.jaxb.adapter.AdapterDuration" />
   </globalBindings>
-  <bindings schemaLocation="../resources/external/schemas/d22b/CrossIndustryInvoice_100pD22B.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d22b/cdar/CrossDomainAcknowledgementAndResponse_100pD22B.xsd" node="/xsd:schema">
     <schemaBindings>
-      <package name="un.unece.uncefact.data.standard.cii.d22b" />
+      <package name="un.unece.uncefact.data.standard.cdar.d22b" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/external/schemas/d22b/CrossIndustryInvoice_100pD22B_urn_un_unece_uncefact_data_standard_QualifiedDataType_100.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d22b/cdar/CrossDomainAcknowledgementAndResponse_100pD22B_urn_un_unece_uncefact_data_standard_QualifiedDataType_100.xsd" node="/xsd:schema">
     <schemaBindings>
-      <package name="un.unece.uncefact.data.standard.cii.d22b.qdt" />
+      <package name="un.unece.uncefact.data.standard.cdar.d22b.qdt" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/external/schemas/d22b/CrossIndustryInvoice_100pD22B_urn_un_unece_uncefact_data_standard_ReusableAggregateBusinessInformationEntity_100.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d22b/cdar/CrossDomainAcknowledgementAndResponse_100pD22B_urn_un_unece_uncefact_data_standard_ReusableAggregateBusinessInformationEntity_100.xsd" node="/xsd:schema">
     <schemaBindings>
-      <package name="un.unece.uncefact.data.standard.cii.d22b.rabie" />
+      <package name="un.unece.uncefact.data.standard.cdar.d22b.rabie" />
     </schemaBindings>
   </bindings>
-  <bindings schemaLocation="../resources/external/schemas/d22b/CrossIndustryInvoice_100pD22B_urn_un_unece_uncefact_data_standard_UnqualifiedDataType_100.xsd" node="/xsd:schema">
+  <bindings schemaLocation="../resources/external/schemas/d22b/cdar/CrossDomainAcknowledgementAndResponse_100pD22B_urn_un_unece_uncefact_data_standard_UnqualifiedDataType_100.xsd" node="/xsd:schema">
     <schemaBindings>
-      <package name="un.unece.uncefact.data.standard.cii.d22b.udt" />
+      <package name="un.unece.uncefact.data.standard.cdar.d22b.udt" />
     </schemaBindings>
   </bindings>
 </bindings>

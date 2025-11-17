@@ -57,6 +57,9 @@ Note: v10.1.0 was accidentally published to Maven and should NOT be used
 
 # News and noteworthy
 
+v4.1.1 - work in progress
+* Added support for the Cross Domain Acknowledgement and Response (CDAR) format in D22B
+
 v4.1.0 - 2025-11-16
 * Updated to ph-commons 12.1.0
 * Using JSpecify annotations

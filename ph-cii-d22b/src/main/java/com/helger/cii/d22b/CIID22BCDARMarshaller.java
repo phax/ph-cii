@@ -20,25 +20,25 @@ import com.helger.annotation.concurrent.NotThreadSafe;
 import com.helger.collection.commons.CommonsArrayList;
 import com.helger.jaxb.GenericJAXBMarshaller;
 
-import un.unece.uncefact.data.standard.cii.d22b.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.cdar.d22b.CrossDomainAcknowledgementAndResponseType;
 
 /**
- * A JAXB Marshaller for CII D22B CrossIndustryInvoiceType documents.
+ * A JAXB Marshaller for CII D22B CrossDomainAcknowledgementAndResponse (CDAR) documents.
  *
  * @author Philip Helger
- * @since 3.1.0
+ * @since 4.1.1
  */
 @NotThreadSafe
-public class CIID22BCrossIndustryInvoiceTypeMarshaller extends GenericJAXBMarshaller <CrossIndustryInvoiceType>
+public class CIID22BCDARMarshaller extends GenericJAXBMarshaller <CrossDomainAcknowledgementAndResponseType>
 {
   /**
    * Create a new Marshaller
    */
-  public CIID22BCrossIndustryInvoiceTypeMarshaller ()
+  public CIID22BCDARMarshaller ()
   {
-    super (CrossIndustryInvoiceType.class,
-           new CommonsArrayList <> (CCIID22B.getXSDResourceCII ()),
-           new un.unece.uncefact.data.standard.cii.d22b.ObjectFactory ()::createCrossIndustryInvoice);
-    setNamespaceContext (CIID22BNamespaceContext.getForCII ());
+    super (CrossDomainAcknowledgementAndResponseType.class,
+           new CommonsArrayList <> (CCIID22B.getXSDResourceCDAR ()),
+           new un.unece.uncefact.data.standard.cdar.d22b.ObjectFactory ()::createCrossDomainAcknowledgementAndResponse);
+    setNamespaceContext (CIID22BNamespaceContext.getForCDAR ());
   }
 }

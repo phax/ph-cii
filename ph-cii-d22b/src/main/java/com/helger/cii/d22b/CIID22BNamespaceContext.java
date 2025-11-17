@@ -40,7 +40,6 @@ public class CIID22BNamespaceContext extends MapBasedNamespaceContext
   {
     addMapping ("xsi", XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
     addMapping ("xs", XMLConstants.W3C_XML_SCHEMA_NS_URI);
-    addMapping ("rsm", CCIID22B.XML_SCHEMA_RSM_NAMESPACE_URL);
     addMapping ("udt", CCIID22B.XML_SCHEMA_UDT_NAMESPACE_URL);
     addMapping ("qdt", CCIID22B.XML_SCHEMA_QDT_NAMESPACE_URL);
     addMapping ("ram", CCIID22B.XML_SCHEMA_RAM_NAMESPACE_URL);
@@ -50,5 +49,17 @@ public class CIID22BNamespaceContext extends MapBasedNamespaceContext
   public static CIID22BNamespaceContext getInstance ()
   {
     return SingletonHolder.INSTANCE;
+  }
+
+  @NonNull
+  public static MapBasedNamespaceContext getForCII ()
+  {
+    return getInstance ().getClone ().addMapping ("rsm", CCIID22B.XML_SCHEMA_CII_NAMESPACE_URL);
+  }
+
+  @NonNull
+  public static MapBasedNamespaceContext getForCDAR ()
+  {
+    return getInstance ().getClone ().addMapping ("rsm", CCIID22B.XML_SCHEMA_CDAR_NAMESPACE_URL);
   }
 }

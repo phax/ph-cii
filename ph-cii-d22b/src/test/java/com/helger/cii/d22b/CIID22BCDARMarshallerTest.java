@@ -19,6 +19,7 @@ package com.helger.cii.d22b;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,33 +28,34 @@ import com.helger.base.io.stream.StreamHelper;
 import com.helger.diagnostics.error.list.IErrorList;
 import com.helger.io.resource.ClassPathResource;
 
-import un.unece.uncefact.data.standard.cii.d22b.CrossIndustryInvoiceType;
+import un.unece.uncefact.data.standard.cdar.d22b.CrossDomainAcknowledgementAndResponseType;
 
 /**
- * Test class for class {@link CIID22BCrossIndustryInvoiceTypeMarshaller}.
+ * Test class for class {@link CIID22BCDARMarshaller}.
  *
  * @author Philip Helger
  */
-public final class CIID22BCrossIndustryInvoiceTypeMarshallerTest
+public final class CIID22BCDARMarshallerTest
 {
-  private static final Logger LOGGER = LoggerFactory.getLogger (CIID22BCrossIndustryInvoiceTypeMarshallerTest.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger (CIID22BCDARMarshallerTest.class);
 
   @Test
+  @Ignore ("Enable when test files are present")
   public void testReadAndWriteInvoice ()
   {
-    final CIID22BCrossIndustryInvoiceTypeMarshaller m = new CIID22BCrossIndustryInvoiceTypeMarshaller ();
+    final CIID22BCDARMarshaller m = new CIID22BCDARMarshaller ();
     m.setNamespaceContext (CIID22BNamespaceContext.getInstance ()
                                                   .getClone ()
-                                                  .addMapping ("bla", CCIID22B.XML_SCHEMA_CII_NAMESPACE_URL));
+                                                  .addMapping ("bla", CCIID22B.XML_SCHEMA_CDAR_NAMESPACE_URL));
 
     final String sFilename = MockCIID22BTestDocuments.getTestCrossIndustryInvoices ().get (0);
 
     // Read from resource
-    final CrossIndustryInvoiceType aRead1 = m.read (new ClassPathResource (sFilename));
+    final CrossDomainAcknowledgementAndResponseType aRead1 = m.read (new ClassPathResource (sFilename));
     assertNotNull (aRead1);
 
     // Read from byte[]
-    final CrossIndustryInvoiceType aRead2 = m.read (StreamHelper.getAllBytes (new ClassPathResource (sFilename)));
+    final CrossDomainAcknowledgementAndResponseType aRead2 = m.read (StreamHelper.getAllBytes (new ClassPathResource (sFilename)));
     assertNotNull (aRead2);
     assertEquals (aRead1, aRead2);
 

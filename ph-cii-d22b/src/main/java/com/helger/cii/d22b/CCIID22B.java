@@ -33,10 +33,26 @@ public final class CCIID22B
   /** The classpath relative directory where the main XSDs reside */
   public static final String SCHEMA_DIRECTORY = "external/schemas/d22b/";
 
-  public static final String XSD_PATH = SCHEMA_DIRECTORY + "CrossIndustryInvoice_100pD22B.xsd";
+  public static final String XSD_PATH_CII = SCHEMA_DIRECTORY + "cii/CrossIndustryInvoice_100pD22B.xsd";
+
+  /**
+   * @deprecated Use {@link #XSD_PATH_CII} instead
+   */
+  @Deprecated (forRemoval = true, since = "4.1.1")
+  public static final String XSD_PATH = XSD_PATH_CII;
+
+  public static final String XSD_PATH_CDAR = SCHEMA_DIRECTORY +
+                                             "cdar/CrossDomainAcknowledgementAndResponse_100pD22B.xsd";
 
   /** The CII rsm namespace URL */
-  public static final String XML_SCHEMA_RSM_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100";
+  public static final String XML_SCHEMA_CII_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100";
+
+  /** The CII rsm namespace URL */
+  @Deprecated (forRemoval = true, since = "4.1.1")
+  public static final String XML_SCHEMA_RSM_NAMESPACE_URL = XML_SCHEMA_CII_NAMESPACE_URL;
+
+  /** The CDAR rsm namespace URL */
+  public static final String XML_SCHEMA_CDAR_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:CrossDomainAcknowledgementAndResponse:100";
 
   /** The udt namespace URL */
   public static final String XML_SCHEMA_UDT_NAMESPACE_URL = "urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100";
@@ -60,8 +76,21 @@ public final class CCIID22B
   }
 
   @NonNull
+  @Deprecated (forRemoval = true, since = "4.1.1")
   public static ClassPathResource getXSDResource ()
   {
-    return new ClassPathResource (XSD_PATH, _getCL ());
+    return getXSDResourceCII ();
+  }
+
+  @NonNull
+  public static ClassPathResource getXSDResourceCII ()
+  {
+    return new ClassPathResource (XSD_PATH_CII, _getCL ());
+  }
+
+  @NonNull
+  public static ClassPathResource getXSDResourceCDAR ()
+  {
+    return new ClassPathResource (XSD_PATH_CDAR, _getCL ());
   }
 }
