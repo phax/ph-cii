@@ -38,7 +38,8 @@ public final class CDARTestFiles
   public static final List <String> D22B_FILES;
   static
   {
-    final var aList = Arrays.asList (PREFIX + "d22b/UC1_F202500003_01-CDV-200_Deposee_POUR_PPF.xml",
+    final var aList = Arrays.asList (PREFIX + "d22b/slack1.xml",
+                                     PREFIX + "d22b/UC1_F202500003_01-CDV-200_Deposee_POUR_PPF.xml",
                                      PREFIX + "d22b/UC1_F202500003_01-CDV-200_Deposee.xml",
                                      PREFIX + "d22b/UC1_F202500003_02-CDV-202_Recue.xml",
                                      PREFIX + "d22b/UC1_F202500003_03-CDV-203_Mise_a_disposition.xml",

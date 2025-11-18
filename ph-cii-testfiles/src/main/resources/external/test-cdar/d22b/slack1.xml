@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsm:CrossDomainAcknowledgementAndResponse
+xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100"
+ xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100"
+ xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100"
+ xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossDomainAcknowledgementAndResponse:100"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rsm:ExchangedDocumentContext>
+    <ram:BusinessProcessSpecifiedDocumentContextParameter>
+      <ram:ID>S1</ram:ID>
+    </ram:BusinessProcessSpecifiedDocumentContextParameter>
+    <ram:GuidelineSpecifiedDocumentContextParameter>
+      <ram:ID>urn.cpro.gouv.fr:1p0:CDV:invoice</ram:ID>
+    </ram:GuidelineSpecifiedDocumentContextParameter>
+  </rsm:ExchangedDocumentContext>
+  <rsm:ExchangedDocument>
+    <ram:ID>FFE0614A_PPF000_PPF0000000000000000000008</ram:ID>
+    <ram:Name>slack1</ram:Name>
+    <ram:IssueDateTime>
+      <udt:DateTimeString format="204">20251113220611</udt:DateTimeString>
+    </ram:IssueDateTime>
+    <ram:SenderTradeParty>
+      <ram:GlobalID schemeID="0002">100000009</ram:GlobalID>
+      <ram:Name>Opentext</ram:Name>
+      <ram:RoleCode>WK</ram:RoleCode>
+    </ram:SenderTradeParty>
+    <ram:IssuerTradeParty>
+      <ram:GlobalID schemeID="0002">100000009</ram:GlobalID>
+      <ram:Name>Opentext</ram:Name>
+      <ram:RoleCode>WK</ram:RoleCode>
+    </ram:IssuerTradeParty>
+    <ram:RecipientTradeParty>
+      <ram:GlobalID schemeID="0002">100000009</ram:GlobalID>
+      <ram:Name>LEVENDEURC1</ram:Name>
+      <ram:RoleCode>SE</ram:RoleCode>
+    </ram:RecipientTradeParty>
+    <ram:RecipientTradeParty>
+      <ram:GlobalID schemeID="0002">100000009</ram:GlobalID>
+      <ram:Name>LECLIENTC1</ram:Name>
+      <ram:RoleCode>BY</ram:RoleCode>
+    </ram:RecipientTradeParty>
+    <ram:RecipientTradeParty>
+      <ram:GlobalID schemeID="0238">0000</ram:GlobalID>
+      <ram:Name>PPF</ram:Name>
+      <ram:RoleCode>DFH</ram:RoleCode>
+    </ram:RecipientTradeParty>
+  </rsm:ExchangedDocument>
+  <rsm:AcknowledgementDocument>
+    <ram:MultipleReferencesIndicator>
+      <udt:Indicator>false</udt:Indicator>
+    </ram:MultipleReferencesIndicator>
+    <ram:TypeCode>305</ram:TypeCode>
+    <ram:IssueDateTime>
+      <udt:DateTimeString format="204">20251113220611</udt:DateTimeString>
+    </ram:IssueDateTime>
+    <ram:ReferenceReferencedDocument>
+      <ram:IssuerAssignedID>PATest_SP_UBL_01</ram:IssuerAssignedID>
+      <ram:StatusCode>10</ram:StatusCode>
+      <ram:TypeCode>380</ram:TypeCode>
+      <ram:ReceiptDateTime>
+        <udt:DateTimeString format="204">20251113174941</udt:DateTimeString>
+      </ram:ReceiptDateTime>
+      <ram:ReferenceTypeCode>urn.cpro.gouv.fr:1p0:CDV:invoice</ram:ReferenceTypeCode>
+      <ram:FormattedIssueDateTime>
+        <qdt:DateTimeString format="204">20251113220611</qdt:DateTimeString>
+      </ram:FormattedIssueDateTime>
+      <ram:ProcessConditionCode>213</ram:ProcessConditionCode>
+      <ram:ProcessCondition>Rejetée</ram:ProcessCondition>
+      <ram:IssuerTradeParty>
+        <ram:GlobalID schemeID="0002">100000009</ram:GlobalID>
+        <ram:Name>Test</ram:Name>
+        <ram:RoleCode>WK</ram:RoleCode>
+      </ram:IssuerTradeParty>
+      <ram:SpecifiedDocumentStatus>
+        <ram:ReasonCode>REJ_COH</ram:ReasonCode>
+        <ram:SequenceNumeric>1</ram:SequenceNumeric>
+        <ram:IncludedNote>
+          <ram:ContentCode>BR-FR-05/BT-22</ram:ContentCode>
+          <ram:Content>fatal: BR-FR-05/BT-22 : La mention relative à l’escompte ou à son absence (code AAB) est absente. Elle est obligatoire dans les notes (BG-3).</ram:Content>
+        </ram:IncludedNote>
+      </ram:SpecifiedDocumentStatus>
+    </ram:ReferenceReferencedDocument>
+  </rsm:AcknowledgementDocument>
+</rsm:CrossDomainAcknowledgementAndResponse>
