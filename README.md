@@ -1,8 +1,9 @@
 # ph-cii
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.helger.cii/ph-cii-parent-pom/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.helger.cii/ph-cii-parent-pom) 
-[![javadoc](https://javadoc.io/badge2/com.helger.cii/ph-cii-parent-pom/javadoc.svg)](https://javadoc.io/doc/com.helger.cii/ph-cii-parent-pom)
-[![CodeCov](https://codecov.io/gh/phax/ph-cii/branch/master/graph/badge.svg)](https://codecov.io/gh/phax/ph-cii)
+<!-- ph-badge-start -->
+[![Sonatype Central](https://maven-badges.sml.io/sonatype-central/com.helger.cii/ph-cii-parent-pom/badge.svg)](https://maven-badges.sml.io/sonatype-central/com.helger.cii/ph-cii-parent-pom/)
+[![javadoc](https://javadoc.io/badge2/com.helger.cii/ph-cii-testfiles/javadoc.svg)](https://javadoc.io/doc/com.helger.cii/ph-cii-testfiles)
+<!-- ph-badge-end -->
 
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
