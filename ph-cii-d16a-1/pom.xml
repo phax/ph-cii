@@ -25,12 +25,11 @@
     <version>4.1.2-SNAPSHOT</version>
   </parent>
   <artifactId>ph-cii-d16a-1</artifactId>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
   <name>ph-cii-d16a-1</name>
   <description>Library for reading and writing CII D16A.1 documents</description>
   <url>https://github.com/phax/ph-cii/ph-cii-d16a-1</url>
   <inceptionYear>2016</inceptionYear>
-  
   <licenses>
     <license>
       <name>Apache 2</name>
@@ -38,12 +37,10 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  
   <organization>
     <name>Philip Helger</name>
     <url>https://www.helger.com</url>
   </organization>
-  
   <developers>
     <developer>
       <id>philip</id>
@@ -52,7 +49,6 @@
       <url>https://www.helger.com</url>
     </developer>
   </developers>
-  
   <dependencies>
     <dependency>
       <groupId>com.helger.commons</groupId>
@@ -62,7 +58,6 @@
       <groupId>com.helger.commons</groupId>
       <artifactId>ph-jaxb-adapter</artifactId>
     </dependency>
-    
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
@@ -79,24 +74,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Automatic-Module-Name>com.helger.cii.d16a1</Automatic-Module-Name>
-            <Export-Package>com.helger.cii.d16a1.*,
-            un.unece.uncefact.codelist.*,
-            un.unece.uncefact.data.*,
-            un.unece.uncefact.identifierlist.*</Export-Package>
-            <Import-Package>!org.jspecify.annotations.*,*</Import-Package>
-          </instructions>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>${jaxb-plugin.group}</groupId>
         <artifactId>${jaxb-plugin.artifact}</artifactId>
@@ -159,7 +138,7 @@
             ${project.build.sourceDirectory}:${project.build.directory}/generated-sources/d16a1
           </sourcepath>
         </configuration>
-      </plugin> 
+      </plugin>
     </plugins>
   </build>
 </project>
