@@ -78,6 +78,18 @@ public final class CIITestFiles
                                                                           PREFIX + "d22b/CII_example9.xml")
                                                                                                            .getAsUnmodifiable ();
 
+  @CodingStyleguideUnaware
+  public static final List <String> D25A_FILES = new CommonsArrayList <> (PREFIX + "d25a/CII_example1.xml",
+                                                                          PREFIX + "d25a/CII_example2.xml",
+                                                                          PREFIX + "d25a/CII_example3.xml",
+                                                                          PREFIX + "d25a/CII_example4.xml",
+                                                                          PREFIX + "d25a/CII_example5.xml",
+                                                                          PREFIX + "d25a/CII_example6.xml",
+                                                                          PREFIX + "d25a/CII_example7.xml",
+                                                                          PREFIX + "d25a/CII_example8.xml",
+                                                                          PREFIX + "d25a/CII_example9.xml")
+                                                                                                           .getAsUnmodifiable ();
+
   public CIITestFiles ()
   {}
 }

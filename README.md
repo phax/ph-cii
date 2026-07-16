@@ -9,8 +9,9 @@
 
 Java Wrapper for the UN/CEFACT Cross Industry Invoice (using SCRDM schemas).
 
-This library focuses currently on D16A.1 and D16B for use with the EN resulting from directive 2014/55/EU.
+This library focuses currently on D16A.1 and D16B for use with the EN 16931:2017 version resulting from directive 2014/55/EU.
 Additionally it supports D22B for support for the Zugferd 2.3+ versions.
+The UN/CEFACT release D25A is supported as well for EN 16931:2026.
 
 It is licensed under Apache 2.0 license.
 
@@ -50,6 +51,16 @@ For CII D22B (since v3.1.0):
 </dependency>
 ```
 
+For CII D25A (since v4.1.2):
+
+```xml
+<dependency>
+  <groupId>com.helger.cii</groupId>
+  <artifactId>ph-cii-d25a</artifactId>
+  <version>x.y.z</version>
+</dependency>
+```
+
 Note: prior to v2.2.0 the Maven groupId was `com.helger`.
 
 Note: v10.1.0 was accidentally published to Maven and should NOT be used
@@ -60,8 +71,9 @@ Note: v10.1.0 was accidentally published to Maven and should NOT be used
 
 # News and noteworthy
 
-v4.1.2 - work in progress
+v4.1.2 - 2026-07-16
 * Removed OSGI bundling
+* Added support for CII D25A in new submodule `ph-cii-d25a`
 
 v4.1.1 - 2025-11-17
 * Added support for the Cross Domain Acknowledgement and Response (CDAR) format in D22B

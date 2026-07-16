@@ -99,6 +99,11 @@
         <artifactId>ph-cii-d22b</artifactId>
         <version>${project.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.helger.cii</groupId>
+        <artifactId>ph-cii-d25a</artifactId>
+        <version>${project.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   
@@ -120,5 +125,6 @@
     <module>ph-cii-d16a-1</module>
     <module>ph-cii-d16b</module>
     <module>ph-cii-d22b</module>
+    <module>ph-cii-d25a</module>
   </modules>
 </project>
