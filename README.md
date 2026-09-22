@@ -68,8 +68,18 @@ Note: v10.1.0 was accidentally published to Maven and should NOT be used
 # References
 
 * Source schemas are located here: http://www.unece.org/cefact/xml_schemas/index.html
+* UN/CEFACT publishes the CII and CDAR schemas in a "coupled" and an "uncoupled" variant.
+  Only the uncoupled variant is used, because the generated JAXB classes are meant to read and write documents and not to enforce code lists.
+  The only exception is D16A.1, for which no uncoupled variant was published. See `docs/00readme.txt` for details
 
 # News and noteworthy
+
+v4.1.3 - work in progress
+* Switched the CII D22B XSDs to the "uncoupled" variant, so that all CII and CDAR versions except D16A.1 use it. UN/CEFACT published no uncoupled variant for D16A.1, so it stays coupled
+* The generated JAXB classes of `ph-cii-d22b` no longer contain the code list enumerations - all `un.unece.uncefact.codelist.*` and `un.unece.uncefact.identifierlist.*` packages as well as the `*ListAgencyIDContentType` and `*SchemeAgencyIDContentType` classes in package `un.unece.uncefact.data.standard.cii.d22b.qdt` were removed
+* `TradeSettlementFinancialCardType.getValidFromDateTime ()` and `SupplyChainEventType.getTimeOccurrenceDateTime ()` of `ph-cii-d22b` now use `String` instead of `DateOnlyFormattedDateTimeType` and `TimeOnlyFormattedDateTimeType`
+* New classes `SealTypeCodeType` and `TransportEquipmentSizeTypeCodeType` in package `un.unece.uncefact.data.standard.cii.d22b.qdt`
+* Removed all XSD files that are not referenced from the respective main XSD
 
 v4.1.2 - 2026-07-16
 * Removed OSGI bundling
