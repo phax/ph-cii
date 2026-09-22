@@ -1,6 +1,6 @@
 # CII
 
-Source page: https://unece.org/trade/uncefact/xml-schemas
+Source page: https://unece.org/trade/uncefact/xml-schemas-2018-2012
 
 SCRDM_CCBDA_CII_D16A.1_30MAY2016_coupled.zip
   The only D16A.1 publication available - it is a "coupled" one, meaning that the
