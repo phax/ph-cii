@@ -74,7 +74,7 @@ Note: v10.1.0 was accidentally published to Maven and should NOT be used
 
 # News and noteworthy
 
-v4.1.3 - work in progress
+v4.1.3 - 2026-09-22
 * Switched the CII D22B XSDs to the "uncoupled" variant, so that all CII and CDAR versions except D16A.1 use it. UN/CEFACT published no uncoupled variant for D16A.1, so it stays coupled
 * The generated JAXB classes of `ph-cii-d22b` no longer contain the code list enumerations - all `un.unece.uncefact.codelist.*` and `un.unece.uncefact.identifierlist.*` packages as well as the `*ListAgencyIDContentType` and `*SchemeAgencyIDContentType` classes in package `un.unece.uncefact.data.standard.cii.d22b.qdt` were removed
 * `TradeSettlementFinancialCardType.getValidFromDateTime ()` and `SupplyChainEventType.getTimeOccurrenceDateTime ()` of `ph-cii-d22b` now use `String` instead of `DateOnlyFormattedDateTimeType` and `TimeOnlyFormattedDateTimeType`
