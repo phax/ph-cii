@@ -74,6 +74,10 @@ Note: v10.1.0 was accidentally published to Maven and should NOT be used
 
 # News and noteworthy
 
+v4.1.4 - 2026-11-14
+* Added new submodule `ph-cii-bom` with a Maven BOM for all ph-cii artefacts
+* The parent POM now imports `ph-commons-bom` instead of `ph-commons-parent-pom`
+
 v4.1.3 - 2026-09-22
 * Switched the CII D22B XSDs to the "uncoupled" variant, so that all CII and CDAR versions except D16A.1 use it.
   UN/CEFACT published no uncoupled variant for D16A.1, so it stays coupled
